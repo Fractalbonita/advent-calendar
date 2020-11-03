@@ -1,6 +1,6 @@
 <template>
   <div class="header">
-    <h1>{{ msg }}</h1>
+    <h1 class="header__title">{{ title }}</h1>
   </div>
 </template>
 
@@ -8,16 +8,16 @@
 import Vue from 'vue';
 
 export default Vue.extend({
-  name: 'Header',
+  name: 'TheHeader',
   props: {
-    msg: String
+    title: String
   }
 });
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-h1 {
-  margin: 40px 0 0;
+.header__title {
+  font-size: $headline-1-size;
+  margin: 0.5rem;
 }
 </style>
