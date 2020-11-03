@@ -1,19 +1,22 @@
 <template>
   <div id="app">
-    <Header msg="Advent calendar" />
+    <TheHeader title="Advent calendar" />
+    <CalendarDescription />
     <CalendarWindow />
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
-import Header from './components/Header.vue';
+import TheHeader from './components/TheHeader.vue';
+import CalendarDescription from './components/CalendarDescription.vue';
 import CalendarWindow from './components/CalendarWindow.vue';
 
 export default Vue.extend({
   name: 'App',
   components: {
-    Header,
+    TheHeader,
+    CalendarDescription,
     CalendarWindow
   }
 });
@@ -24,8 +27,6 @@ export default Vue.extend({
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
