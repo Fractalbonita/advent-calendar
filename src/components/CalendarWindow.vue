@@ -1,19 +1,24 @@
 <template>
   <div>
+    <Countdown v-bind:count="countDown()" />
     <ul>
       <li
-        v-for="beer in beers"
+        v-for="beer in randomBeers"
         v-bind:key="beer.id"
-        v-on:click="toggle(beer.id)"
+        v-on:click="toggleWindow(beer.id)"
       >
-        <div v-if="isVisible.includes(beer.id)">
-          <p>{{ beer.id }}</p>
-          <h2>{{ beer.name }}</h2>
-          <h3>{{ beer.category }}</h3>
-          <p>{{ beer.brewery }}</p>
+        <div
+          v-if="open.includes(beer.id)"
+          key="window-open"
+          class="window--open"
+        >
+          <p class="window__overline">{{ getWindowNumber(beer) }}</p>
+          <h2 class="window__headline-2">{{ beer.name }}</h2>
+          <p class="window__subtitle-1">{{ beer.category }}</p>
+          <p class="window__subtitle-2">{{ beer.brewery }}</p>
         </div>
-        <div class="calendar__window--closed" v-else>
-          <h2>{{ beer.id }}</h2>
+        <div v-else key="window-closed" class="window--closed">
+          <h2 class="window__headline-2">{{ getWindowNumber(beer) }}</h2>
         </div>
       </li>
     </ul>
@@ -22,26 +27,50 @@
 
 <script lang="ts">
 import Vue from 'vue';
+import Countdown from './Countdown.vue';
+
+interface Beer {
+  id: number;
+  name: string;
+  category: string;
+  brewery: string;
+}
 
 export default Vue.extend({
   name: 'CalendarWindow',
-  data: () => ({
-    isVisible: [] as string[],
-    beers: []
-  }),
+  components: {
+    Countdown
+  },
+  data() {
+    return {
+      beers: [] as Beer[],
+      randomBeers: [] as Beer[],
+      open: [] as string[]
+    };
+  },
   created() {
     fetch(process.env.VUE_APP_BEER_API_URL)
       .then(res => res.json())
-      .then(beers => {
-        this.beers = beers.slice(0, 24);
+      .then((beers: Beer[]) => {
+        this.beers = beers;
+        this.randomBeers = [...beers].sort(() =>
+          Math.random() > 0.5 ? 1 : -1
+        );
       })
       .catch(error => console.log(error.message));
   },
   methods: {
-    toggle(id: string) {
-      this.isVisible.includes(id)
-        ? this.isVisible.splice(this.isVisible.indexOf(id), 1)
-        : this.isVisible.push(id);
+    toggleWindow(id: string) {
+      this.open.includes(id)
+        ? this.open.splice(this.open.indexOf(id), 1)
+        : this.open.push(id);
+    },
+    countDown() {
+      return this.beers.length - this.open.length;
+    },
+    getWindowNumber(beer: Beer) {
+      return this.beers.indexOf(beer) + 1;
+      // randomize numbers with appropiate algorithm
     }
   }
 });
@@ -49,30 +78,62 @@ export default Vue.extend({
 
 <style scoped lang="scss">
 ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
   list-style-type: none;
   padding: 0;
 }
 li {
   display: inline-block;
-  margin: 0 10px;
+  margin: 0;
+  padding: 5px;
 }
-h2 {
-  color: #42b983;
-}
-.calendar__window--closed {
-  border: 1px solid #42b983;
-  text-align: center;
-  height: 100px;
-  width: 100px;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-
-  h2 {
-    color: #42b983;
+.window {
+  &__overline {
+    font-size: $overline-size;
+    margin: 0.5rem;
+    word-break: noraml;
   }
-}
-.calendar__window--open {
-  border: 1px solid #42b983;
+  &__headline-2 {
+    color: $primary-color;
+    font-size: $headline-2-size;
+    margin: 0.5rem;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    overflow: hidden;
+  }
+  &__subtitle-1 {
+    font-size: $subtitle-1-size;
+    margin: 0.5rem;
+  }
+  &__subtitle-2 {
+    font-size: $subtitle-2-size;
+    margin: 0.5rem;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    overflow: hidden;
+  }
+  &--closed {
+    border: 1px solid $primary-color;
+    text-align: center;
+    height: 160px;
+    width: 160px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  &--open {
+    border: 1px solid $primary-color;
+    text-align: center;
+    height: 160px;
+    width: 160px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
 }
 </style>
