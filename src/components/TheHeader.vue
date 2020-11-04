@@ -15,7 +15,7 @@ export default Vue.extend({
 });
 </script>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 .header__title {
   font-size: $headline-1-size;
   margin: 0.5rem;
