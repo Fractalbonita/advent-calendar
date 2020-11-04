@@ -1,6 +1,12 @@
 <template>
   <div>
     <Countdown v-bind:count="countDown()" />
+    <BaseModal
+      v-if="showModal"
+      v-bind:closeModal="closeModal"
+      v-on:close="closeModal"
+      children="Hello"
+    />
     <ul>
       <li
         v-for="beer in randomBeers"
@@ -13,7 +19,9 @@
           class="window--open"
         >
           <p class="window__overline">{{ getWindowNumber(beer) }}</p>
-          <h2 class="window__headline-2">{{ beer.name }}</h2>
+          <h2 v-on:click="showModal = true" class="window__headline-2">
+            {{ beer.name }}
+          </h2>
           <p class="window__subtitle-1">{{ beer.category }}</p>
           <p class="window__subtitle-2">{{ beer.brewery }}</p>
         </div>
@@ -28,6 +36,7 @@
 <script lang="ts">
 import Vue from 'vue';
 import Countdown from './Countdown.vue';
+import BaseModal from './BaseModal.vue';
 
 interface Beer {
   id: number;
@@ -39,13 +48,15 @@ interface Beer {
 export default Vue.extend({
   name: 'CalendarWindow',
   components: {
-    Countdown
+    Countdown,
+    BaseModal
   },
   data() {
     return {
       beers: [] as Beer[],
       randomBeers: [] as Beer[],
-      open: [] as string[]
+      open: [] as string[],
+      showModal: false
     };
   },
   created() {
@@ -70,6 +81,9 @@ export default Vue.extend({
     },
     getWindowNumber(beer: Beer) {
       return this.beers.indexOf(beer) + 1;
+    },
+    closeModal() {
+      this.showModal = !this.showModal;
     }
   }
 });
@@ -85,6 +99,7 @@ ul {
   padding: 0;
 }
 li {
+  cursor: pointer;
   display: inline-block;
   margin: 0;
   padding: 5px;

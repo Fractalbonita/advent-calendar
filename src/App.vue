@@ -3,7 +3,6 @@
     <TheHeader title="Advent calendar" />
     <CalendarDescription />
     <CalendarWindow />
-    <BaseBackdrop v-bind:shown="true" />
   </div>
 </template>
 
@@ -12,15 +11,13 @@ import Vue from 'vue';
 import TheHeader from './components/TheHeader.vue';
 import CalendarDescription from './components/CalendarDescription.vue';
 import CalendarWindow from './components/CalendarWindow.vue';
-import BaseBackdrop from './components/BaseBackdrop.vue';
 
 export default Vue.extend({
   name: 'App',
   components: {
     TheHeader,
     CalendarDescription,
-    CalendarWindow,
-    BaseBackdrop
+    CalendarWindow
   }
 });
 </script>
