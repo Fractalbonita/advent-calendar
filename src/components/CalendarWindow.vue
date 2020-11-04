@@ -70,18 +70,17 @@ export default Vue.extend({
     },
     getWindowNumber(beer: Beer) {
       return this.beers.indexOf(beer) + 1;
-      // randomize numbers with appropiate algorithm
     }
   }
 });
 </script>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 ul {
   display: flex;
   flex-direction: row;
-  justify-content: center;
   flex-wrap: wrap;
+  justify-content: center;
   list-style-type: none;
   padding: 0;
 }
@@ -97,12 +96,12 @@ li {
     word-break: noraml;
   }
   &__headline-2 {
-    color: $primary-color;
-    font-size: $headline-2-size;
-    margin: 0.5rem;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
+    color: $primary-color;
     display: -webkit-box;
+    font-size: $headline-2-size;
+    margin: 0.5rem;
     overflow: hidden;
   }
   &__subtitle-1 {
@@ -110,30 +109,30 @@ li {
     margin: 0.5rem;
   }
   &__subtitle-2 {
-    font-size: $subtitle-2-size;
-    margin: 0.5rem;
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
     display: -webkit-box;
+    font-size: $subtitle-2-size;
+    margin: 0.5rem;
     overflow: hidden;
   }
   &--closed {
     border: 1px solid $primary-color;
-    text-align: center;
-    height: 160px;
-    width: 160px;
     display: flex;
-    justify-content: center;
     flex-direction: column;
+    height: 160px;
+    justify-content: center;
+    text-align: center;
+    width: 160px;
   }
   &--open {
     border: 1px solid $primary-color;
-    text-align: center;
-    height: 160px;
-    width: 160px;
     display: flex;
-    justify-content: center;
     flex-direction: column;
+    height: 160px;
+    justify-content: center;
+    text-align: center;
+    width: 160px;
   }
 }
 </style>
