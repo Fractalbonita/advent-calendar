@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-on:keyup.esc="closeModal" tabindex="0">
     <Countdown v-bind:count="countDown()" />
     <BaseModal
       v-if="showModal"
