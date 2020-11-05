@@ -9,26 +9,24 @@
         aria-describedby="modalDescription"
       >
         <div class="modal__header" id="modalTitle">
-          <slot name="header"
-            >default header
-            <button
-              type="button"
-              v-on:click="$emit('close')"
-              class="modal__button--close"
-            >
-              X
-            </button>
-          </slot>
+          <slot name="header"></slot>
+          <button
+            type="button"
+            v-on:click="$emit('close')"
+            class="modal__button--close"
+          >
+            X
+          </button>
         </div>
         <div
-          class="modal__body"
+          class="modal__main"
           id="modalDescription"
           v-bind:class="{ scrollable: scrollable }"
         >
-          <slot name="body">default body</slot>
+          <slot name="main"></slot>
         </div>
         <div class="modal__footer">
-          <slot name="footer">default footer</slot>
+          <slot name="footer"></slot>
         </div>
       </div>
     </div>
@@ -90,7 +88,7 @@ export default Vue.extend({
     font-size: $button-size;
     padding: 0;
   }
-  &__body {
+  &__main {
     margin: 24px;
   }
   &__footer {

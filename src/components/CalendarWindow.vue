@@ -2,11 +2,34 @@
   <div v-on:keyup.esc="closeModal" tabindex="0">
     <Countdown v-bind:count="countDown()" />
     <BaseModal
-      v-if="showModal"
+      v-if="shown"
       v-bind:closeModal="closeModal"
       v-on:close="closeModal"
       v-bind:scrollable="scrollable"
-    />
+    >
+      <template v-slot:header
+        ><h1>{{ beer.name }}</h1>
+        <p>{{ beer.brewery }}</p></template
+      >
+      <template v-slot:main>
+        <p>Image</p>
+        <p>{{ beer.category }}</p>
+        <p>{{ beer.award }}</p>
+        <p>{{ beer.year }}</p>
+        <p>{{ beer.style }}</p>
+        <p>{{ beer.abv }}</p>
+        <p>{{ beer.country }}</p>
+        <p>
+          {{ beer.tastingNote }}
+        </p>
+        <a
+          v-bind:href="beer.website"
+          target="_blank"
+          rel="noopener noreferrer"
+          >{{ beer.website }}</a
+        >
+      </template>
+    </BaseModal>
     <ul>
       <li
         v-for="beer in randomBeers"
@@ -19,7 +42,7 @@
           class="window--open"
         >
           <p class="window__overline">{{ getWindowNumber(beer) }}</p>
-          <h2 v-on:click="showModal = true" class="window__headline-2">
+          <h2 v-on:click="showModal(beer)" class="window__headline-2">
             {{ beer.name }}
           </h2>
           <p class="window__subtitle-1">{{ beer.category }}</p>
@@ -39,10 +62,17 @@ import Countdown from './Countdown.vue';
 import BaseModal from './BaseModal.vue';
 
 interface Beer {
-  id: number;
+  award: string;
+  year: string;
   name: string;
-  category: string;
   brewery: string;
+  tastingNote: string;
+  category: string;
+  country: string;
+  style: string;
+  abv: string;
+  website: string;
+  id: number;
 }
 
 export default Vue.extend({
@@ -56,8 +86,8 @@ export default Vue.extend({
       beers: [] as Beer[],
       randomBeers: [] as Beer[],
       open: [] as string[],
-      showModal: false,
-      scrollable: false
+      shown: false,
+      beer: {} as Beer
     };
   },
   created() {
@@ -84,7 +114,11 @@ export default Vue.extend({
       return this.beers.indexOf(beer) + 1;
     },
     closeModal() {
-      this.showModal = !this.showModal;
+      this.shown = !this.shown;
+    },
+    showModal(beer: Beer) {
+      this.shown = true;
+      this.beer = beer;
     }
   }
 });
