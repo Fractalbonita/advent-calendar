@@ -20,7 +20,11 @@
             </button>
           </slot>
         </div>
-        <div class="modal__body" id="modalDescription">
+        <div
+          class="modal__body"
+          id="modalDescription"
+          v-bind:class="{ scrollable: scrollable }"
+        >
           <slot name="body">default body</slot>
         </div>
         <div class="modal__footer">
@@ -44,7 +48,8 @@ export default Vue.extend({
     };
   },
   props: {
-    closeModal: Function
+    closeModal: Function,
+    scrollable: Boolean
   }
 });
 </script>
@@ -92,6 +97,9 @@ export default Vue.extend({
     display: flex;
     justify-content: flex-end;
     margin: 12px;
+  }
+  .scrollable {
+    overflow-y: scroll;
   }
 }
 </style>

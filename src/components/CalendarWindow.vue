@@ -5,7 +5,7 @@
       v-if="showModal"
       v-bind:closeModal="closeModal"
       v-on:close="closeModal"
-      children="Hello"
+      v-bind:scrollable="scrollable"
     />
     <ul>
       <li
@@ -56,7 +56,8 @@ export default Vue.extend({
       beers: [] as Beer[],
       randomBeers: [] as Beer[],
       open: [] as string[],
-      showModal: false
+      showModal: false,
+      scrollable: false
     };
   },
   created() {
