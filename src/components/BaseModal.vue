@@ -1,7 +1,7 @@
 <template>
   <transition name="modal">
     <div class="modal">
-      <BaseBackdrop v-bind:backdrop="true" v-bind:handleClick="closeModal" />
+      <BaseBackdrop v-bind:backdrop="true" v-on:close="closeModal" />
       <div
         class="modal__container"
         role="dialog"
@@ -12,7 +12,7 @@
           <slot name="header"></slot>
           <button
             type="button"
-            v-on:click="$emit('close')"
+            v-on:click="closeModal"
             class="modal__button--close"
           >
             X
@@ -40,11 +40,6 @@ import BaseBackdrop from './BaseBackdrop.vue';
 export default Vue.extend({
   name: 'BaseModal',
   components: { BaseBackdrop },
-  data() {
-    return {
-      handleClick: Function
-    };
-  },
   props: {
     closeModal: Function,
     scrollable: Boolean

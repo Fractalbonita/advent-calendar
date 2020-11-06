@@ -1,35 +1,20 @@
 <template>
   <div v-on:keyup.esc="closeModal" tabindex="0">
     <Countdown v-bind:count="countDown()" />
-    <BaseModal
+    <CalendarWindowContentModal
       v-if="shown"
-      v-bind:closeModal="closeModal"
-      v-on:close="closeModal"
-      v-bind:scrollable="scrollable"
-    >
-      <template v-slot:header
-        ><h1>{{ beer.name }}</h1>
-        <p>{{ beer.brewery }}</p></template
-      >
-      <template v-slot:main>
-        <p>Image</p>
-        <p>{{ beer.category }}</p>
-        <p>{{ beer.award }}</p>
-        <p>{{ beer.year }}</p>
-        <p>{{ beer.style }}</p>
-        <p>{{ beer.abv }}</p>
-        <p>{{ beer.country }}</p>
-        <p>
-          {{ beer.tastingNote }}
-        </p>
-        <a
-          v-bind:href="beer.website"
-          target="_blank"
-          rel="noopener noreferrer"
-          >{{ beer.website }}</a
-        >
-      </template>
-    </BaseModal>
+      v-bind:close="closeModal"
+      v-bind:award="beer.award"
+      v-bind:year="beer.year"
+      v-bind:name="beer.name"
+      v-bind:brewery="beer.brewery"
+      v-bind:tastingNote="beer.tastingNote"
+      v-bind:category="beer.category"
+      v-bind:country="beer.country"
+      v-bind:teaste="beer.style"
+      v-bind:abv="beer.abv"
+      v-bind:website="beer.website"
+    />
     <ul>
       <li
         v-for="beer in randomBeers"
@@ -59,7 +44,9 @@
 <script lang="ts">
 import Vue from 'vue';
 import Countdown from './Countdown.vue';
-import BaseModal from './BaseModal.vue';
+import CalendarWindowContentModal from './CalendarWindowContentModal.vue';
+
+//import BaseModal from './BaseModal.vue';
 
 interface Beer {
   award: string;
@@ -79,7 +66,7 @@ export default Vue.extend({
   name: 'CalendarWindow',
   components: {
     Countdown,
-    BaseModal
+    CalendarWindowContentModal
   },
   data() {
     return {
@@ -107,11 +94,11 @@ export default Vue.extend({
         ? this.open.splice(this.open.indexOf(id), 1)
         : this.open.push(id);
     },
-    countDown() {
-      return this.beers.length - this.open.length;
-    },
     getWindowNumber(beer: Beer) {
       return this.beers.indexOf(beer) + 1;
+    },
+    countDown() {
+      return this.beers.length - this.open.length;
     },
     closeModal() {
       this.shown = !this.shown;
