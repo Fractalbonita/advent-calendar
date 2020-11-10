@@ -1,5 +1,5 @@
 <template>
-  <div v-if="backdrop" v-on:click="handleClick"></div>
+  <div v-if="backdrop" v-on:click="$emit('close')"></div>
 </template>
 
 <script lang="ts">
@@ -8,8 +8,7 @@ import Vue from 'vue';
 export default Vue.extend({
   name: 'BaseBackdrop',
   props: {
-    backdrop: Boolean,
-    handleClick: Function
+    backdrop: Boolean
   }
 });
 </script>

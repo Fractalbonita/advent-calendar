@@ -1,6 +1,7 @@
 {
   "beers": [
     {
+      "image": "/assets/images/bach-bulldozer.jpg",
       "award": "Bronze",
       "year": "2020",
       "name": "Bulldozer",
@@ -14,6 +15,7 @@
       "id": 1
     },
     {
+      "image": "/assets/images/vulkan-india-pale-ale-2020.jpg",
       "award": "Bronze",
       "year": "2020",
       "name": "India Pale Ale",
@@ -27,19 +29,21 @@
       "id": 2
     },
     {
+      "image": "/assets/images/schwarzbraeu-ipa.jpg",
       "award": "Bronze",
       "year": "2020",
       "name": "Select",
       "brewery": "Schwarzbräu",
-      "tastingNote": "",
+      "tastingNote": "Amber in appearance, with a thick, dense head that is well-retained. It offers aromas of jammy fruit, some resin, and caramel, alongside a hint of citrus. The palate similarly offers stone fruit as well as a certain softness, with some oxidisation.",
       "category": "IPA",
       "country": "Germany",
       "style": "American Style",
-      "abv": "\"Amber in appearance, with a thick, dense head that is well-retained. It offers aromas of jammy fruit, some resin, and caramel, alongside a hint of citrus. The palate similarly offers stone fruit as well as a certain softness, with some oxidisation. The af\"",
+      "abv": "7.00%",
       "website": "https://www.schwarzbraeu.de/",
       "id": 3
     },
     {
+      "image": "/assets/images/crew-republic-in-your-face.jpg",
       "award": "Silver",
       "year": "2020",
       "name": "In Your Face",
@@ -53,6 +57,7 @@
       "id": 4
     },
     {
+      "image": "/assets/images/welde-ipa-2020.jpg",
       "award": "Silver",
       "year": "2020",
       "name": "IPA",
@@ -61,11 +66,12 @@
       "category": "IPA",
       "country": "Germany",
       "style": "American Style",
-      "abv": "\"Hazy amber, with a loose head. The aromas offered are mainly citrus and tangerine, alongside stone fruit like apricot and peach, with biscuit malt just underneath. This is full-bodied to taste, and quite rich and creamy, although well-balanced. There's a\"",
+      "abv": "6.70%",
       "website": "https://www.welde.de/",
       "id": 5
     },
     {
+      "image": "/assets/images/inselbrauerei-german-coast.jpg",
       "award": "Gold",
       "year": "2019",
       "name": "German Coast",
@@ -79,6 +85,7 @@
       "id": 6
     },
     {
+      "image": "/assets/images/lemke-black-rye-ipa.jpg",
       "award": "Country Winner",
       "year": "2019",
       "name": "Black Rye IPA",
@@ -92,6 +99,7 @@
       "id": 7
     },
     {
+      "image": "/assets/images/crew-republic-escalation.jpg",
       "award": "Country Winner",
       "year": "2019",
       "name": "7:45 Escalation",
@@ -105,6 +113,7 @@
       "id": 8
     },
     {
+      "image": "/assets/images/camba-black-shark.jpg",
       "award": "Country Winner",
       "year": "2019",
       "name": "Black Shark",
@@ -118,6 +127,7 @@
       "id": 9
     },
     {
+      "image": "/assets/images/vulkan-pale-ale.jpg",
       "award": "Bronze",
       "year": "2019",
       "name": "India Pale Ale",
@@ -131,6 +141,7 @@
       "id": 10
     },
     {
+      "image": "/assets/images/glaab-vicky.jpg",
       "award": "Bronze",
       "year": "2019",
       "name": "Vicky loves Pales",
@@ -144,6 +155,7 @@
       "id": 11
     },
     {
+      "image": "/assets/images/welde-ipa.jpg",
       "award": "Silver",
       "year": "2019",
       "name": "IPA",
@@ -157,6 +169,7 @@
       "id": 12
     },
     {
+      "image": "/assets/images/riegele-simco.jpg",
       "award": "Country Winner",
       "year": "2019",
       "name": "Simco 3",
@@ -170,6 +183,7 @@
       "id": 13
     },
     {
+      "image": "/assets/images/maisel-ipa.jpg",
       "award": "Gold",
       "year": "2019",
       "name": "IPA",
@@ -183,6 +197,7 @@
       "id": 14
     },
     {
+      "image": "/assets/images/ratsherrn-westcoast-ipa.jpg",
       "award": "Silver",
       "year": "2019",
       "name": "Coast Guard Westküsten IPA",
@@ -196,6 +211,7 @@
       "id": 15
     },
     {
+      "image": "/assets/images/lemke-spree-ipa.jpg",
       "award": "Silver",
       "year": "2019",
       "name": "Spree Coast IPA",
@@ -209,6 +225,7 @@
       "id": 16
     },
     {
+      "image": "/assets/images/crew-republic-drunken-sailor-2019.jpg",
       "award": "Gold",
       "year": "2019",
       "name": "Drunken Sailor",
@@ -222,6 +239,7 @@
       "id": 17
     },
     {
+      "image": "",
       "award": "Silver",
       "year": "2019",
       "name": "Irish Road Trip",
@@ -235,6 +253,7 @@
       "id": 18
     },
     {
+      "image": "/assets/images/braufactum-progusta.jpg",
       "award": "Country Winner",
       "year": "2019",
       "name": "Progusta",
@@ -248,6 +267,7 @@
       "id": 19
     },
     {
+      "image": "/assets/images/crew-republic-drunken-sailor.jpg",
       "award": "Style Winner",
       "year": "2020",
       "name": "Drunken Sailor",
@@ -261,6 +281,7 @@
       "id": 20
     },
     {
+      "image": "/assets/images/bamberger-rauch-2020.jpg",
       "award": "Silver",
       "year": "2020",
       "name": "Rauch",
@@ -274,6 +295,7 @@
       "id": 21
     },
     {
+      "image": "/assets/images/hachenburger-naturradler-2020.jpg",
       "award": "Bronze",
       "year": "2020",
       "name": "Natur-Radler",
@@ -287,6 +309,7 @@
       "id": 22
     },
     {
+      "image": "/assets/images/freiherr-kellerbier-radler-2020.jpg",
       "award": "Bronze",
       "year": "2020",
       "name": "Kellerbier-Radler",
@@ -300,6 +323,7 @@
       "id": 23
     },
     {
+      "image": "/assets/images/ratsherrn-organicalster-2020.jpg",
       "award": "Silver",
       "year": "2020",
       "name": "Organic Alsterwasser",
@@ -313,6 +337,7 @@
       "id": 24
     },
     {
+      "image": "/assets/images/kurpfaelzbraeu-urradler-2020.jpg",
       "award": "Gold",
       "year": "2020",
       "name": "Ur-Radler",
@@ -326,6 +351,7 @@
       "id": 25
     },
     {
+      "image": "/assets/images/schoefferhofer-grapefruit-2020.jpg",
       "award": "Gold",
       "year": "2020",
       "name": "Grapefruit",
@@ -339,6 +365,7 @@
       "id": 26
     },
     {
+      "image": "/assets/images/loesch-zwerg-weizen-zitronen-radler-alkoholfrei-2020.jpg",
       "award": "Bronze",
       "year": "2020",
       "name": "Weizen Zitrone Alkoholfrei",
@@ -352,6 +379,7 @@
       "id": 27
     },
     {
+      "image": "/assets/images/stoertebeker-zitrone-alkoholfrei.jpg",
       "award": "Silver",
       "year": "2020",
       "name": "Zitrone Alkoholfrei",
@@ -365,6 +393,7 @@
       "id": 28
     },
     {
+      "image": "/assets/images/vulkan-natur-radler-2020.jpg",
       "award": "Silver",
       "year": "2020",
       "name": "Natur-Radler",
@@ -378,6 +407,7 @@
       "id": 29
     },
     {
+      "image": "/assets/images/craftbee-no6.jpg",
       "award": "Silver",
       "year": "2020",
       "name": "N06 Manuka",
@@ -391,6 +421,7 @@
       "id": 30
     },
     {
+      "image": "/assets/images/vulkan-bourbon-barrel-2020.jpg",
       "award": "Gold",
       "year": "2020",
       "name": "Bourbon Barrel Doppelbock",
@@ -404,6 +435,7 @@
       "id": 31
     },
     {
+      "image": "/assets/images/inselbrauerei-strandgut.jpg",
       "award": "Bronze",
       "year": "2019",
       "name": "Strandgut",
@@ -417,6 +449,7 @@
       "id": 32
     },
     {
+      "image": "/assets/images/riegele-magnus-18.jpg",
       "award": "Bronze",
       "year": "2019",
       "name": "Magnus 18 - Edition Brandy",
@@ -430,6 +463,7 @@
       "id": 33
     },
     {
+      "image": "/assets/images/faust-brauerreserve.jpg",
       "award": "Silver",
       "year": "2019",
       "name": "Brauerreserve",
@@ -443,6 +477,7 @@
       "id": 34
     },
     {
+      "image": "/assets/images/weyermann-barrel-aged.jpg",
       "award": "Gold",
       "year": "2019",
       "name": "Barrel Aged Barley Wine",
@@ -456,6 +491,7 @@
       "id": 35
     },
     {
+      "image": "/assets/images/vulkan-bourbon-barrel.jpg",
       "award": "Country Winner",
       "year": "2019",
       "name": "Bourbon Barrel Doppelbock",
@@ -469,6 +505,7 @@
       "id": 36
     },
     {
+      "image": "/assets/images/braufactum-roog.jpg",
       "award": "Bronze",
       "year": "2019",
       "name": "Roog",
@@ -482,6 +519,7 @@
       "id": 37
     },
     {
+      "image": "/assets/images/ratsherrn-smoked.jpg",
       "award": "Silver",
       "year": "2019",
       "name": "Smoked Pilsener",
@@ -495,6 +533,7 @@
       "id": 38
     },
     {
+      "image": "/assets/images/rittmayer-smoky.jpg",
       "award": "Gold",
       "year": "2019",
       "name": "Smoky George",
@@ -508,6 +547,7 @@
       "id": 39
     },
     {
+      "image": "/assets/images/rittmayer-rauchbier.jpg",
       "award": "Country Winner",
       "year": "2019",
       "name": "Hallerndorfer Rauchbier",
@@ -521,6 +561,7 @@
       "id": 40
     },
     {
+      "image": "/assets/images/loesch-zwerg-weizen-zitronen-radler-alkoholfrei.jpg",
       "award": "Silver",
       "year": "2019",
       "name": "Weizen Zitrone Alkoholfrei",
@@ -534,6 +575,7 @@
       "id": 41
     },
     {
+      "image": "/assets/images/hachenburger-radler-alkoholfrei.jpg",
       "award": "Gold",
       "year": "2019",
       "name": "Radler Alkoholfrei",
@@ -547,6 +589,7 @@
       "id": 42
     },
     {
+      "image": "/assets/images/stoertebeker-zitrone-alkoholfrei.jpg",
       "award": "Country Winner",
       "year": "2019",
       "name": "Zitrone alkoholfrei",
@@ -560,6 +603,7 @@
       "id": 43
     },
     {
+      "image": "/assets/images/ratsHerrn-pfeffersack.jpg",
       "award": "World's Best Flavoured Herb & Spice",
       "year": "2019",
       "name": "Pfeffersack",
@@ -573,6 +617,7 @@
       "id": 44
     },
     {
+      "image": "/assets/images/dab-radler.jpg",
       "award": "Bronze",
       "year": "2019",
       "name": "Radler",
@@ -586,6 +631,7 @@
       "id": 45
     },
     {
+      "image": "/assets/images/loesch-zwerg-cola-weizen.jpg",
       "award": "Bronze",
       "year": "2019",
       "name": "Cola Weizen",
@@ -599,6 +645,7 @@
       "id": 46
     },
     {
+      "image": "/assets/images/feldschloesschen-naturtrueb-grapefruit.jpg",
       "award": "Bronze",
       "year": "2019",
       "name": "Naturtrübes Grapefruit",
@@ -612,6 +659,7 @@
       "id": 47
     },
     {
+      "image": "/assets/images/alpirsbacher-kraeuterradler.jpg",
       "award": "Silver",
       "year": "2019",
       "name": "Kräuter Radler",
@@ -625,6 +673,7 @@
       "id": 48
     },
     {
+      "image": "/assets/images/schoefferhofer-grapefruit.jpg",
       "award": "Silver",
       "year": "2019",
       "name": "Grapefruit",
@@ -638,6 +687,7 @@
       "id": 49
     },
     {
+      "image": "/assets/images/loesch-zwerg-radler.jpg",
       "award": "Silver",
       "year": "2019",
       "name": "Radler",
@@ -651,6 +701,7 @@
       "id": 50
     },
     {
+      "image": "/assets/images/freiherr-kellerbier-radler.jpg",
       "award": "Silver",
       "year": "2019",
       "name": "Kellerbier-Radler",
@@ -664,6 +715,7 @@
       "id": 51
     },
     {
+      "image": "/assets/images/loesch-zwerg-naturradler.jpg",
       "award": "Silver",
       "year": "2019",
       "name": "Naturradler",
@@ -677,6 +729,7 @@
       "id": 52
     },
     {
+      "image": "/assets/images/strandraeuber-zitrone-2020-alkoholfrei.jpg",
       "award": "Gold",
       "year": "2019",
       "name": "Zitrone",
@@ -690,6 +743,7 @@
       "id": 53
     },
     {
+      "image": "/assets/images/hachenburger-naturradler.jpg",
       "award": "Gold",
       "year": "2019",
       "name": "Natur-Radler",
@@ -703,6 +757,7 @@
       "id": 54
     },
     {
+      "image": "/assets/images/kurpflaelzbraeu-urradler-2019.jpg",
       "award": "Country Winner",
       "year": "2019",
       "name": "Ur-Radler",
@@ -716,6 +771,7 @@
       "id": 55
     },
     {
+      "image": "/assets/images/ritterguts-speical-gose.jpg",
       "award": "Bronze",
       "year": "2019",
       "name": "Spezial-Gose",
@@ -729,6 +785,7 @@
       "id": 56
     },
     {
+      "image": "/assets/images/brlo-mama.jpg",
       "award": "Bronze",
       "year": "2019",
       "name": "MaMa Weisse",
@@ -742,6 +799,7 @@
       "id": 57
     },
     {
+      "image": "/assets/images/lemke-waldmeister.jpg",
       "award": "Silver",
       "year": "2019",
       "name": "Waldmeister Weisse",
@@ -755,6 +813,7 @@
       "id": 58
     },
     {
+      "image": "/assets/images/lemke-berliner-eiche.jpg",
       "award": "Gold",
       "year": "2019",
       "name": "Berliner Eiche",
@@ -768,6 +827,7 @@
       "id": 59
     },
     {
+      "image": "/assets/images/lemke-himbeer.jpg",
       "award": "Country Winner",
       "year": "2019",
       "name": "Himbeer Weisse",
@@ -781,6 +841,7 @@
       "id": 60
     },
     {
+      "image": "",
       "award": "Country Winner",
       "year": "2019",
       "name": "Brazilian Road Trip",
@@ -794,6 +855,7 @@
       "id": 61
     },
     {
+      "image": "/assets/images/wacken-haimdalls.jpg",
       "award": "Country Winner",
       "year": "2019",
       "name": "Heimdalls Willkomm",
@@ -807,10 +869,11 @@
       "id": 62
     },
     {
+      "image": "/assets/images/ritterguts-urgose.jpg",
       "award": "Style Winner",
       "year": "2020",
       "name": "Urgose Märzen",
-      "brewery": "Ritterguts Gose",
+      "brewery": "Ritterguts",
       "tastingNote": "",
       "category": "Flavoured",
       "country": "Germany",
@@ -820,6 +883,7 @@
       "id": 63
     },
     {
+      "image": "/assets/images/ratsherrn-coffe-quad.jpg",
       "award": "Style Winner",
       "year": "2019",
       "name": "Coffee Quad",
@@ -833,6 +897,7 @@
       "id": 64
     },
     {
+      "image": "/assets/images/welde-pepper-pils.jpg",
       "award": "Silver",
       "year": "2019",
       "name": "Pepper Pils",
@@ -846,6 +911,7 @@
       "id": 65
     },
     {
+      "image": "/assets/images/brlo-pale-ale.jpg",
       "award": "Bronze",
       "year": "2019",
       "name": "Pale Ale",
@@ -859,6 +925,7 @@
       "id": 66
     },
     {
+      "image": "/assets/images/maisel-pale-ale-2019.jpg",
       "award": "Bronze",
       "year": "2019",
       "name": "Pale Ale",
@@ -872,6 +939,7 @@
       "id": 67
     },
     {
+      "image": "/assets/images/vulkan-pale-ale.jpg",
       "award": "Bronze",
       "year": "2019",
       "name": "Pale Ale",
@@ -885,6 +953,7 @@
       "id": 68
     },
     {
+      "image": "/assets/images/crew-republic-foundation-11.jpg",
       "award": "Gold",
       "year": "2020",
       "name": "Foundation 11",
@@ -898,6 +967,7 @@
       "id": 69
     },
     {
+      "image": "/assets/images/riegele-michaeli.jpg",
       "award": "Gold",
       "year": "2019",
       "name": "Michaeli",
@@ -911,6 +981,7 @@
       "id": 70
     },
     {
+      "image": "/assets/images/crew-republic-easy.jpg",
       "award": "Country Winner",
       "year": "2020",
       "name": "Easy",
@@ -924,6 +995,7 @@
       "id": 71
     },
     {
+      "image": "/assets/images/maisel-alkoholfrei.jpg",
       "award": "Country Winner",
       "year": "2020",
       "name": "Alkoholfrei",
@@ -937,6 +1009,7 @@
       "id": 72
     },
     {
+      "image": "/assets/images/maisel-alkoholfrei.jpg",
       "award": "Silver",
       "year": "2020",
       "name": "Surfers Summer Ale",
@@ -950,6 +1023,7 @@
       "id": 73
     },
     {
+      "image": "/assets/images/stoertebeker-atlantik-alkoholfrei.jpg",
       "award": "Bronze",
       "year": "2020",
       "name": "Atlantik-Ale Alkoholfrei",
@@ -963,6 +1037,7 @@
       "id": 74
     },
     {
+      "image": "/assets/images/ketterer-pils.jpg",
       "award": "Bronze",
       "year": "2020",
       "name": "Pils alkoholfrei",
@@ -976,6 +1051,7 @@
       "id": 75
     },
     {
+      "image": "/assets/images/reichenbrander-redale.jpg",
       "award": "Silver",
       "year": "2020",
       "name": "RedAle",
@@ -989,6 +1065,7 @@
       "id": 76
     },
     {
+      "image": "/assets/images/inselbrauerei-baltic-tripel.jpg",
       "award": "Country Winner",
       "year": "2019",
       "name": "Baltic Tripel",
@@ -1002,6 +1079,7 @@
       "id": 77
     },
     {
+      "image": "/assets/images/inselbrauerei-baltic-ale.jpg",
       "award": "Country Winner",
       "year": "2019",
       "name": "Baltic Ale",
@@ -1015,6 +1093,7 @@
       "id": 78
     },
     {
+      "image": "/assets/images/maisel-pale-ale-2020.jpg",
       "award": "Country Winner",
       "year": "2020",
       "name": "Pale Ale",
@@ -1028,6 +1107,7 @@
       "id": 79
     },
     {
+      "image": "/assets/images/inselbrauerei-baltic-farm.jpg",
       "award": "Country Winner",
       "year": "2020",
       "name": "Baltic Farm",
@@ -1041,6 +1121,7 @@
       "id": 80
     },
     {
+      "image": "/assets/images/crew-republic-rest-in-peace.jpg",
       "award": "Silver",
       "year": "2019",
       "name": "Rest In Peace",
@@ -1054,6 +1135,7 @@
       "id": 81
     },
     {
+      "image": "/assets/images/wacken-sold.jpg",
       "award": "Country Winner",
       "year": "2019",
       "name": "Einherjer Sold",
@@ -1067,6 +1149,7 @@
       "id": 82
     },
     {
+      "image": "/assets/images/brlo-naked.jpg",
       "award": "Gold",
       "year": "2019",
       "name": "Naked",
@@ -1080,6 +1163,7 @@
       "id": 83
     },
     {
+      "image": "/assets/images/maisel-alkoholfrei.jpg",
       "award": "Silver",
       "year": "2019",
       "name": "Alkoholfrei",
@@ -1093,6 +1177,7 @@
       "id": 84
     },
     {
+      "image": "/assets/images/inselbrauerei-snorkelers.jpg",
       "award": "Bronze",
       "year": "2019",
       "name": "Snorkelers Sea Salt IPA Alkoholfrei",
@@ -1106,6 +1191,7 @@
       "id": 85
     },
     {
+      "image": "/assets/images/stoertebeker-atlantik-alkoholfrei.jpg",
       "award": "Bronze",
       "year": "2019",
       "name": "Atlantik-Ale Alkoholfrei",
@@ -1119,6 +1205,7 @@
       "id": 86
     },
     {
+      "image": "/assets/images/braufactum-progusta.jpg",
       "award": "Country Winner",
       "year": "2019",
       "name": "Progusta Harvest",
@@ -1132,6 +1219,7 @@
       "id": 87
     },
     {
+      "image": "/assets/images/inselbrauerei-surfers.jpg",
       "award": "Gold",
       "year": "2019",
       "name": "Surfers Summer Ale Alkoholfrei",
@@ -1145,6 +1233,7 @@
       "id": 88
     },
     {
+      "image": "/assets/images/inselbrauerei-skippers.jpg",
       "award": "Country Winner",
       "year": "2019",
       "name": "Skippers Special Bitter Alkoholfrei",
@@ -1158,6 +1247,7 @@
       "id": 89
     },
     {
+      "image": "/assets/images/fuerst-carl-franken-ale.jpg",
       "award": "Bronze",
       "year": "2019",
       "name": "Franken Ale",
@@ -1171,6 +1261,7 @@
       "id": 90
     },
     {
+      "image": "/assets/images/braufactum-colonia.jpg",
       "award": "Silver",
       "year": "2019",
       "name": "Colonia",
@@ -1184,6 +1275,7 @@
       "id": 91
     },
     {
+      "image": "/assets/images/ratsherrn-organic-wheat-ale.jpg",
       "award": "Gold",
       "year": "2019",
       "name": "Organic Wheat Ale",
@@ -1197,6 +1289,7 @@
       "id": 92
     },
     {
+      "image": "/assets/images/riegele-bayrisch-ale.jpg",
       "award": "Country Winner",
       "year": "2019",
       "name": "Bayerisch Ale 2",
@@ -1210,6 +1303,7 @@
       "id": 93
     },
     {
+      "image": "/assets/images/and-union-sunday.jpg",
       "award": "Country Winner",
       "year": "2019",
       "name": "Sunday",
@@ -1223,6 +1317,7 @@
       "id": 94
     },
     {
+      "image": "/assets/images/inselbrauerei-inselherb.jpg",
       "award": "Silver",
       "year": "2019",
       "name": "Insel Herb",
@@ -1236,6 +1331,7 @@
       "id": 95
     },
     {
+      "image": "/assets/images/braufactum-palor.jpg",
       "award": "Country Winner",
       "year": "2019",
       "name": "Palor",
@@ -1249,6 +1345,7 @@
       "id": 96
     },
     {
+      "image": "/assets/images/brauatelier-farmhouse.jpg",
       "award": "Bronze",
       "year": "2019",
       "name": "Farmhouse Ale",
@@ -1262,6 +1359,7 @@
       "id": 97
     },
     {
+      "image": "/assets/images/braufactum-soleya.jpg",
       "award": "Country Winner",
       "year": "2019",
       "name": "Soleya",
@@ -1275,6 +1373,7 @@
       "id": 98
     },
     {
+      "image": "/assets/images/crew-republic-rest-in-peace.jpg",
       "award": "Style Winner",
       "year": "2020",
       "name": "Rest In Peace",
@@ -1288,6 +1387,7 @@
       "id": 99
     },
     {
+      "image": "/assets/images/braufactum-clan.jpg",
       "award": "Country Winner",
       "year": "2019",
       "name": "Clan",
@@ -1301,6 +1401,7 @@
       "id": 100
     },
     {
+      "image": "/assets/images/inselbrauerei-saison.jpg",
       "award": "Country Winner",
       "year": "2019",
       "name": "Insel Saison",
@@ -1314,6 +1415,7 @@
       "id": 101
     },
     {
+      "image": "/assets/images/wacken-yggdrasil.jpg",
       "award": "Silver",
       "year": "2019",
       "name": "Yggdrasil",
@@ -1327,6 +1429,7 @@
       "id": 102
     },
     {
+      "image": "/assets/images/camba-pale-ale.jpg",
       "award": "Style Winner",
       "year": "2019",
       "name": "Pale Ale",
@@ -1340,6 +1443,7 @@
       "id": 103
     },
     {
+      "image": "/assets/images/ratsherrn-pale-ale.jpg",
       "award": "Gold",
       "year": "2019",
       "name": "Pale Ale",
@@ -1353,6 +1457,7 @@
       "id": 104
     },
     {
+      "image": "/assets/images/braufactum-german-pale-ale.jpg",
       "award": "Silver",
       "year": "2019",
       "name": "German Pale Ale",
@@ -1366,6 +1471,7 @@
       "id": 105
     },
     {
+      "image": "/assets/images/crew-republic-foundation-11.jpg",
       "award": "Silver",
       "year": "2019",
       "name": "Foundation 11",
@@ -1379,6 +1485,7 @@
       "id": 106
     },
     {
+      "image": "/assets/images/wacken-crafty-loki.jpg",
       "award": "Silver",
       "year": "2019",
       "name": "Crafty Loki",
@@ -1392,6 +1499,7 @@
       "id": 107
     },
     {
+      "image": "/assets/images/wacken-walkürenschluck.jpg",
       "award": "Style Winner",
       "year": "2019",
       "name": "Walkürenschluck Eisbock Edition",
@@ -1405,6 +1513,7 @@
       "id": 108
     },
     {
+      "image": "/assets/images/welde-citra-helles.jpg",
       "award": "Gold",
       "year": "2019",
       "name": "Citra Helles",
@@ -1418,6 +1527,7 @@
       "id": 109
     },
     {
+      "image": "/assets/images/brauatelier-dinkel-maerzen.jpg",
       "award": "Silver",
       "year": "2019",
       "name": "Dinkel-Märzen",
@@ -1431,6 +1541,7 @@
       "id": 110
     },
     {
+      "image": "/assets/images/detmolder-polar-bock.jpg",
       "award": "Silver",
       "year": "2019",
       "name": "Polar Bock",
@@ -1444,6 +1555,7 @@
       "id": 111
     },
     {
+      "image": "/assets/images/detmolder-chardonnay-hopfen.jpg",
       "award": "Gold",
       "year": "2019",
       "name": "Chardonnay Hopfen",
@@ -1457,6 +1569,7 @@
       "id": 112
     },
     {
+      "image": "/assets/images/stoertebeker-roggen.jpg",
       "award": "Style Winner",
       "year": "2019",
       "name": "Roggen-Weizen",
@@ -1470,6 +1583,7 @@
       "id": 113
     },
     {
+      "image": "/assets/images/detmolder-chardonnay-hopfen.jpg",
       "award": "Country Winner",
       "year": "2020",
       "name": "Chardonnay Hopfen",
@@ -1483,6 +1597,7 @@
       "id": 114
     },
     {
+      "image": "/assets/images/ganter-magisch-dunkel.jpg",
       "award": "Bronze",
       "year": "2020",
       "name": "Magisch Dunkel",
@@ -1496,6 +1611,7 @@
       "id": 115
     },
     {
+      "image": "/assets/images/weyermann-7-rye.jpg",
       "award": "Bronze",
       "year": "2020",
       "name": "Nr. 7 RyePA",
@@ -1509,6 +1625,7 @@
       "id": 116
     },
     {
+      "image": "/assets/images/inselbrauerei-inselkreide.jpg",
       "award": "Country Winner",
       "year": "2019",
       "name": "Insel Kreide",
@@ -1522,6 +1639,7 @@
       "id": 117
     },
     {
+      "image": "/assets/images/inselbrauerei-quadriga.jpg",
       "award": "Silver",
       "year": "2019",
       "name": "Quadriga",
@@ -1535,6 +1653,7 @@
       "id": 118
     },
     {
+      "image": "/assets/images/stoertebeker-arktik-ale.jpg",
       "award": "Bronze",
       "year": "2019",
       "name": "Arktik-Ale",
@@ -1548,6 +1667,7 @@
       "id": 119
     },
     {
+      "image": "/assets/images/ganter-wodan.jpg",
       "award": "Style Winner",
       "year": "2020",
       "name": "Wodan",
@@ -1561,6 +1681,7 @@
       "id": 120
     },
     {
+      "image": "/assets/images/engel-kellerbier.jpg",
       "award": "Bronze",
       "year": "2020",
       "name": "Kellerbier Dunkel",
@@ -1574,6 +1695,7 @@
       "id": 121
     },
     {
+      "image": "/assets/images/autenrieder-urtyp-dunkel-2020.jpg",
       "award": "Silver",
       "year": "2020",
       "name": "Urtyp Dunkel",
@@ -1587,6 +1709,7 @@
       "id": 122
     },
     {
+      "image": "/assets/images/schwarzbraeu-aged-bock-2020.jpg",
       "award": "Silver",
       "year": "2020",
       "name": "Aged Bock",
@@ -1600,6 +1723,7 @@
       "id": 123
     },
     {
+      "image": "/assets/images/floetzinger-josef-bock.jpg",
       "award": "Gold",
       "year": "2019",
       "name": "Josefi-Bock",
@@ -1613,6 +1737,7 @@
       "id": 124
     },
     {
+      "image": "/assets/images/riegele-ator-20.jpg",
       "award": "Country Winner",
       "year": "2019",
       "name": "Ator 20",
@@ -1626,6 +1751,7 @@
       "id": 125
     },
     {
+      "image": "/assets/images/autenrieder-urtyp-dunkel.jpg",
       "award": "Country Winner",
       "year": "2019",
       "name": "Urtyp Dunkel",
@@ -1639,6 +1765,7 @@
       "id": 126
     },
     {
+      "image": "/assets/images/schwarzbraeu-aged-bock-2017.jpg",
       "award": "Country Winner",
       "year": "2019",
       "name": "Aged Bock 2017",
@@ -1652,6 +1779,7 @@
       "id": 127
     },
     {
+      "image": "/assets/images/inselbrauerei-baltic-dubbel.jpg",
       "award": "Gold",
       "year": "2019",
       "name": "Baltic Dubbel",
@@ -1665,6 +1793,7 @@
       "id": 128
     },
     {
+      "image": "/assets/images/schwarzbraeu-aged-bock.jpg",
       "award": "Country Winner",
       "year": "2019",
       "name": "Aged Bock 2018",
@@ -1678,6 +1807,7 @@
       "id": 129
     },
     {
+      "image": "/assets/images/braufactum-brale.jpg",
       "award": "Gold",
       "year": "2019",
       "name": "The Brale",
@@ -1691,6 +1821,7 @@
       "id": 130
     },
     {
+      "image": "/assets/images/camba-hop-gun.jpg",
       "award": "Country Winner",
       "year": "2019",
       "name": "Hop Gun",
@@ -1704,6 +1835,7 @@
       "id": 131
     },
     {
+      "image": "/assets/images/weyermann-barley-wine.jpg",
       "award": "Style Winner",
       "year": "2019",
       "name": "Barley Wine",
@@ -1717,6 +1849,7 @@
       "id": 132
     },
     {
+      "image": "/assets/images/riegele-noctus.jpg",
       "award": "Country Winner",
       "year": "2019",
       "name": "Noctus 100",
@@ -1730,6 +1863,7 @@
       "id": 133
     },
     {
+      "image": "/assets/images/stoertebeker-nordik-porter.jpg",
       "award": "Bronze",
       "year": "2019",
       "name": "Nordik-Porter",
@@ -1743,6 +1877,7 @@
       "id": 134
     },
     {
+      "image": "/assets/images/ratsherrn-noctopus.jpg",
       "award": "Gold",
       "year": "2019",
       "name": "Noctopus Imperial Stout",
@@ -1756,9 +1891,10 @@
       "id": 135
     },
     {
+      "image": "/assets/images/inselbrauerei-stout.jpg",
       "award": "Silver",
       "year": "2019",
-      "name": "https://www.ratsherrn.de",
+      "name": "Baltic Stout",
       "brewery": "Rügener Insel-Brauerei",
       "tastingNote": "",
       "category": "Stout & Porter",
@@ -1769,6 +1905,7 @@
       "id": 136
     },
     {
+      "image": "/assets/images/crew-republic-roundhouse-kick.jpg",
       "award": "Bronze",
       "year": "2019",
       "name": "Roundhouse Kick",
@@ -1782,6 +1919,7 @@
       "id": 137
     },
     {
+      "image": "/assets/images/maisel-marcs-chocolate-bock.jpg",
       "award": "Country Winner",
       "year": "2019",
       "name": "Marc’s Chocolate Bock",
@@ -1795,6 +1933,7 @@
       "id": 138
     },
     {
+      "image": "/assets/images/vulkan-porter.jpg",
       "award": "Silver",
       "year": "2019",
       "name": "Porter",
@@ -1808,6 +1947,7 @@
       "id": 139
     },
     {
+      "image": "/assets/images/brlo-porter.jpg",
       "award": "Gold",
       "year": "2019",
       "name": "Porter",
@@ -1821,6 +1961,7 @@
       "id": 140
     },
     {
+      "image": "/assets/images/riegele-robustus.jpg",
       "award": "Country Winner",
       "year": "2019",
       "name": "Robustus 6",
@@ -1834,6 +1975,7 @@
       "id": 141
     },
     {
+      "image": "/assets/images/crew-republic-roundhouse-kick.jpg",
       "award": "Country Winner",
       "year": "2020",
       "name": "Roundhouse Kick",

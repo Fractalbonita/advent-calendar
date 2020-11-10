@@ -2,7 +2,7 @@
   <div id="app">
     <TheHeader title="Advent calendar" />
     <CalendarDescription />
-    <CalendarWindow />
+    <CalendarWindows />
   </div>
 </template>
 
@@ -10,14 +10,14 @@
 import Vue from 'vue';
 import TheHeader from './components/TheHeader.vue';
 import CalendarDescription from './components/CalendarDescription.vue';
-import CalendarWindow from './components/CalendarWindow.vue';
+import CalendarWindows from './components/CalendarWindows.vue';
 
 export default Vue.extend({
   name: 'App',
   components: {
     TheHeader,
     CalendarDescription,
-    CalendarWindow
+    CalendarWindows
   }
 });
 </script>

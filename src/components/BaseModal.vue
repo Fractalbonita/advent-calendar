@@ -1,7 +1,7 @@
 <template>
   <transition name="modal">
     <div class="modal">
-      <BaseBackdrop v-bind:backdrop="true" v-bind:handleClick="closeModal" />
+      <BaseBackdrop v-bind:backdrop="true" v-on:close="closeModal" />
       <div
         class="modal__container"
         role="dialog"
@@ -9,26 +9,24 @@
         aria-describedby="modalDescription"
       >
         <div class="modal__header" id="modalTitle">
-          <slot name="header"
-            >default header
-            <button
-              type="button"
-              v-on:click="$emit('close')"
-              class="modal__button--close"
-            >
-              X
-            </button>
-          </slot>
+          <slot name="header"></slot>
+          <button
+            type="button"
+            v-on:click="closeModal"
+            class="modal__button--close"
+          >
+            X
+          </button>
         </div>
         <div
-          class="modal__body"
+          class="modal__main"
           id="modalDescription"
           v-bind:class="{ scrollable: scrollable }"
         >
-          <slot name="body">default body</slot>
+          <slot name="main"></slot>
         </div>
         <div class="modal__footer">
-          <slot name="footer">default footer</slot>
+          <slot name="footer"></slot>
         </div>
       </div>
     </div>
@@ -42,14 +40,15 @@ import BaseBackdrop from './BaseBackdrop.vue';
 export default Vue.extend({
   name: 'BaseModal',
   components: { BaseBackdrop },
-  data() {
-    return {
-      handleClick: Function
-    };
-  },
   props: {
     closeModal: Function,
     scrollable: Boolean
+  },
+  beforeMount() {
+    document.body.style.overflow = 'hidden';
+  },
+  beforeDestroy() {
+    document.body.style.overflow = '';
   }
 });
 </script>
@@ -72,34 +71,40 @@ export default Vue.extend({
     border: 1px solid $surface-color;
     border-radius: 5px;
     box-shadow: 0 2px 8px $shadow-color;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    max-height: 80vh;
+    padding: 24px 24px 12px;
     position: fixed;
-    transition: all 0.3s ease;
     top: 10vh;
+    transition: all 0.3s ease;
     width: 80%;
     z-index: 10000;
   }
   &__header {
-    display: flex;
-    justify-content: space-between;
-    margin: 24px;
+    position: relative;
   }
   &__button--close {
     background-color: transparent;
     border: none;
     cursor: pointer;
     font-size: $button-size;
-    padding: 0;
+    height: 36px;
+    width: 36px;
+    position: absolute;
+    right: 0;
+    top: 0;
   }
-  &__body {
-    margin: 24px;
+  &__main {
+    margin: 24px 0;
   }
   &__footer {
     display: flex;
     justify-content: flex-end;
-    margin: 12px;
   }
   .scrollable {
-    overflow-y: scroll;
+    overflow-y: auto;
   }
 }
 </style>
