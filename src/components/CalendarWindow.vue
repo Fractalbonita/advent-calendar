@@ -1,13 +1,13 @@
 <template>
-  <div v-if="openWindow" key="window-open" class="window--open">
+  <div v-if="openWindow" key="window-open" class="window window--open">
     <p class="window__overline">{{ windowNumber }}</p>
-    <h2 v-on:click="$emit('open-window')" class="window__headline-2">
+    <h2 v-on:click.stop="$emit('open-window')" class="window__headline-2">
       {{ name }}
     </h2>
     <p class="window__subtitle-1">{{ category }}</p>
     <p class="window__subtitle-2">{{ brewery }}</p>
   </div>
-  <div v-else key="window-closed" class="window--closed">
+  <div v-else key="window-closed" class="window window--closed">
     <h2 class="window__headline-2">{{ windowNumber }}</h2>
   </div>
 </template>
@@ -29,6 +29,12 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
 .window {
+  display: flex;
+  flex-direction: column;
+  height: 150px;
+  justify-content: center;
+  width: 150px;
+
   &__overline {
     font-size: $overline-size;
     margin: 0.5rem;
@@ -57,21 +63,11 @@ export default Vue.extend({
   }
   &--closed {
     border: 1px solid $primary-color;
-    display: flex;
-    flex-direction: column;
-    height: 160px;
-    justify-content: center;
     text-align: center;
-    width: 160px;
   }
   &--open {
     border: 1px solid $primary-color;
-    display: flex;
-    flex-direction: column;
-    height: 160px;
-    justify-content: center;
     text-align: center;
-    width: 160px;
   }
 }
 </style>
