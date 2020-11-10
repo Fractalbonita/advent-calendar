@@ -1,9 +1,10 @@
 <template>
-  <div v-on:keyup.esc="closeModal" tabindex="0">
+  <div v-on:keyup.esc="closeModal" tabindex="0" class="container">
     <Countdown v-bind:count="countDown()" />
     <CalendarWindowContentModal
       v-if="shown"
       v-bind:close="closeModal"
+      v-bind:image="getImage(beer)"
       v-bind:award="beer.award"
       v-bind:year="beer.year"
       v-bind:name="beer.name"
@@ -42,6 +43,7 @@ import CalendarWindowContentModal from './CalendarWindowContentModal.vue';
 import CalendarWindow from './CalendarWindow.vue';
 
 interface Beer {
+  image: string;
   award: string;
   year: string;
   name: string;
@@ -100,24 +102,36 @@ export default Vue.extend({
     showModal(beer: Beer) {
       this.shown = true;
       this.beer = beer;
+    },
+    getImage(beer: Beer) {
+      if (!beer.image) {
+        return (
+          process.env.VUE_APP_BEER_IMAGES_URL +
+          '/assets/images/gonzalo-remy-JCIJnIXv7SE-unsplash.jpg'
+        );
+      } else {
+        return process.env.VUE_APP_BEER_IMAGES_URL + beer.image;
+      }
     }
   }
 });
 </script>
 
 <style lang="scss" scoped>
+.container {
+  outline: none;
+}
 .calendar {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-flow: row wrap;
   justify-content: center;
   list-style-type: none;
   padding: 0;
-}
-.calendar__window {
-  cursor: pointer;
-  display: inline-block;
-  margin: 0;
-  padding: 5px;
+
+  &__window {
+    cursor: pointer;
+    margin: 0;
+    padding: 5px;
+  }
 }
 </style>
