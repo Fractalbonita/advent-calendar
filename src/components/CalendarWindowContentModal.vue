@@ -2,36 +2,36 @@
   <BaseModal v-bind:closeModal="close" v-bind:scrollable="scrollable">
     <template v-slot:header>
       <div class="header">
-        <p class="header__overline">{{ brewery }}</p>
-        <h1 class="header__headline-1">{{ name }}</h1>
+        <p class="header__overline">{{ beer.brewery }}</p>
+        <h1 class="header__headline-1">{{ beer.name }}</h1>
       </div>
     </template>
     <template v-slot:main>
       <div class="main">
         <div class="main__image">
           <div class="main__image_container">
-            <img v-bind:src="image" alt="Awarded beer" />
+            <img v-bind:src="getImage()" v-bind:alt="beer.name" />
           </div>
-          <p class="main__image_subtitle-1">{{ award }}</p>
-          <p class="main__image_subtitle-2">{{ year }}</p>
+          <p class="main__image_subtitle-1">{{ beer.award }}</p>
+          <p class="main__image_subtitle-2">{{ beer.year }}</p>
         </div>
         <div class="main__description">
-          <p class="main__description_text">{{ tastingNote }}</p>
+          <p class="main__description_text">{{ beer.tastingNote }}</p>
           <h2 class="main__description_caption">Category</h2>
-          <p class="main__description_text">{{ category }}</p>
+          <p class="main__description_text">{{ beer.category }}</p>
           <h2 class="main__description_caption">Style</h2>
-          <p class="main__description_text">{{ teaste }}</p>
+          <p class="main__description_text">{{ beer.teaste }}</p>
           <h2 class="main__description_caption">Alcohol by volume</h2>
-          <p class="main__description_text">{{ abv }}</p>
+          <p class="main__description_text">{{ beer.abv }}</p>
           <h2 class="main__description_caption">Country</h2>
-          <p class="main__description_text">{{ country }}</p>
+          <p class="main__description_text">{{ beer.country }}</p>
           <h2 class="main__description_caption">Website</h2>
           <a
-            v-bind:href="website"
+            v-bind:href="beer.website"
             target="_blank"
             rel="noopener noreferrer"
             class="main__description_link"
-            >{{ website }}</a
+            >{{ beer.website }}</a
           >
         </div>
       </div>
@@ -40,8 +40,9 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import Vue, { PropType } from 'vue';
 import BaseModal from './BaseModal.vue';
+import Beer from './Beer';
 
 export default Vue.extend({
   name: 'CalendarWindowContentModal',
@@ -55,17 +56,19 @@ export default Vue.extend({
   },
   props: {
     close: Function,
-    image: String,
-    award: String,
-    year: String,
-    name: String,
-    brewery: String,
-    tastingNote: String,
-    category: String,
-    country: String,
-    teaste: String,
-    abv: String,
-    website: String
+    beer: { type: Object as PropType<Beer> }
+  },
+  methods: {
+    getImage() {
+      if (!this.beer.image) {
+        return (
+          process.env.VUE_APP_BEER_IMAGES_URL +
+          '/assets/images/gonzalo-remy-JCIJnIXv7SE-unsplash.jpg'
+        );
+      } else {
+        return process.env.VUE_APP_BEER_IMAGES_URL + this.beer.image;
+      }
+    }
   }
 });
 </script>
