@@ -1,5 +1,6 @@
 <template>
   <section>
+    <h2>The 24 Beers of Christmas</h2>
     <p>
       Treat your taste buds during the festive season and explore a new craft
       beer each day from the 1st to the 24th December.
@@ -19,8 +20,8 @@
     <p>Cheers!</p>
     <blockquote>
       <p>
-        According to the <cite>German JuSchG §9</cite> you have to be 16 years
-        to consume beer.
+        According to the <cite>German JuSchG §9</cite> you have to be over 16
+        years to consume beer.
       </p>
       <footer>
         Further information see
