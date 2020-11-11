@@ -1,28 +1,23 @@
 <template>
   <div id="app">
-    <TheHeader title="Advent calendar" />
-    <CalendarDescription />
-    <CalendarWindows />
+    <TheNavigation />
+    <router-view />
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
-import TheHeader from './components/TheHeader.vue';
-import CalendarDescription from './components/CalendarDescription.vue';
-import CalendarWindows from './components/CalendarWindows.vue';
+import TheNavigation from './components/TheNavigation.vue';
 
 export default Vue.extend({
   name: 'App',
   components: {
-    TheHeader,
-    CalendarDescription,
-    CalendarWindows
+    TheNavigation
   }
 });
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
