@@ -31,9 +31,14 @@ export default Vue.extend({
   name: 'BeerDetails',
   data() {
     return {
-      beerId: this.$route.params.id as string,
       beers: [] as Beer[]
     };
+  },
+  props: {
+    id: {
+      type: String,
+      required: true
+    }
   },
   created() {
     fetch(process.env.VUE_APP_BEER_API_URL + '/beers')
@@ -55,7 +60,7 @@ export default Vue.extend({
     // type annoation necessary including type "undefined" in csee of no match
     beer(): Beer {
       return (
-        this.beers.find((beer: Beer) => beer.id === this.beerId) || ({} as Beer)
+        this.beers.find((beer: Beer) => beer.id === this.id) || ({} as Beer)
       );
     }
   }
