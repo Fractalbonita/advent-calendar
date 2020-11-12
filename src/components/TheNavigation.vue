@@ -15,8 +15,10 @@
     font-weight: bold;
     color: #2c3e50;
     padding: 0 10px;
+    text-decoration: none;
 
     &.router-link-exact-active {
+      text-decoration: underline;
       color: #42b983;
     }
   }
