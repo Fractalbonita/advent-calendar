@@ -28,7 +28,7 @@ export default Vue.extend({
 }
 .views-enter-active,
 .views-leave-active {
-  transition: all 0.9s cubic-bezier(1, 0.5, 0.8, 1);
+  transition: all 0.6s cubic-bezier(1, 0.5, 0.8, 1);
 }
 .views-enter,
 .views-leave-to {

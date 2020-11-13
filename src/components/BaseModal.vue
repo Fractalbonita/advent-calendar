@@ -104,6 +104,7 @@ export default Vue.extend({
     justify-content: flex-end;
   }
   .scrollable {
+    scrollbar-width: thin;
     overflow-y: auto;
   }
 }
