@@ -3,9 +3,8 @@ module.exports = {
     process.env.NODE_ENV === 'production' ? '/' : 'http://localhost:8080/',
   css: {
     loaderOptions: {
-      sass: {
+      scss: {
         prependData: `
-        @import "@/assets/scss/_base.scss";
         @import "@/assets/scss/_library.scss";
         `
       }

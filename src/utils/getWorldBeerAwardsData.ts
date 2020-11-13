@@ -1,3 +1,4 @@
+/*
 (function() {
   const awardImg = document.querySelector('.drinkdesc img');
   const $ = q => document.querySelector(q).textContent.trim();
@@ -33,3 +34,4 @@
     document.execCommand('copy');
   });
 })();
+//*/

@@ -12,7 +12,8 @@
       "style": "American Style",
       "abv": "6.30%",
       "website": "https://www.bachs.beer/",
-      "id": 1
+      "id": "1",
+      "slug": "bachs-bulldozer-2020"
     },
     {
       "image": "/assets/images/vulkan-india-pale-ale-2020.jpg",
@@ -26,7 +27,8 @@
       "style": "American Style",
       "abv": "5.80%",
       "website": "https://www.vulkan-brauerei.de/",
-      "id": 2
+      "id": "2",
+      "slug": "vulkan-india-pale-ale-2020"
     },
     {
       "image": "/assets/images/schwarzbraeu-ipa.jpg",
@@ -40,7 +42,8 @@
       "style": "American Style",
       "abv": "7.00%",
       "website": "https://www.schwarzbraeu.de/",
-      "id": 3
+      "id": "3",
+      "slug": "schwarzbraeu-select-2020"
     },
     {
       "image": "/assets/images/crew-republic-in-your-face.jpg",
@@ -54,21 +57,23 @@
       "style": "American Style",
       "abv": "6.80%",
       "website": "https://www.crewrepublic.de/",
-      "id": 4
+      "id": "4",
+      "slug": "crew-republic-in-your-face-2020"
     },
     {
       "image": "/assets/images/welde-ipa-2020.jpg",
       "award": "Silver",
       "year": "2020",
       "name": "IPA",
-      "brewery": "Welde Brauspezialitäten",
+      "brewery": "Weldebräu",
       "tastingNote": "Hazy amber, with a loose head. The aromas offered are mainly citrus and tangerine, alongside stone fruit like apricot and peach, with biscuit malt just underneath. This is full-bodied to taste, and quite rich and creamy, although well-balanced.",
       "category": "IPA",
       "country": "Germany",
       "style": "American Style",
       "abv": "6.70%",
       "website": "https://www.welde.de/",
-      "id": 5
+      "id": "5",
+      "slug": "welde-ipa-2020"
     },
     {
       "image": "/assets/images/inselbrauerei-german-coast.jpg",
@@ -82,7 +87,8 @@
       "style": "Specialty",
       "abv": "7.50%",
       "website": "https://www.insel-brauerei.de/",
-      "id": 6
+      "id": "6",
+      "slug": "insel-brauerei-german-coast-2019"
     },
     {
       "image": "/assets/images/lemke-black-rye-ipa.jpg",
@@ -96,7 +102,8 @@
       "style": "Specialty",
       "abv": "7.20%",
       "website": "https://www.lemke.berlin/",
-      "id": 7
+      "id": "7",
+      "slug": "lemke-black-rye-ipa-2019"
     },
     {
       "image": "/assets/images/crew-republic-escalation.jpg",
@@ -110,7 +117,8 @@
       "style": "Imperial/Double",
       "abv": "8.30%",
       "website": "https://www.crewrepublic.de/",
-      "id": 8
+      "id": "8",
+      "slug": "crew-republic-7-45-escalation-2019"
     },
     {
       "image": "/assets/images/camba-black-shark.jpg",
@@ -124,7 +132,8 @@
       "style": "Black",
       "abv": "8.50%",
       "website": "https://www.camba-bavaria.de/",
-      "id": 9
+      "id": "9",
+      "slug": "camba-black-shark-2019"
     },
     {
       "image": "/assets/images/vulkan-pale-ale.jpg",
@@ -138,7 +147,8 @@
       "style": "American Style",
       "abv": "7.00%",
       "website": "https://www.vulkan-brauerei.de/",
-      "id": 10
+      "id": "10",
+      "slug": "vulkan-india-pale-ale-2019"
     },
     {
       "image": "/assets/images/glaab-vicky.jpg",
@@ -152,21 +162,23 @@
       "style": "American Style",
       "abv": "5.70%",
       "website": "https://glaabsbraeu.de/",
-      "id": 11
+      "id": "11",
+      "slug": "glaabs-vicky-loves-pales-2019"
     },
     {
       "image": "/assets/images/welde-ipa.jpg",
       "award": "Silver",
       "year": "2019",
       "name": "IPA",
-      "brewery": "Welde Brauspezialitäten",
+      "brewery": "Weldebräu",
       "tastingNote": "",
       "category": "IPA",
       "country": "Germany",
       "style": "American Style",
       "abv": "6.70%",
       "website": "https://www.welde.de/",
-      "id": 12
+      "id": "12",
+      "slug": "welde-ipa-2019"
     },
     {
       "image": "/assets/images/riegele-simco.jpg",
@@ -180,7 +192,8 @@
       "style": "American Style",
       "abv": "5.00%",
       "website": "https://www.riegele.de/",
-      "id": 13
+      "id": "13",
+      "slug": "riegele-simco-3-2019"
     },
     {
       "image": "/assets/images/maisel-ipa.jpg",
@@ -194,7 +207,8 @@
       "style": "American Style",
       "abv": "6.30%",
       "website": "https://www.maiselandfriends.com/",
-      "id": 14
+      "id": "14",
+      "slug": "maiselandfriends-ipa-2019"
     },
     {
       "image": "/assets/images/ratsherrn-westcoast-ipa.jpg",
@@ -208,7 +222,8 @@
       "style": "American Style",
       "abv": "6.30%",
       "website": "https://www.ratsherrn.de/",
-      "id": 15
+      "id": "15",
+      "slug": "ratsherrn-coast-guard-westkuesten-ipa-2019"
     },
     {
       "image": "/assets/images/lemke-spree-ipa.jpg",
@@ -222,7 +237,8 @@
       "style": "American Style",
       "abv": "6.90%",
       "website": "https://www.lemke.berlin/",
-      "id": 16
+      "id": "16",
+      "slug": "lemke-spree-coast-ipa-2019"
     },
     {
       "image": "/assets/images/crew-republic-drunken-sailor-2019.jpg",
@@ -236,7 +252,8 @@
       "style": "English Style",
       "abv": "6.40%",
       "website": "https://www.crewrepublic.de/",
-      "id": 17
+      "id": "17",
+      "slug": "crew-republic-drunken-sailor-2019"
     },
     {
       "image": "",
@@ -250,7 +267,8 @@
       "style": "English Style",
       "abv": "6.50%",
       "website": "https://www.hopfmeister.com/",
-      "id": 18
+      "id": "18",
+      "slug": "hopfmeister-irish-road-trip-2019"
     },
     {
       "image": "/assets/images/braufactum-progusta.jpg",
@@ -264,7 +282,8 @@
       "style": "English Style",
       "abv": "6.80%",
       "website": "https://www.braufactum.de/",
-      "id": 19
+      "id": "19",
+      "slug": "braufactum-progosta-2019"
     },
     {
       "image": "/assets/images/crew-republic-drunken-sailor.jpg",
@@ -278,21 +297,23 @@
       "style": "English Style",
       "abv": "6.40%",
       "website": "https://www.crewrepublic.de",
-      "id": 20
+      "id": "20",
+      "slug": "crew-republic-drunken-sailor-2020"
     },
     {
       "image": "/assets/images/bamberger-rauch-2020.jpg",
       "award": "Silver",
       "year": "2020",
       "name": "Rauch",
-      "brewery": "Bamberger Hofbräu - Weyermann Braumanufaktur",
+      "brewery": "Weyermann Braumanufaktur",
       "tastingNote": "",
       "category": "Flavoured",
       "country": "Germany",
       "style": "Smoke",
       "abv": "5.20%",
       "website": "https://www.weyermann.de/",
-      "id": 21
+      "id": "21",
+      "slug": "weyermann-rauch-2020"
     },
     {
       "image": "/assets/images/hachenburger-naturradler-2020.jpg",
@@ -306,7 +327,8 @@
       "style": "Fruit & Vegetable",
       "abv": "2.10%",
       "website": "https://hachenburger.de/",
-      "id": 22
+      "id": "22",
+      "slug": "hachenburger-natur-radler-2020"
     },
     {
       "image": "/assets/images/freiherr-kellerbier-radler-2020.jpg",
@@ -320,7 +342,8 @@
       "style": "Fruit & Vegetable",
       "abv": "2.60%",
       "website": "https://www.freiherrvonzech.de/",
-      "id": 23
+      "id": "23",
+      "slug": "freiherrvonzech-kellerbier-radler-2020"
     },
     {
       "image": "/assets/images/ratsherrn-organicalster-2020.jpg",
@@ -334,7 +357,8 @@
       "style": "Fruit & Vegetable",
       "abv": "2.50%",
       "website": "https://www.ratsherrn.de/",
-      "id": 24
+      "id": "24",
+      "slug": "ratsherrn-organic-alsterwasser-2020"
     },
     {
       "image": "/assets/images/kurpfaelzbraeu-urradler-2020.jpg",
@@ -348,7 +372,8 @@
       "style": "Fruit & Vegetable",
       "abv": "2.00%",
       "website": "https://www.kurpfalzbraeu.de/",
-      "id": 25
+      "id": "25",
+      "slug": "kurpfalzbraeu-ur-radler-2020"
     },
     {
       "image": "/assets/images/schoefferhofer-grapefruit-2020.jpg",
@@ -362,7 +387,8 @@
       "style": "Fruit & Vegetable",
       "abv": "2.50%",
       "website": "https://www.schoefferhofer.com/",
-      "id": 26
+      "id": "26",
+      "slug": "schoefferhofer-grapefruit-2020"
     },
     {
       "image": "/assets/images/loesch-zwerg-weizen-zitronen-radler-alkoholfrei-2020.jpg",
@@ -376,7 +402,8 @@
       "style": "Low Alcohol",
       "abv": "0.30%",
       "website": "https://www.loesch-zwerg.de/",
-      "id": 27
+      "id": "27",
+      "slug": "loesch-zwerg-weizen-zitronen-alkoholfrei-2020"
     },
     {
       "image": "/assets/images/stoertebeker-zitrone-alkoholfrei.jpg",
@@ -390,7 +417,8 @@
       "style": "Low Alcohol",
       "abv": "0.20%",
       "website": "https://www.strandraeuber.net/",
-      "id": 28
+      "id": "28",
+      "slug": "strandraeuber-zitrone-alkoholfrei-2020"
     },
     {
       "image": "/assets/images/vulkan-natur-radler-2020.jpg",
@@ -404,7 +432,8 @@
       "style": "Low Alcohol",
       "abv": "2.90%",
       "website": "https://www.vulkan-brauerei.de/",
-      "id": 29
+      "id": "29",
+      "slug": "vulkan-natur-radler-2020"
     },
     {
       "image": "/assets/images/craftbee-no6.jpg",
@@ -418,7 +447,8 @@
       "style": "Honey & Maple",
       "abv": "5.00%",
       "website": "https://www.craftbee.de/",
-      "id": 30
+      "id": "30",
+      "slug": "craftbee-n06-manuka-2020"
     },
     {
       "image": "/assets/images/vulkan-bourbon-barrel-2020.jpg",
@@ -432,7 +462,8 @@
       "style": "Wood Aged",
       "abv": "9.50%",
       "website": "https://www.vulkan-brauerei.de/",
-      "id": 31
+      "id": "31",
+      "slug": "vulkan-bourbon-barrel-doppelbock-2020"
     },
     {
       "image": "/assets/images/inselbrauerei-strandgut.jpg",
@@ -446,7 +477,8 @@
       "style": "Wood Aged",
       "abv": "5.60%",
       "website": "https://www.insel-brauerei.de/",
-      "id": 32
+      "id": "32",
+      "slug": "insel-brauerei-strandgut-2019"
     },
     {
       "image": "/assets/images/riegele-magnus-18.jpg",
@@ -460,7 +492,8 @@
       "style": "Wood Aged",
       "abv": "9.00%",
       "website": "https://www.riegele.de/",
-      "id": 33
+      "id": "33",
+      "slug": "riegele-magnus-18-2019"
     },
     {
       "image": "/assets/images/faust-brauerreserve.jpg",
@@ -474,7 +507,8 @@
       "style": "Wood Aged",
       "abv": "10.90%",
       "website": "https://www.faust.de/",
-      "id": 34
+      "id": "34",
+      "slug": "faust-brauerreserve-2019"
     },
     {
       "image": "/assets/images/weyermann-barrel-aged.jpg",
@@ -488,7 +522,8 @@
       "style": "Wood Aged",
       "abv": "10.50%",
       "website": "https://www.weyermann.de/",
-      "id": 35
+      "id": "35",
+      "slug": "weyermann-barrel-angel-barley-wine-2019"
     },
     {
       "image": "/assets/images/vulkan-bourbon-barrel.jpg",
@@ -502,7 +537,8 @@
       "style": "Wood Aged",
       "abv": "9.50%",
       "website": "https://www.vulkan-brauerei.de/",
-      "id": 36
+      "id": "36",
+      "slug": "vulkan-bourbon-barrel-doppelbock-2019"
     },
     {
       "image": "/assets/images/braufactum-roog.jpg",
@@ -516,7 +552,8 @@
       "style": "Smoke",
       "abv": "6.60%",
       "website": "https://www.braufactum.de/",
-      "id": 37
+      "id": "37",
+      "slug": "braufactum-roog-2019"
     },
     {
       "image": "/assets/images/ratsherrn-smoked.jpg",
@@ -530,7 +567,8 @@
       "style": "Smoke",
       "abv": "4.90%",
       "website": "https://www.ratsherrn.de/",
-      "id": 38
+      "id": "38",
+      "slug": "ratsherrn-smoked-pilsener-2019"
     },
     {
       "image": "/assets/images/rittmayer-smoky.jpg",
@@ -544,7 +582,8 @@
       "style": "Smoke",
       "abv": "7.00%",
       "website": "https://www.rittmayer.de/",
-      "id": 39
+      "id": "39",
+      "slug": "rittmayer-smoky-george-2019"
     },
     {
       "image": "/assets/images/rittmayer-rauchbier.jpg",
@@ -558,7 +597,8 @@
       "style": "Smoke",
       "abv": "5.00%",
       "website": "https://www.rittmayer.de/",
-      "id": 40
+      "id": "40",
+      "slug": "rittmayer-hallerndorfer-rauchbier-2019"
     },
     {
       "image": "/assets/images/loesch-zwerg-weizen-zitronen-radler-alkoholfrei.jpg",
@@ -572,7 +612,8 @@
       "style": "Low Alcohol",
       "abv": "0.50%",
       "website": "https://www.loeschzwerg.de/",
-      "id": 41
+      "id": "41",
+      "slug": "loesch-zwerg-weizen-zitrone-alkoholfrei-2019"
     },
     {
       "image": "/assets/images/hachenburger-radler-alkoholfrei.jpg",
@@ -586,7 +627,8 @@
       "style": "Low Alcohol",
       "abv": "0.50%",
       "website": "https://hachenburger.de/",
-      "id": 42
+      "id": "42",
+      "slug": "hachenburger-radler-alkoholfrei-2019"
     },
     {
       "image": "/assets/images/stoertebeker-zitrone-alkoholfrei.jpg",
@@ -600,7 +642,8 @@
       "style": "Low Alcohol",
       "abv": "0.10%",
       "website": "https://www.strandraeuber.net/",
-      "id": 43
+      "id": "43",
+      "slug": "strandraeuber-zitrone-alkoholfrei-2019"
     },
     {
       "image": "/assets/images/ratsHerrn-pfeffersack.jpg",
@@ -614,7 +657,8 @@
       "style": "Herb & Spice",
       "abv": "\"Great aromas straight away of spicy pepper and florals, hints of rosemary and lavender. Dry on the palate with a good balance of spicy flavours and a great bitterness. Lingering finish.\"",
       "website": "https://www.ratsherrn.de/",
-      "id": 44
+      "id": "44",
+      "slug": "ratsherrn-pfeffersack-2019"
     },
     {
       "image": "/assets/images/dab-radler.jpg",
@@ -628,7 +672,8 @@
       "style": "Fruit & Vegetable",
       "abv": "3.00%",
       "website": "https://www.dab-beer.com/",
-      "id": 45
+      "id": "45",
+      "slug": "dab-radler-2019"
     },
     {
       "image": "/assets/images/loesch-zwerg-cola-weizen.jpg",
@@ -642,7 +687,8 @@
       "style": "Fruit & Vegetable",
       "abv": "2.80%",
       "website": "https://www.loeschzwerg.de/",
-      "id": 46
+      "id": "46",
+      "slug": "loesch-zwerg-cola-weizen-2019"
     },
     {
       "image": "/assets/images/feldschloesschen-naturtrueb-grapefruit.jpg",
@@ -656,7 +702,8 @@
       "style": "Fruit & Vegetable",
       "abv": "2.00%",
       "website": "https://www.feldschloesschen.de/",
-      "id": 47
+      "id": "47",
+      "slug": "feldschloesschen-naturtruebes-grapefruit-2019"
     },
     {
       "image": "/assets/images/alpirsbacher-kraeuterradler.jpg",
@@ -670,7 +717,8 @@
       "style": "Fruit & Vegetable",
       "abv": "2.10%",
       "website": "https://www.alpirsbacher.de/",
-      "id": 48
+      "id": "48",
+      "slug": "alpirsbacher-klosterbraeu-kraeuter-radler"
     },
     {
       "image": "/assets/images/schoefferhofer-grapefruit.jpg",
@@ -684,7 +732,8 @@
       "style": "Fruit & Vegetable",
       "abv": "2.50%",
       "website": "https://www.schoefferhofer.com/",
-      "id": 49
+      "id": "49",
+      "slug": "schoefferhofer-grapefruit-2019"
     },
     {
       "image": "/assets/images/loesch-zwerg-radler.jpg",
@@ -698,7 +747,8 @@
       "style": "Fruit & Vegetable",
       "abv": "2.90%",
       "website": "https://www.loeschzwerg.de/",
-      "id": 50
+      "id": "50",
+      "slug": "loesch-zwerg-radler-2019"
     },
     {
       "image": "/assets/images/freiherr-kellerbier-radler.jpg",
@@ -712,7 +762,8 @@
       "style": "Fruit & Vegetable",
       "abv": "2.60%",
       "website": "https://www.freiherrvonzech.de/",
-      "id": 51
+      "id": "51",
+      "slug": "freiherrvonzech-kellerbier-radler-2019"
     },
     {
       "image": "/assets/images/loesch-zwerg-naturradler.jpg",
@@ -726,7 +777,8 @@
       "style": "Fruit & Vegetable",
       "abv": "2.60%",
       "website": "https://www.loeschzwerg.de/",
-      "id": 52
+      "id": "52",
+      "slug": "loesch-zwerg-naturradler-2019"
     },
     {
       "image": "/assets/images/strandraeuber-zitrone-2020-alkoholfrei.jpg",
@@ -740,7 +792,8 @@
       "style": "Fruit & Vegetable",
       "abv": "2.00%",
       "website": "https://www.strandraeuber.net/",
-      "id": 53
+      "id": "53",
+      "slug": "strandraeuber-zitrone-2019"
     },
     {
       "image": "/assets/images/hachenburger-naturradler.jpg",
@@ -754,7 +807,8 @@
       "style": "Fruit & Vegetable",
       "abv": "2.10%",
       "website": "https://hachenburger.de/",
-      "id": 54
+      "id": "54",
+      "slug": "hachenburger-natur-radler-2019"
     },
     {
       "image": "/assets/images/kurpflaelzbraeu-urradler-2019.jpg",
@@ -768,7 +822,8 @@
       "style": "Fruit & Vegetable",
       "abv": "2.00%",
       "website": "https://www.kurpfalzbraeu.de/",
-      "id": 55
+      "id": "55",
+      "slug": "kurpfalzbraeu-ur-radler-2019"
     },
     {
       "image": "/assets/images/ritterguts-speical-gose.jpg",
@@ -782,7 +837,8 @@
       "style": "Flavoured Wild/Sour",
       "abv": "5.20%",
       "website": "https://www.leipziger-gose.com/",
-      "id": 56
+      "id": "56",
+      "slug": "ritterguts-spezial-gose-2019"
     },
     {
       "image": "/assets/images/brlo-mama.jpg",
@@ -796,7 +852,8 @@
       "style": "Flavoured Wild/Sour",
       "abv": "0.00%",
       "website": "https://www.brlo.de/",
-      "id": 57
+      "id": "57",
+      "slug": "brlo-mama-weisse-2019"
     },
     {
       "image": "/assets/images/lemke-waldmeister.jpg",
@@ -810,7 +867,8 @@
       "style": "Flavoured Wild/Sour",
       "abv": "3.00%",
       "website": "https://www.lemke.berlin/",
-      "id": 58
+      "id": "58",
+      "slug": "lemke-waldmeister-weisse-2019"
     },
     {
       "image": "/assets/images/lemke-berliner-eiche.jpg",
@@ -824,7 +882,8 @@
       "style": "Flavoured Wild/Sour",
       "abv": "3.00%",
       "website": "https://www.lemke.berlin/",
-      "id": 59
+      "id": "59",
+      "slug": "lemke-berliner-eiche-2019"
     },
     {
       "image": "/assets/images/lemke-himbeer.jpg",
@@ -838,7 +897,8 @@
       "style": "Flavoured Wild/Sour",
       "abv": "4.00%",
       "website": "https://www.lemke.berlin/",
-      "id": 60
+      "id": "60",
+      "slug": "lemke-himbeer-weisse-2019"
     },
     {
       "image": "",
@@ -852,7 +912,8 @@
       "style": "Flavoured Stout/Porter",
       "abv": "5.60%",
       "website": "https://www.hopfmeister.com/",
-      "id": 61
+      "id": "61",
+      "slug": "hopfmeister-brazilian-road-trip-2019"
     },
     {
       "image": "/assets/images/wacken-haimdalls.jpg",
@@ -866,7 +927,8 @@
       "style": "Honey & Maple",
       "abv": "6.50%",
       "website": "https://www.wacken.beer/",
-      "id": 62
+      "id": "62",
+      "slug": "wacken-heimdalls-willkomm-2019"
     },
     {
       "image": "/assets/images/ritterguts-urgose.jpg",
@@ -880,7 +942,8 @@
       "style": "Flavoured Wild/Sour",
       "abv": "5.50%",
       "website": "https://www.Leipziger-Gose.com",
-      "id": 63
+      "id": "63",
+      "slug": "ritterguts-urgose-maerzen-2020"
     },
     {
       "image": "/assets/images/ratsherrn-coffe-quad.jpg",
@@ -894,7 +957,8 @@
       "style": "Chocolate & Coffee",
       "abv": "9.50",
       "website": "https://www.ratsherrn.de",
-      "id": 64
+      "id": "64",
+      "slug": "ratsherrn-coffee-quad-2019"
     },
     {
       "image": "/assets/images/welde-pepper-pils.jpg",
@@ -908,7 +972,8 @@
       "style": "Herb & Spice",
       "abv": "https://www.welde.de",
       "website": "",
-      "id": 65
+      "id": "65",
+      "slug": "welde-pepper-pils-2019"
     },
     {
       "image": "/assets/images/brlo-pale-ale.jpg",
@@ -922,7 +987,8 @@
       "style": "American-style Pale Ale",
       "abv": "6.00%",
       "website": "https://www.brlo.de/",
-      "id": 66
+      "id": "66",
+      "slug": "brlo-pale-ale-2019"
     },
     {
       "image": "/assets/images/maisel-pale-ale-2019.jpg",
@@ -936,7 +1002,8 @@
       "style": "American-style Pale Ale",
       "abv": "5.20%",
       "website": "https://www.maiselandfriends.com/",
-      "id": 67
+      "id": "67",
+      "slug": "maiselandfriends-pale-ale-2019"
     },
     {
       "image": "/assets/images/vulkan-pale-ale.jpg",
@@ -950,7 +1017,8 @@
       "style": "American-style Pale Ale",
       "abv": "4.90%",
       "website": "https://www.vulkan-brauerei.de/",
-      "id": 68
+      "id": "68",
+      "slug": "vulkan-pale-ale-2019"
     },
     {
       "image": "/assets/images/crew-republic-foundation-11.jpg",
@@ -964,7 +1032,8 @@
       "style": "American-style Pale Ale",
       "abv": "5.60%",
       "website": "https://www.crewrepublic.de/",
-      "id": 69
+      "id": "69",
+      "slug": "crew-republic-foundation-11-2020"
     },
     {
       "image": "/assets/images/riegele-michaeli.jpg",
@@ -978,7 +1047,8 @@
       "style": "Seasonal",
       "abv": "6.00%",
       "website": "https://www.riegele.de/",
-      "id": 70
+      "id": "70",
+      "slug": "riegele-michaeli-2019"
     },
     {
       "image": "/assets/images/crew-republic-easy.jpg",
@@ -992,7 +1062,8 @@
       "style": "Golden Ales",
       "abv": "4.90%",
       "website": "https://www.crewrepublic.de/",
-      "id": 71
+      "id": "71",
+      "slug": "crew-republic-easy-2020"
     },
     {
       "image": "/assets/images/maisel-alkoholfrei.jpg",
@@ -1006,10 +1077,11 @@
       "style": "Low Alcohol",
       "abv": "0.00%",
       "website": "https://www.maiselandfriends.com/",
-      "id": 72
+      "id": "72",
+      "slug": "maiselandfriends-alkoholfrei-2020"
     },
     {
-      "image": "/assets/images/maisel-alkoholfrei.jpg",
+      "image": "/assets/images/inselbrauerei-surfers.jpg",
       "award": "Silver",
       "year": "2020",
       "name": "Surfers Summer Ale",
@@ -1020,7 +1092,8 @@
       "style": "Low Alcohol",
       "abv": "0.40%",
       "website": "https://www.insel-brauerei.de/",
-      "id": 73
+      "id": "73",
+      "slug": "insel-brauerei-surfers-summer-ale-2020"
     },
     {
       "image": "/assets/images/stoertebeker-atlantik-alkoholfrei.jpg",
@@ -1034,7 +1107,8 @@
       "style": "Low Alcohol",
       "abv": "0.30%",
       "website": "https://www.stoertebeker.com/",
-      "id": 74
+      "id": "74",
+      "slug": "stoertebeker-atlantik-ale-alkoholfrei-2020"
     },
     {
       "image": "/assets/images/ketterer-pils.jpg",
@@ -1048,7 +1122,8 @@
       "style": "Low Alcohol",
       "abv": "0.40%",
       "website": "https://www.kettererbier.de/",
-      "id": 75
+      "id": "75",
+      "slug": "ketterer-pils-alkoholfrei-2020"
     },
     {
       "image": "/assets/images/reichenbrander-redale.jpg",
@@ -1062,7 +1137,8 @@
       "style": "Amber",
       "abv": "4.80%",
       "website": "https://www.reichenbrander.de/",
-      "id": 76
+      "id": "76",
+      "slug": "reichenbrander-redale-2020"
     },
     {
       "image": "/assets/images/inselbrauerei-baltic-tripel.jpg",
@@ -1076,7 +1152,8 @@
       "style": "Belgian Style Tripel",
       "abv": "9.50%",
       "website": "https://www.insel-brauerei.de/",
-      "id": 77
+      "id": "77",
+      "slug": "insel-brauerei-baltic-tripel-2019"
     },
     {
       "image": "/assets/images/inselbrauerei-baltic-ale.jpg",
@@ -1090,7 +1167,8 @@
       "style": "Belgian Style Blonde",
       "abv": "7.50%",
       "website": "https://www.insel-brauerei.de/",
-      "id": 78
+      "id": "78",
+      "slug": "insel-brauerei-baltic-ale-2019"
     },
     {
       "image": "/assets/images/maisel-pale-ale-2020.jpg",
@@ -1104,7 +1182,8 @@
       "style": "American-style Pale Ale",
       "abv": "5.20%",
       "website": "https://www.maiselandfriends.com/",
-      "id": 79
+      "id": "79",
+      "slug": "maiselandfriends-pale-ale-2020"
     },
     {
       "image": "/assets/images/inselbrauerei-baltic-farm.jpg",
@@ -1118,7 +1197,8 @@
       "style": "Biére De Garde / Saison",
       "abv": "6.50%",
       "website": "https://www.insel-brauerei.de/",
-      "id": 80
+      "id": "80",
+      "slug": "insel-brauerei-baltic-farm-2020"
     },
     {
       "image": "/assets/images/crew-republic-rest-in-peace.jpg",
@@ -1132,7 +1212,8 @@
       "style": "Barley Wine",
       "abv": "10.10%",
       "website": "https://www.crewrepublic.de/",
-      "id": 81
+      "id": "81",
+      "slug": "crew-republic-rest-in-peace-2019"
     },
     {
       "image": "/assets/images/wacken-sold.jpg",
@@ -1146,7 +1227,8 @@
       "style": "Barley Wine",
       "abv": "9.50%",
       "website": "https://www.wacken.beer/",
-      "id": 82
+      "id": "82",
+      "slug": "wacken-einherjer-sold-2019"
     },
     {
       "image": "/assets/images/brlo-naked.jpg",
@@ -1160,7 +1242,8 @@
       "style": "Low Alcohol",
       "abv": "0.50%",
       "website": "https://www.brlo.de/",
-      "id": 83
+      "id": "83",
+      "slug": "brlo-naked-2019"
     },
     {
       "image": "/assets/images/maisel-alkoholfrei.jpg",
@@ -1174,7 +1257,8 @@
       "style": "Low Alcohol",
       "abv": "0.00%",
       "website": "https://www.maiselandfriends.com/",
-      "id": 84
+      "id": "84",
+      "slug": "maiselandfriends-alkoholfrei-2019"
     },
     {
       "image": "/assets/images/inselbrauerei-snorkelers.jpg",
@@ -1188,7 +1272,8 @@
       "style": "Low Alcohol",
       "abv": "0.40%",
       "website": "https://www.insel-brauerei.de/",
-      "id": 85
+      "id": "85",
+      "slug": "insel-brauerei-smorkelers-sea-salt-ipa-alkoholfrei-2019"
     },
     {
       "image": "/assets/images/stoertebeker-atlantik-alkoholfrei.jpg",
@@ -1202,7 +1287,8 @@
       "style": "Low Alcohol",
       "abv": "0.30%",
       "website": "https://www.stoertebeker.com/",
-      "id": 86
+      "id": "68",
+      "slug": "stoertebeker-atlantik-ale-alkoholfrei-2019"
     },
     {
       "image": "/assets/images/braufactum-progusta.jpg",
@@ -1216,7 +1302,8 @@
       "style": "Seasonal",
       "abv": "6.80%",
       "website": "https://www.braufactum.de/",
-      "id": 87
+      "id": "87",
+      "slug": "braufactum-progusta-harvest-2019"
     },
     {
       "image": "/assets/images/inselbrauerei-surfers.jpg",
@@ -1230,7 +1317,8 @@
       "style": "Low Alcohol",
       "abv": "0.40%",
       "website": "https://www.insel-brauerei.de",
-      "id": 88
+      "id": "88",
+      "slug": "insel-brauerei-surfers-summer-ale-alkoholfrei-2019"
     },
     {
       "image": "/assets/images/inselbrauerei-skippers.jpg",
@@ -1244,7 +1332,8 @@
       "style": "Low Alcohol",
       "abv": "0.40%",
       "website": "https://www.insel-brauerei.de",
-      "id": 89
+      "id": "89",
+      "slug": "insel-brauerei-skippers-special-bitter-alhoholfrei-2019"
     },
     {
       "image": "/assets/images/fuerst-carl-franken-ale.jpg",
@@ -1258,7 +1347,8 @@
       "style": "Golden Ales",
       "abv": "5.30%",
       "website": "https://www.fuerst-carl.de",
-      "id": 90
+      "id": "90",
+      "slug": "fuerst-carl-franken-ale-2019"
     },
     {
       "image": "/assets/images/braufactum-colonia.jpg",
@@ -1272,7 +1362,8 @@
       "style": "Golden Ales",
       "abv": "5.50%",
       "website": "https://www.braufactum.de",
-      "id": 91
+      "id": "91",
+      "slug": "braufactum-colonia-2019"
     },
     {
       "image": "/assets/images/ratsherrn-organic-wheat-ale.jpg",
@@ -1286,7 +1377,8 @@
       "style": "Golden Ales",
       "abv": "5.30%",
       "website": "https://www.ratsherrn.de",
-      "id": 92
+      "id": "92",
+      "slug": "ratsherrn-organic-wheat-ale-2019"
     },
     {
       "image": "/assets/images/riegele-bayrisch-ale.jpg",
@@ -1300,7 +1392,8 @@
       "style": "Golden Ales",
       "abv": "5.00%",
       "website": "https://www.riegele.de",
-      "id": 93
+      "id": "93",
+      "slug": "riegele-bayerisch-ale-2-2019"
     },
     {
       "image": "/assets/images/and-union-sunday.jpg",
@@ -1314,7 +1407,8 @@
       "style": "English-style Pale Ale",
       "abv": "5.50%",
       "website": "https://www.andunion.com",
-      "id": 94
+      "id": "94",
+      "slug": "andunion-sunday-2019"
     },
     {
       "image": "/assets/images/inselbrauerei-inselherb.jpg",
@@ -1328,7 +1422,8 @@
       "style": "Bitter 4.5 to 5.5%",
       "abv": "5.50%",
       "website": "https://www.insel-brauerei.de",
-      "id": 95
+      "id": "95",
+      "slug": "insel-brauerei-insel-herb-2019"
     },
     {
       "image": "/assets/images/braufactum-palor.jpg",
@@ -1342,7 +1437,8 @@
       "style": "Bitter 4.5 to 5.5%",
       "abv": "5.20%",
       "website": "https://www.braufactum.de",
-      "id": 96
+      "id": "96",
+      "slug": "braufactum-polar-2019"
     },
     {
       "image": "/assets/images/brauatelier-farmhouse.jpg",
@@ -1356,7 +1452,8 @@
       "style": "Biére De Garde / Saison",
       "abv": "3.90%",
       "website": "https://www.potts.de",
-      "id": 97
+      "id": "97",
+      "slug": "potts-farmhouse-ale-2019"
     },
     {
       "image": "/assets/images/braufactum-soleya.jpg",
@@ -1370,7 +1467,8 @@
       "style": "Biére De Garde / Saison",
       "abv": "6.50%",
       "website": "https://www.braufactum.de",
-      "id": 98
+      "id": "98",
+      "slug": "braufactum-soleya-2019"
     },
     {
       "image": "/assets/images/crew-republic-rest-in-peace.jpg",
@@ -1384,7 +1482,8 @@
       "style": "Barley Wine",
       "abv": "10.10",
       "website": "https://www.crewrepublic.de",
-      "id": 99
+      "id": "99",
+      "slug": "crew-republic-rest-in-peace-2020"
     },
     {
       "image": "/assets/images/braufactum-clan.jpg",
@@ -1398,7 +1497,8 @@
       "style": "Amber",
       "abv": "6.40%",
       "website": "https://www.braufactum.de/",
-      "id": 100
+      "id": "100",
+      "slug": "braufactum-clan-2019"
     },
     {
       "image": "/assets/images/inselbrauerei-saison.jpg",
@@ -1412,7 +1512,8 @@
       "style": "Belgian Style Ale",
       "abv": "5.60%",
       "website": "https://www.insel-brauerei.de/",
-      "id": 101
+      "id": "101",
+      "slug": "insel-brauerei-insel-saison-2019"
     },
     {
       "image": "/assets/images/wacken-yggdrasil.jpg",
@@ -1426,7 +1527,8 @@
       "style": "Amber",
       "abv": "5.20%",
       "website": "https://www.wacken.beer/",
-      "id": 102
+      "id": "102",
+      "slug": "wacken-yggbrasil-2019"
     },
     {
       "image": "/assets/images/camba-pale-ale.jpg",
@@ -1440,7 +1542,8 @@
       "style": "American-style Pale Ale",
       "abv": "5.30%",
       "website": "https://www.camba-bavaria.de",
-      "id": 103
+      "id": "103",
+      "slug": "camba-pale-ale-2019"
     },
     {
       "image": "/assets/images/ratsherrn-pale-ale.jpg",
@@ -1454,7 +1557,8 @@
       "style": "American-style Pale Ale",
       "abv": "5.60%",
       "website": "https://www.ratsherrn.de",
-      "id": 104
+      "id": "104",
+      "slug": "ratsherrn-pale-ale-2019"
     },
     {
       "image": "/assets/images/braufactum-german-pale-ale.jpg",
@@ -1468,7 +1572,8 @@
       "style": "American-style Pale Ale",
       "abv": "5.00%",
       "website": "https://www.braufactum.de/",
-      "id": 105
+      "id": "105",
+      "slug": "braufactum-german-pale-ale"
     },
     {
       "image": "/assets/images/crew-republic-foundation-11.jpg",
@@ -1482,7 +1587,8 @@
       "style": "American-style Pale Ale",
       "abv": "5.60%",
       "website": "https://www.crewrepublic.de",
-      "id": 106
+      "id": "106",
+      "slug": "crew-republic-foundation-11-2019"
     },
     {
       "image": "/assets/images/wacken-crafty-loki.jpg",
@@ -1496,7 +1602,8 @@
       "style": "American-style Pale Ale",
       "abv": "5.70%",
       "website": "https://www.wacken.beer",
-      "id": 107
+      "id": "107",
+      "slug": "wacken-crafty-loki"
     },
     {
       "image": "/assets/images/wacken-walkürenschluck.jpg",
@@ -1510,7 +1617,8 @@
       "style": "Experimental",
       "abv": "11.60%",
       "website": "https://www.wacken.beer",
-      "id": 108
+      "id": "108",
+      "slug": "wacken-walkuerenschluck-eisbock-edition-2019"
     },
     {
       "image": "/assets/images/welde-citra-helles.jpg",
@@ -1524,7 +1632,8 @@
       "style": "Experimental",
       "abv": "5.20%",
       "website": "https://www.welde.de",
-      "id": 109
+      "id": "109",
+      "slug": "welde-citra-helles-2019"
     },
     {
       "image": "/assets/images/brauatelier-dinkel-maerzen.jpg",
@@ -1538,7 +1647,8 @@
       "style": "Experimental",
       "abv": "5.80%",
       "website": "https://www.potts.de",
-      "id": 110
+      "id": "110",
+      "slug": "potts-dinkel-maerzen-2019"
     },
     {
       "image": "/assets/images/detmolder-polar-bock.jpg",
@@ -1552,7 +1662,8 @@
       "style": "Experimental",
       "abv": "9.80%",
       "website": "https://www.brauerei-strate.de",
-      "id": 111
+      "id": "111",
+      "slug": "detmolder-strate-polar-bock-2019"
     },
     {
       "image": "/assets/images/detmolder-chardonnay-hopfen.jpg",
@@ -1566,7 +1677,8 @@
       "style": "Experimental",
       "abv": "7.40$",
       "website": "https://www.brauerei-strate.de",
-      "id": 112
+      "id": "112",
+      "slug": "detmolder-strate-chardonnay-hopfen-2019"
     },
     {
       "image": "/assets/images/stoertebeker-roggen.jpg",
@@ -1580,7 +1692,8 @@
       "style": "Rye",
       "abv": "5.40%",
       "website": "https://www.stoertebeker.com",
-      "id": 113
+      "id": "113",
+      "slug": "stoertebeker-roggen-weizen-2019"
     },
     {
       "image": "/assets/images/detmolder-chardonnay-hopfen.jpg",
@@ -1594,7 +1707,8 @@
       "style": "Experimental",
       "abv": "7.50%",
       "website": "https://www.brauerei-strate.de",
-      "id": 114
+      "id": "114",
+      "slug": "detmolder-strate-chardonnay-hopfen-2020"
     },
     {
       "image": "/assets/images/ganter-magisch-dunkel.jpg",
@@ -1608,7 +1722,8 @@
       "style": "Experimental",
       "abv": "5.80%",
       "website": "https://www.ganter.com",
-      "id": 115
+      "id": "115",
+      "slug": "ganter-magisch-dunkel-2020"
     },
     {
       "image": "/assets/images/weyermann-7-rye.jpg",
@@ -1622,7 +1737,8 @@
       "style": "Rye",
       "abv": "7.20%",
       "website": "https://www.weyermann.de",
-      "id": 116
+      "id": "116",
+      "slug": "weyermann-nr-7-ryepa-2020"
     },
     {
       "image": "/assets/images/inselbrauerei-inselkreide.jpg",
@@ -1636,7 +1752,8 @@
       "style": "Brut Beers",
       "abv": "5.60%",
       "website": "https://www.insel-brauerei.de",
-      "id": 117
+      "id": "117",
+      "slug": "insel-brauerei-insel-kreide-2019"
     },
     {
       "image": "/assets/images/inselbrauerei-quadriga.jpg",
@@ -1650,7 +1767,8 @@
       "style": "Brut Beers",
       "abv": "10.50%",
       "website": "https://www.insel-brauerei.de",
-      "id": 118
+      "id": "118",
+      "slug": "insel-brauerei-quadriga-2019"
     },
     {
       "image": "/assets/images/stoertebeker-arktik-ale.jpg",
@@ -1664,7 +1782,8 @@
       "style": "Experimental",
       "abv": "8.50%",
       "website": "https://www.stoertebeker.com",
-      "id": 119
+      "id": "119",
+      "slug": "stoertebeker-arktik-ale-2019"
     },
     {
       "image": "/assets/images/ganter-wodan.jpg",
@@ -1678,7 +1797,8 @@
       "style": "Strong",
       "abv": "7.50%",
       "website": "https://www.ganter.com/",
-      "id": 120
+      "id": "120",
+      "slug": "ganter-wodan-2020"
     },
     {
       "image": "/assets/images/engel-kellerbier.jpg",
@@ -1692,7 +1812,8 @@
       "style": "Mild",
       "abv": "5.30%",
       "website": "https://www.engelbier.de/",
-      "id": 121
+      "id": "121",
+      "slug": "engel-kellerbier-dunkel-2020"
     },
     {
       "image": "/assets/images/autenrieder-urtyp-dunkel-2020.jpg",
@@ -1706,7 +1827,8 @@
       "style": "Mild",
       "abv": "5.40%",
       "website": "https://www.autenrieder.de/",
-      "id": 122
+      "id": "122",
+      "slug": "autenrieder-urtyp-dunkel-2020"
     },
     {
       "image": "/assets/images/schwarzbraeu-aged-bock-2020.jpg",
@@ -1720,7 +1842,8 @@
       "style": "Barley Wine",
       "abv": "8.10%",
       "website": "https://www.schwarzbraeu.de/",
-      "id": 123
+      "id": "123",
+      "slug": "schwarzbraeu-aged-bock-2020"
     },
     {
       "image": "/assets/images/floetzinger-josef-bock.jpg",
@@ -1734,7 +1857,8 @@
       "style": "Strong",
       "abv": "7.50%",
       "website": "https://www.floetzinger.com/",
-      "id": 124
+      "id": "124",
+      "slug": "floetzinger-braeu-josefi-bock-2019"
     },
     {
       "image": "/assets/images/riegele-ator-20.jpg",
@@ -1748,7 +1872,8 @@
       "style": "Strong",
       "abv": "7.50%",
       "website": "https://www.riegele.de/",
-      "id": 125
+      "id": "125",
+      "slug": "riegele-ator-20-2019"
     },
     {
       "image": "/assets/images/autenrieder-urtyp-dunkel.jpg",
@@ -1762,7 +1887,8 @@
       "style": "Mild",
       "abv": "5.40%",
       "website": "https://www.autenrieder.de/",
-      "id": 126
+      "id": "126",
+      "slug": "autenrieder-urtyp-dunkel-2019"
     },
     {
       "image": "/assets/images/schwarzbraeu-aged-bock-2017.jpg",
@@ -1776,7 +1902,8 @@
       "style": "Belgian Style Strong",
       "abv": "8.10%",
       "website": "https://www.schwarzbraeu.de/",
-      "id": 127
+      "id": "127",
+      "slug": "schwarzbraeu-aged-bock-2017-2019"
     },
     {
       "image": "/assets/images/inselbrauerei-baltic-dubbel.jpg",
@@ -1790,7 +1917,8 @@
       "style": "Belgian Style Dubbel",
       "abv": "8.50%",
       "website": "https://www.insel-brauerei.de/",
-      "id": 128
+      "id": "128",
+      "slug": "insel-brauerei-baltic-dubbel-2019"
     },
     {
       "image": "/assets/images/schwarzbraeu-aged-bock.jpg",
@@ -1804,7 +1932,8 @@
       "style": "Belgian Style Dubbel",
       "abv": "8.10%",
       "website": "https://www.schwarzbraeu.de/",
-      "id": 129
+      "id": "129",
+      "slug": "schwarzbraeu-aged-bock-2018-2019"
     },
     {
       "image": "/assets/images/braufactum-brale.jpg",
@@ -1818,7 +1947,8 @@
       "style": "American Style Brown Ale",
       "abv": "5.00%",
       "website": "https://www.braufactum.de/",
-      "id": 130
+      "id": "130",
+      "slug": "braufactum-the-brale-2019"
     },
     {
       "image": "/assets/images/camba-hop-gun.jpg",
@@ -1832,7 +1962,8 @@
       "style": "American Style Brown Ale",
       "abv": "6.40%",
       "website": "https://www.camba-bavaria.de/",
-      "id": 131
+      "id": "131",
+      "slug": "camba-hop-gun-2019"
     },
     {
       "image": "/assets/images/weyermann-barley-wine.jpg",
@@ -1846,7 +1977,8 @@
       "style": "Barley Wine",
       "abv": "10.50%",
       "website": "https://www.weyermann.de/",
-      "id": 132
+      "id": "132",
+      "slug": "weyermann-barley-wine-2019"
     },
     {
       "image": "/assets/images/riegele-noctus.jpg",
@@ -1860,7 +1992,8 @@
       "style": "Imperial Stout",
       "abv": "10.00%",
       "website": "https://www.riegele.de",
-      "id": 133
+      "id": "133",
+      "slug": "riegele-noctus-100-2019"
     },
     {
       "image": "/assets/images/stoertebeker-nordik-porter.jpg",
@@ -1874,7 +2007,8 @@
       "style": "Strong Porter",
       "abv": "9.10%",
       "website": "https://www.stoertebeker.com",
-      "id": 134
+      "id": "134",
+      "slug": "stoertebeker-nordik-porter-2019"
     },
     {
       "image": "/assets/images/ratsherrn-noctopus.jpg",
@@ -1888,7 +2022,8 @@
       "style": "Imperial Stout",
       "abv": "8.80%",
       "website": "https://www.ratsherrn.de",
-      "id": 135
+      "id": "135",
+      "slug": "ratsherrn-noctupus-imperial-stout-2019"
     },
     {
       "image": "/assets/images/inselbrauerei-stout.jpg",
@@ -1902,7 +2037,8 @@
       "style": "Imperial Stout",
       "abv": "7.50%",
       "website": "https://www.insel-brauerei.de",
-      "id": 136
+      "id": "136",
+      "slug": "insel-brauerei-baltic-stout-2019"
     },
     {
       "image": "/assets/images/crew-republic-roundhouse-kick.jpg",
@@ -1916,7 +2052,8 @@
       "style": "Imperial Stout",
       "abv": "9.20",
       "website": "https://www.crewrepublic.de",
-      "id": 137
+      "id": "137",
+      "slug": "crew-republic-roundhouse-kick-2019"
     },
     {
       "image": "/assets/images/maisel-marcs-chocolate-bock.jpg",
@@ -1930,7 +2067,8 @@
       "style": "Strong Porter",
       "abv": "7.50%",
       "website": "https://www.maiselandfriends.com",
-      "id": 138
+      "id": "138",
+      "slug": "maiselandfriends-marcs-chocolate-bock-2019"
     },
     {
       "image": "/assets/images/vulkan-porter.jpg",
@@ -1944,7 +2082,8 @@
       "style": "Porter",
       "abv": "6.00%",
       "website": "https://www.vulkan-brauerei.de",
-      "id": 139
+      "id": "139",
+      "slug": "vulkan-porter-2019"
     },
     {
       "image": "/assets/images/brlo-porter.jpg",
@@ -1958,7 +2097,8 @@
       "style": "Porter",
       "abv": "7.00%",
       "website": "https://www.brlo.de",
-      "id": 140
+      "id": "140",
+      "slug": "brlo-porter-2019"
     },
     {
       "image": "/assets/images/riegele-robustus.jpg",
@@ -1972,7 +2112,8 @@
       "style": "Porter",
       "abv": "5.00%",
       "website": "https://www.riegele.de",
-      "id": 141
+      "id": "141",
+      "slug": "riegele-robustus-6-2019"
     },
     {
       "image": "/assets/images/crew-republic-roundhouse-kick.jpg",
@@ -1986,7 +2127,8 @@
       "style": "Imperial Stout",
       "abv": "9.20%",
       "website": "https://www.crewrepublic.de",
-      "id": 142
+      "id": "142",
+      "slug": "crew-republic-roundhouse-kick-2020"
     }
   ]
 }

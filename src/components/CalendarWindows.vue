@@ -4,17 +4,7 @@
     <CalendarWindowContentModal
       v-if="shown"
       v-bind:close="closeModal"
-      v-bind:image="getImage(beer)"
-      v-bind:award="beer.award"
-      v-bind:year="beer.year"
-      v-bind:name="beer.name"
-      v-bind:brewery="beer.brewery"
-      v-bind:tastingNote="beer.tastingNote"
-      v-bind:category="beer.category"
-      v-bind:country="beer.country"
-      v-bind:teaste="beer.style"
-      v-bind:abv="beer.abv"
-      v-bind:website="beer.website"
+      v-bind:beer="beer"
     />
     <ul class="calendar">
       <li
@@ -41,21 +31,7 @@ import Vue from 'vue';
 import Countdown from './Countdown.vue';
 import CalendarWindowContentModal from './CalendarWindowContentModal.vue';
 import CalendarWindow from './CalendarWindow.vue';
-
-interface Beer {
-  image: string;
-  award: string;
-  year: string;
-  name: string;
-  brewery: string;
-  tastingNote: string;
-  category: string;
-  country: string;
-  style: string;
-  abv: string;
-  website: string;
-  id: number;
-}
+import Beer from './Beer';
 
 export default Vue.extend({
   name: 'CalendarWindows',
@@ -74,7 +50,7 @@ export default Vue.extend({
     };
   },
   created() {
-    fetch(process.env.VUE_APP_BEER_API_URL)
+    fetch(process.env.VUE_APP_BEER_API_URL + '/beers?_limit=24')
       .then(res => res.json())
       .then((beers: Beer[]) => {
         this.beers = beers;
@@ -102,16 +78,6 @@ export default Vue.extend({
     showModal(beer: Beer) {
       this.shown = true;
       this.beer = beer;
-    },
-    getImage(beer: Beer) {
-      if (!beer.image) {
-        return (
-          process.env.VUE_APP_BEER_IMAGES_URL +
-          '/assets/images/gonzalo-remy-JCIJnIXv7SE-unsplash.jpg'
-        );
-      } else {
-        return process.env.VUE_APP_BEER_IMAGES_URL + beer.image;
-      }
     }
   }
 });
