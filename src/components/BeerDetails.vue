@@ -1,5 +1,6 @@
 <template>
   <div>
+    <BaseButtonBack />
     <img v-bind:src="getImage()" v-bind:alt="beer.name" />
     <p>{{ beer.brewery }}</p>
     <h1>{{ beer.name }}</h1>
@@ -26,9 +27,13 @@
 <script lang="ts">
 import Vue from 'vue';
 import Beer from './Beer';
+import BaseButtonBack from './BaseButtonBack.vue';
 
 export default Vue.extend({
   name: 'BeerDetails',
+  components: {
+    BaseButtonBack
+  },
   data() {
     return {
       beers: [] as Beer[]
