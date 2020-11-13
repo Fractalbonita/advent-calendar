@@ -11,4 +11,5 @@ export default interface Beer {
   abv: string;
   website: string;
   id: string;
+  slug: string;
 }

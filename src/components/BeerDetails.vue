@@ -40,7 +40,7 @@ export default Vue.extend({
     };
   },
   props: {
-    id: {
+    slug: {
       type: String,
       required: true
     }
@@ -65,7 +65,7 @@ export default Vue.extend({
     // type annoation necessary including type "undefined" in csee of no match
     beer(): Beer {
       return (
-        this.beers.find((beer: Beer) => beer.id === this.id) || ({} as Beer)
+        this.beers.find((beer: Beer) => beer.slug === this.slug) || ({} as Beer)
       );
     }
   }

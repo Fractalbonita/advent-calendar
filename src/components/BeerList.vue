@@ -4,7 +4,7 @@
     <ul>
       <li v-for="beer in beers" v-bind:key="beer.id">
         <router-link
-          v-bind:to="{ name: 'BeerDetails', params: { id: beer.id } }"
+          v-bind:to="{ name: 'BeerDetails', params: { slug: beer.slug } }"
         >
           <img v-bind:src="getImage(beer)" v-bind:alt="beer.name" />
           <p>{{ beer.brewery }}</p>
