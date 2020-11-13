@@ -29,18 +29,25 @@ const routes: Array<RouteConfig> = [
       import(/* webpackChunkName: "beer-list" */ '../views/Beers.vue')
   },
   {
-    path: '/beers/details/:id',
+    path: '/beer/:slug',
     name: 'BeerDetails',
     props: true,
     component: () =>
       import(
         /* webpackChunkName: 'beer-details" */ '../components/BeerDetails.vue'
       )
+  },
+  {
+    path: '/404',
+    alias: '*',
+    name: 'NotFound',
+    component: () =>
+      import(/* webpackChunkName: "not-found" */ '../views/NotFound.vue')
   }
 ];
 
 const router = new VueRouter({
-  mode: 'history',
+  // mode: 'history',
   routes
 });
 
