@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <TheNavigation />
-    <router-view />
+    <transition name="views" mode="out-in">
+      <router-view v-bind:key="$route.path" />
+    </transition>
   </div>
 </template>
 
@@ -22,6 +24,15 @@ export default Vue.extend({
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
+  color: $secondary-color;
+}
+.views-enter-active,
+.views-leave-active {
+  transition: all 0.9s cubic-bezier(1, 0.5, 0.8, 1);
+}
+.views-enter,
+.views-leave-to {
+  opacity: 0;
+  transform: translateX(10px);
 }
 </style>
