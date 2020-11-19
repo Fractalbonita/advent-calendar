@@ -29,7 +29,7 @@
             <BeerListItem v-bind:beer="beer" />
           </li>
         </ul>
-        <p v-shown="noResults">
+        <p v-show="noResults">
           Your search did not match any beer or brewery.
         </p>
       </div>
