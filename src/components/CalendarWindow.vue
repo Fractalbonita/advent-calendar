@@ -2,10 +2,10 @@
   <div v-if="openWindow" key="window-open" class="window window--open">
     <p class="window__overline">{{ windowNumber }}</p>
     <h2 v-on:click.stop="$emit('open-window')" class="window__headline-2">
-      {{ name }}
+      {{ beer.name }}
     </h2>
-    <p class="window__subtitle-1">{{ category }}</p>
-    <p class="window__subtitle-2">{{ brewery }}</p>
+    <p class="window__subtitle-1">{{ beer.category }}</p>
+    <p class="window__subtitle-2">{{ beer.brewery }}</p>
   </div>
   <div v-else key="window-closed" class="window window--closed">
     <h2 class="window__headline-2">{{ windowNumber }}</h2>
@@ -13,16 +13,15 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import Vue, { PropType } from 'vue';
+import Beer from './Beer';
 
 export default Vue.extend({
-  name: 'CalendarWdowin',
+  name: 'CalendarWindow',
   props: {
     openWindow: Boolean,
     windowNumber: Number,
-    name: String,
-    category: String,
-    brewery: String
+    beer: { type: Object as PropType<Beer> }
   }
 });
 </script>
