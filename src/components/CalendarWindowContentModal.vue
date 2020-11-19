@@ -41,7 +41,7 @@
 
 <script lang="ts">
 import Vue, { PropType } from 'vue';
-import BaseModal from './BaseModal.vue';
+import BaseModal from './ui/BaseModal.vue';
 import Beer from './Beer';
 
 export default Vue.extend({

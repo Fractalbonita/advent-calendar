@@ -1,6 +1,5 @@
 <template>
   <section>
-    <h2>The 24 Beers of Christmas</h2>
     <p>
       Treat your taste buds during the festive season and explore a new craft
       beer each day from the 1st to the 24th December.
