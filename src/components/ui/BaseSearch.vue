@@ -1,9 +1,7 @@
 <template>
-  <div class="search">
-    <label>
-      <span aria-hidden="true" focusable="false" class="search__icon"
-        >Icon</span
-      >
+  <form class="search" v-on:reset="$emit('input', '')">
+    <label class="search__label">
+      <span aria-hidden="true" focusable="false" class="search__icon">S</span>
       <input
         v-bind:id="searchId"
         name="search"
@@ -13,16 +11,17 @@
         v-bind:value="value"
         v-on:input="$emit('input', $event.target.value)"
         class="search__input"
-    /></label>
+      />
+    </label>
     <button
-      type="button"
+      type="reset"
       aria-label="Clear search"
-      v-on:click="$emit('clear-search')"
+      v-if="value != ''"
       class="search__button--clear"
     >
       X
     </button>
-  </div>
+  </form>
 </template>
 
 <script lang="ts">
@@ -34,46 +33,54 @@ export default Vue.extend({
     value: String,
     searchId: String,
     placeholder: String,
-    ariaLabel: String,
-    displayReset: Boolean
+    ariaLabel: String
   }
 });
 </script>
 
 <style lang="scss" scoped>
 .search {
-  align-items: center;
-  display: flex;
+  margin: 0 auto;
   position: relative;
+  width: 80%;
 
   &__label {
-    border: 0;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
+    display: flex;
+    justify-content: center;
+    position: relative;
   }
   &__icon {
-    font-size: 18px;
+    font-size: 24px;
+    height: 36px;
+    left: 6px;
+    line-height: 36px;
+    position: absolute;
+    text-align: center;
+    top: 6px;
+    width: 36px;
   }
   &__input {
     border: 1px solid $secondary-color;
     border-radius: 0;
     cursor: text;
+    font-size: $body-size;
     height: 48px;
-    padding: 0 30px;
+    padding: 0 42px;
+    width: 100%;
 
     &::-webkit-search-cancel-button {
       display: none;
+    }
+    &::placeholder {
+      color: $secondary-color;
+      font-size: $caption-size;
     }
     &:hover {
       border: 2px solid $primary-color;
     }
     &:focus {
       border: 2px solid $primary-color;
+      outline: none;
     }
   }
   &__button--clear {
@@ -81,12 +88,11 @@ export default Vue.extend({
     border: none;
     cursor: pointer;
     font-size: 24px;
-    position: absolute;
-    left: 200px;
     height: 36px;
+    position: absolute;
+    right: 6px;
+    top: 6px;
     width: 36px;
   }
 }
 </style>
-
-<!-- .search-box:not(:valid) ~ .close-icon { display: none; } -->
