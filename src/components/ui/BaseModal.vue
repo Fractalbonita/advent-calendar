@@ -12,6 +12,7 @@
           <slot name="header"></slot>
           <button
             type="button"
+            aria-label="Close modal"
             v-on:click="closeModal"
             class="modal__button--close"
           >
