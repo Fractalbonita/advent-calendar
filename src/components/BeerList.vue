@@ -1,5 +1,5 @@
 <template>
-  <div class="beers">
+  <div>
     <section v-if="apiError">
       <p>
         The inforamtion you have requrested is currently not available. Please
@@ -8,13 +8,12 @@
     </section>
     <section v-else>
       <div v-if="isLoading">Loading ...</div>
-      <div v-else>
+      <div v-else class="beers">
         <BaseSearch
           v-bind:searchId="searchId"
           v-bind:placeholder="placeholder"
           v-bind:ariaLabel="ariaLabel"
           v-model="searchQuery"
-          v-on:clear-search="clearSearch"
         />
         <p class="beers__headline">
           There are {{ totalBeers }} beers to give a taste.
@@ -70,11 +69,6 @@ export default Vue.extend({
       })
       .finally(() => (this.isLoading = false));
   },
-  methods: {
-    clearSearch() {
-      this.searchQuery = '';
-    }
-  },
   computed: {
     totalBeers(): number {
       return this.beers.length;
@@ -109,8 +103,6 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
 .beers {
-  padding: 15px;
-
   &__tiles {
     display: flex;
     flex-flow: row wrap;
