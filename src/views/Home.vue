@@ -1,13 +1,13 @@
 <template>
-  <div class="home">
-    <TheHeader title="Advent calendar" />
+  <div id="home">
+    <TheHeader title="The 24 Beers of Christmas Advent Calendar" />
     <CalendarDescription />
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
-import TheHeader from '../components/TheHeader.vue';
+import TheHeader from '../components/layout/TheHeader.vue';
 import CalendarDescription from '../components/CalendarDescription.vue';
 
 export default Vue.extend({
