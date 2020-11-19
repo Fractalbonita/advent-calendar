@@ -1,28 +1,37 @@
 <template>
-  <div v-on:keyup.esc="closeModal" tabindex="0" class="container">
-    <Countdown v-bind:count="countDown()" />
-    <CalendarWindowContentModal
-      v-if="shown"
-      v-bind:close="closeModal"
-      v-bind:beer="beer"
-    />
-    <ul class="calendar">
-      <li
-        v-for="beer in randomBeers"
-        v-bind:key="beer.id"
-        v-on:click="toggleWindow(beer.id)"
-        class="calendar__window"
-      >
-        <CalendarWindow
-          v-bind:openWindow="open.includes(beer.id)"
-          v-on:open-window="showModal(beer)"
-          v-bind:windowNumber="getWindowNumber(beer)"
-          v-bind:name="beer.name"
-          v-bind:category="beer.category"
-          v-bind:brewery="beer.brewery"
+  <div v-on:keyup.esc="closeModal" tabindex="0" class="calendar">
+    <section v-if="apiError">
+      <p>
+        The inforamtion you have requrested is currently not available. Please
+        try again later.
+      </p>
+    </section>
+    <section v-else>
+      <div v-if="isLoading">Loading ...</div>
+      <div v-else>
+        <Countdown v-bind:count="countDown" />
+        <CalendarWindowContentModal
+          v-if="shown"
+          v-bind:close="closeModal"
+          v-bind:beer="beer"
         />
-      </li>
-    </ul>
+        <ul class="calendar__wrapper">
+          <li
+            v-for="beer in randomBeers"
+            v-bind:key="beer.id"
+            v-on:click="toggleWindow(beer.id)"
+            class="calendar__window"
+          >
+            <CalendarWindow
+              v-bind:openWindow="open.includes(beer.id)"
+              v-on:open-window="showModal(beer)"
+              v-bind:windowNumber="getWindowNumber(beer)"
+              v-bind:beer="beer"
+            />
+          </li>
+        </ul>
+      </div>
+    </section>
   </div>
 </template>
 
@@ -46,7 +55,9 @@ export default Vue.extend({
       randomBeers: [] as Beer[],
       open: [] as string[],
       shown: false,
-      beer: {} as Beer
+      beer: {} as Beer,
+      apiError: false,
+      isLoading: true
     };
   },
   created() {
@@ -58,7 +69,11 @@ export default Vue.extend({
           Math.random() > 0.5 ? 1 : -1
         );
       })
-      .catch(error => console.log(error.message));
+      .catch(error => {
+        console.log(error.message);
+        this.apiError = true;
+      })
+      .finally(() => (this.isLoading = false));
   },
   methods: {
     toggleWindow(id: string) {
@@ -69,9 +84,6 @@ export default Vue.extend({
     getWindowNumber(beer: Beer) {
       return this.beers.indexOf(beer) + 1;
     },
-    countDown() {
-      return this.beers.length - this.open.length;
-    },
     closeModal() {
       this.shown = !this.shown;
     },
@@ -79,21 +91,26 @@ export default Vue.extend({
       this.shown = true;
       this.beer = beer;
     }
+  },
+  computed: {
+    countDown(): number {
+      return this.beers.length - this.open.length;
+    }
   }
 });
 </script>
 
 <style lang="scss" scoped>
-.container {
-  outline: none;
-}
 .calendar {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  list-style-type: none;
-  padding: 0;
+  outline: none;
 
+  &__wrapper {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
+  }
   &__window {
     cursor: pointer;
     margin: 0;
