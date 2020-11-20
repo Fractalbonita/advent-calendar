@@ -15,6 +15,16 @@
           v-bind:ariaLabel="ariaLabel"
           v-model="searchQuery"
         />
+        <p>Filter by taste category</p>
+        <FilterButton
+          v-bind:options="categories"
+          v-on:change="handleCategories"
+        />
+        <p>Filter by beer award</p>
+        <FilterButton v-bind:options="awards" v-on:change="handleAwards" />
+        <p>Filter by year</p>
+        <FilterButton v-bind:options="years" v-on:change="handleYears" />
+        <p></p>
         <p class="beers__headline">
           There are {{ totalBeers }} beers to give a taste.
         </p>
@@ -29,7 +39,7 @@
           </li>
         </ul>
         <p v-show="noResults">
-          Your search did not match any beer or brewery.
+          Your search did not match any beer.
         </p>
       </div>
     </section>
@@ -39,13 +49,15 @@
 <script lang="ts">
 import Vue from 'vue';
 import Beer from './Beer';
-import BeerListItem from './BeerListItem.vue';
 import BaseSearch from '../components/ui/BaseSearch.vue';
+import BeerListItem from './BeerListItem.vue';
+import FilterButton from './FilterButton.vue';
 
 export default Vue.extend({
   name: 'BeerList',
   components: {
     BeerListItem,
+    FilterButton,
     BaseSearch
   },
   data() {
@@ -56,7 +68,11 @@ export default Vue.extend({
       searchQuery: '',
       searchId: 'search-beer',
       placeholder: 'Beers or breweries',
-      ariaLabel: 'Search for beers or breweries'
+      ariaLabel: 'Search for beers or breweries',
+      selectedCategories: [] as string[],
+      selectedAwards: [] as string[],
+      selectedYears: [] as string[],
+      favourites: [] as Beer[]
     };
   },
   created() {
@@ -69,33 +85,54 @@ export default Vue.extend({
       })
       .finally(() => (this.isLoading = false));
   },
+  methods: {
+    handleCategories(selectedCategories: string[]) {
+      this.selectedCategories = selectedCategories;
+    },
+    handleAwards(selectedAwards: string[]) {
+      this.selectedAwards = selectedAwards;
+    },
+    handleYears(selectedYears: string[]) {
+      this.selectedYears = selectedYears;
+    }
+  },
   computed: {
     totalBeers(): number {
-      return this.beers.length;
+      return this.filteredBeers.length;
+    },
+    categories(): string[] {
+      return [...new Set(this.beers.map(beer => beer.category))];
+    },
+    awards(): string[] {
+      return [...new Set(this.beers.map(beer => beer.award))];
+    },
+    years(): string[] {
+      return [...new Set(this.beers.map(beer => beer.year))];
     },
     filteredBeers(): Beer[] {
-      if (this.searchQuery.length < 3 || !this.beers.length) {
-        return this.beers;
-      } else {
-        return this.beers.filter(beer => {
-          if (
-            beer.name.toLowerCase().includes(this.searchQuery.toLowerCase())
-          ) {
-            return beer.name;
-          } else if (
-            beer.brewery.toLowerCase().includes(this.searchQuery.toLowerCase())
-          ) {
-            return beer.brewery;
-          }
-        });
-      }
+      const searchQuery =
+        this.searchQuery.length < 3 ? '' : this.searchQuery.toLowerCase();
+      const filteredCategories =
+        this.selectedCategories.length == 0
+          ? this.categories
+          : this.selectedCategories;
+      const filteredAwards =
+        this.selectedAwards.length == 0 ? this.awards : this.selectedAwards;
+      const filterdYears =
+        this.selectedYears.length == 0 ? this.years : this.selectedYears;
+
+      return this.beers
+        .filter(beer => filteredCategories.includes(beer.category))
+        .filter(beer => filteredAwards.includes(beer.award))
+        .filter(beer => filterdYears.includes(beer.year))
+        .filter(
+          beer =>
+            beer.name.toLowerCase().includes(searchQuery) ||
+            beer.brewery.toLowerCase().includes(searchQuery)
+        );
     },
     noResults(): boolean {
-      if (typeof this.filteredBeers === 'undefined') {
-        return false;
-      } else {
-        return this.filteredBeers.length < 1;
-      }
+      return this.filteredBeers != undefined && this.filteredBeers.length < 1;
     }
   }
 });
