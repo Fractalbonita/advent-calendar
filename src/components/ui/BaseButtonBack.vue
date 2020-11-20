@@ -22,5 +22,6 @@ export default Vue.extend({
   background-color: transparent;
   border: 0;
   cursor: pointer;
+  outline: none;
 }
 </style>
