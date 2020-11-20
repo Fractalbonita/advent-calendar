@@ -60,14 +60,11 @@ export default Vue.extend({
   },
   methods: {
     getImage() {
-      if (!this.beer.image) {
-        return (
-          process.env.VUE_APP_BEER_IMAGES_URL +
-          '/assets/images/gonzalo-remy-JCIJnIXv7SE-unsplash.jpg'
-        );
-      } else {
-        return process.env.VUE_APP_BEER_IMAGES_URL + this.beer.image;
-      }
+      return (
+        process.env.VUE_APP_BEER_IMAGES_URL +
+        (this.beer.image ||
+          '/assets/images/gonzalo-remy-JCIJnIXv7SE-unsplash.jpg')
+      );
     }
   }
 });

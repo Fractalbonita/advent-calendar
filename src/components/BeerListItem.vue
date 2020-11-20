@@ -26,14 +26,11 @@ export default Vue.extend({
   },
   methods: {
     getImage() {
-      if (!this.beer.image) {
-        return (
-          process.env.VUE_APP_BEER_IMAGES_URL +
-          '/assets/images/gonzalo-remy-JCIJnIXv7SE-unsplash.jpg'
-        );
-      } else {
-        return process.env.VUE_APP_BEER_IMAGES_URL + this.beer.image;
-      }
+      return (
+        process.env.VUE_APP_BEER_IMAGES_URL +
+        (this.beer.image ||
+          '/assets/images/gonzalo-remy-JCIJnIXv7SE-unsplash.jpg')
+      );
     }
   }
 });
@@ -43,6 +40,7 @@ export default Vue.extend({
 .beer {
   color: $secondary-color;
   height: 100%;
+  outline: none;
   text-decoration: none;
   width: 100%;
   word-break: normal;
@@ -84,7 +82,7 @@ export default Vue.extend({
       background-color: $primary-color;
       border: 1px solid $primary-color;
       border-radius: 0;
-      color: white;
+      color: $surface-color;
       font-size: $caption-size;
       margin: 0;
       padding: 5px 10px;
