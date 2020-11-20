@@ -1,9 +1,8 @@
 <template>
   <div>
-    <BaseButtonBack />
-    <img v-bind:src="getImage()" v-bind:alt="beer.name" />
     <p>{{ beer.brewery }}</p>
     <h1>{{ beer.name }}</h1>
+    <img v-bind:src="getImage()" v-bind:alt="beer.name" />
     <h2>Award</h2>
     <p>{{ beer.award }}</p>
     <h2>Year</h2>
@@ -27,13 +26,9 @@
 <script lang="ts">
 import Vue from 'vue';
 import Beer from './Beer';
-import BaseButtonBack from './BaseButtonBack.vue';
 
 export default Vue.extend({
   name: 'BeerDetails',
-  components: {
-    BaseButtonBack
-  },
   data() {
     return {
       beers: [] as Beer[]
@@ -53,12 +48,11 @@ export default Vue.extend({
   },
   methods: {
     getImage() {
-      if (!this.beer.image) {
+      return (
         process.env.VUE_APP_BEER_IMAGES_URL +
-          '/assets/images/gonzalo-remy-JCIJnIXv7SE-unsplash.jpg';
-      } else {
-        return process.env.VUE_APP_BEER_API_URL + this.beer.image;
-      }
+        (this.beer.image ||
+          '/assets/images/gonzalo-remy-JCIJnIXv7SE-unsplash.jpg')
+      );
     }
   },
   computed: {

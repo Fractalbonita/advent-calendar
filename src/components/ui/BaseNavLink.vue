@@ -17,9 +17,13 @@ export default Vue.extend({
 a {
   font-weight: bold;
   color: $secondary-color;
+  outline: none;
   padding: 10px;
   text-decoration: none;
 
+  &:hover {
+    color: $primary-color;
+  }
   &.router-link-exact-active {
     text-decoration: underline;
     color: $primary-color;
