@@ -16,14 +16,14 @@
           v-model="searchQuery"
         />
         <p>Filter by taste category</p>
-        <FilterButton
+        <BaseFilterButton
           v-bind:options="categories"
           v-on:change="handleCategories"
         />
         <p>Filter by beer award</p>
-        <FilterButton v-bind:options="awards" v-on:change="handleAwards" />
+        <BaseFilterButton v-bind:options="awards" v-on:change="handleAwards" />
         <p>Filter by year</p>
-        <FilterButton v-bind:options="years" v-on:change="handleYears" />
+        <BaseFilterButton v-bind:options="years" v-on:change="handleYears" />
         <p></p>
         <p class="beers__headline">
           There are {{ totalBeers }} beers to give a taste.
@@ -51,13 +51,13 @@ import Vue from 'vue';
 import Beer from './Beer';
 import BaseSearch from '../components/ui/BaseSearch.vue';
 import BeerListItem from './BeerListItem.vue';
-import FilterButton from './FilterButton.vue';
+import BaseFilterButton from '../components/ui/BaseFilterButton.vue';
 
 export default Vue.extend({
   name: 'BeerList',
   components: {
     BeerListItem,
-    FilterButton,
+    BaseFilterButton,
     BaseSearch
   },
   data() {

@@ -18,7 +18,7 @@
 import Vue from 'vue';
 
 export default Vue.extend({
-  name: 'FilterButton',
+  name: 'BaseFilterButton',
   data() {
     return {
       selectedOptions: [] as string[]
