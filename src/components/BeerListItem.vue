@@ -5,6 +5,12 @@
   >
     <div class="beer__image">
       <img v-bind:src="getImage()" v-bind:alt="beer.name" />
+      <button
+        v-on:click.prevent="$emit('select')"
+        class="beer__button--favourite"
+      >
+        F
+      </button>
     </div>
     <h1 class="beer__headline">{{ beer.name }}</h1>
     <h2 class="beer__subheadline">{{ beer.brewery }}</h2>
@@ -45,9 +51,23 @@ export default Vue.extend({
   width: 100%;
   word-break: normal;
 
+  &__button--favourite {
+    background-color: pink;
+    border: none;
+    color: red;
+    cursor: pointer;
+    font-size: 24px;
+    height: 36px;
+    outline: none;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 36px;
+  }
   &__image {
     height: 200px;
     overflow: hidden;
+    position: relative;
     width: 100%;
 
     & img {

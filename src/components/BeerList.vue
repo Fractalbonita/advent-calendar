@@ -35,7 +35,10 @@
             v-bind:beer="beer"
             class="beers__tile"
           >
-            <BeerListItem v-bind:beer="beer" />
+            <BeerListItem
+              v-bind:beer="beer"
+              v-on:select="addToFavourites(beer)"
+            />
           </li>
         </ul>
         <p v-show="noResults">
@@ -94,6 +97,10 @@ export default Vue.extend({
     },
     handleYears(selectedYears: string[]) {
       this.selectedYears = selectedYears;
+    },
+    addToFavourites(beer: Beer) {
+      this.favourites.push(beer);
+      console.log(this.favourites);
     }
   },
   computed: {
