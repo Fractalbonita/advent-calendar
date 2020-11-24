@@ -38,7 +38,7 @@
             <BeerListItem
               v-bind:beer="beer"
               v-on:select="toggleFavourite(beer)"
-              v-bind:isFavourite="isFavourite"
+              v-bind:isFavourite="favourites.includes(beer)"
             />
           </li>
         </ul>
@@ -67,6 +67,7 @@ export default Vue.extend({
   data() {
     return {
       beers: [] as Beer[],
+      beer: {} as Beer,
       apiError: false,
       isLoading: true,
       searchQuery: '',
@@ -76,8 +77,7 @@ export default Vue.extend({
       selectedCategories: [] as string[],
       selectedAwards: [] as string[],
       selectedYears: [] as string[],
-      favourites: [] as Beer[],
-      isFavourite: false
+      favourites: [] as Beer[]
     };
   },
   created() {
@@ -106,7 +106,16 @@ export default Vue.extend({
             favourite => favourite !== beer
           ))
         : this.favourites.push(beer);
-      this.isFavourite = !this.isFavourite;
+      fetch(process.env.VUE_APP_BEER_API_URL + '/favourites', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(beer)
+      })
+        .then(res => res.json())
+        .then(data => (this.beer.id = data.id))
+        .catch(error => console.error(error));
     }
   },
   computed: {

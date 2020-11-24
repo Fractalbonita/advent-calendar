@@ -52,8 +52,8 @@ export default Vue.extend({
   },
   props: {
     onSelect: Function,
-    isFavourite: Boolean,
-    beer: { type: Object as PropType<Beer> }
+    beer: { type: Object as PropType<Beer> },
+    isFavourite: Boolean
   },
   methods: {
     getImage() {
