@@ -7,7 +7,7 @@
       </p>
     </section>
     <section v-else>
-      <div v-if="isLoading">Loading ...</div>
+      <div v-if="isLoading">Loading beers ...</div>
       <div v-else class="beers">
         <BaseSearch
           v-bind:searchId="searchId"
@@ -37,7 +37,8 @@
           >
             <BeerListItem
               v-bind:beer="beer"
-              v-on:select="addToFavourites(beer)"
+              v-on:select="toggleFavourite(beer)"
+              v-bind:isFavourite="isFavourite"
             />
           </li>
         </ul>
@@ -75,7 +76,8 @@ export default Vue.extend({
       selectedCategories: [] as string[],
       selectedAwards: [] as string[],
       selectedYears: [] as string[],
-      favourites: [] as Beer[]
+      favourites: [] as Beer[],
+      isFavourite: false
     };
   },
   created() {
@@ -98,9 +100,13 @@ export default Vue.extend({
     handleYears(selectedYears: string[]) {
       this.selectedYears = selectedYears;
     },
-    addToFavourites(beer: Beer) {
-      this.favourites.push(beer);
-      console.log(this.favourites);
+    toggleFavourite(beer: Beer) {
+      this.favourites.includes(beer)
+        ? (this.favourites = this.favourites.filter(
+            favourite => favourite !== beer
+          ))
+        : this.favourites.push(beer);
+      this.isFavourite = !this.isFavourite;
     }
   },
   computed: {
