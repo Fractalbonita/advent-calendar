@@ -33,9 +33,14 @@ const routes: Array<RouteConfig> = [
     name: 'BeerDetails',
     props: true,
     component: () =>
-      import(
-        /* webpackChunkName: 'beer-details" */ '../components/BeerDetails.vue'
-      )
+      import(/* webpackChunkName: "beer-details" */ '../views/Beer.vue')
+  },
+  {
+    path: '/favourites',
+    name: 'Favourites',
+    props: true,
+    component: () =>
+      import(/* webpackChunkName: "favorite-beers" */ '../views/Favourites.vue')
   },
   {
     path: '/404',
