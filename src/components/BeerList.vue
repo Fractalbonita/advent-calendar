@@ -56,6 +56,10 @@ import Beer from './Beer';
 import BaseSearch from '../components/ui/BaseSearch.vue';
 import BeerListItem from './BeerListItem.vue';
 import BaseFilterButton from '../components/ui/BaseFilterButton.vue';
+import {
+  adddFavouriteBeerToDd,
+  deleteFavouriteBeerFromDd
+} from '../services/favouritesClient';
 
 export default Vue.extend({
   name: 'BeerList',
@@ -101,21 +105,15 @@ export default Vue.extend({
       this.selectedYears = selectedYears;
     },
     toggleFavourite(beer: Beer) {
-      this.favourites.includes(beer)
-        ? (this.favourites = this.favourites.filter(
-            favourite => favourite !== beer
-          ))
-        : this.favourites.push(beer);
-      fetch(process.env.VUE_APP_BEER_API_URL + '/favourites', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(beer)
-      })
-        .then(res => res.json())
-        .then(data => (this.beer.id = data.id))
-        .catch(error => console.error(error));
+      if (this.favourites.includes(beer)) {
+        this.favourites = this.favourites.filter(
+          favourite => favourite !== beer
+        );
+        deleteFavouriteBeerFromDd(beer);
+      } else {
+        this.favourites.push(beer);
+        adddFavouriteBeerToDd(beer);
+      }
     }
   },
   computed: {
