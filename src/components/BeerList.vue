@@ -24,7 +24,6 @@
         <BaseFilterButton v-bind:options="awards" v-on:change="handleAwards" />
         <p>Filter by year</p>
         <BaseFilterButton v-bind:options="years" v-on:change="handleYears" />
-        <p></p>
         <p class="beers__headline">
           There are {{ totalBeers }} beers to give a taste.
         </p>
@@ -37,8 +36,8 @@
           >
             <BeerListItem
               v-bind:beer="beer"
-              v-on:select="toggleFavourite(beer)"
-              v-bind:isFavourite="favourites.includes(beer)"
+              v-on:select="toggleFavourite(beer.id)"
+              v-bind:isFavourite="favourites.includes(beer.id)"
             />
           </li>
         </ul>
@@ -56,10 +55,6 @@ import Beer from './Beer';
 import BaseSearch from '../components/ui/BaseSearch.vue';
 import BeerListItem from './BeerListItem.vue';
 import BaseFilterButton from '../components/ui/BaseFilterButton.vue';
-import {
-  adddFavouriteBeerToDb,
-  deleteFavouriteBeerFromDb
-} from '../services/favouritesClient';
 
 export default Vue.extend({
   name: 'BeerList',
@@ -71,7 +66,6 @@ export default Vue.extend({
   data() {
     return {
       beers: [] as Beer[],
-      beer: {} as Beer,
       apiError: false,
       isLoading: true,
       searchQuery: '',
@@ -81,7 +75,7 @@ export default Vue.extend({
       selectedCategories: [] as string[],
       selectedAwards: [] as string[],
       selectedYears: [] as string[],
-      favourites: [] as Beer[]
+      favourites: [] as string[]
     };
   },
   created() {
@@ -93,6 +87,10 @@ export default Vue.extend({
         this.apiError = true;
       })
       .finally(() => (this.isLoading = false));
+    fetch(process.env.VUE_APP_BEER_API_URL + '/favourites')
+      .then(res => res.json())
+      .then((data: { id: string }[]) => data.map(({ id }) => id))
+      .then((favourites: string[]) => (this.favourites = favourites));
   },
   methods: {
     handleCategories(selectedCategories: string[]) {
@@ -104,15 +102,21 @@ export default Vue.extend({
     handleYears(selectedYears: string[]) {
       this.selectedYears = selectedYears;
     },
-    toggleFavourite(beer: Beer) {
-      if (this.favourites.includes(beer)) {
-        this.favourites = this.favourites.filter(
-          favourite => favourite !== beer
-        );
-        deleteFavouriteBeerFromDb(beer);
+    toggleFavourite(id: string) {
+      if (this.favourites.includes(id)) {
+        this.favourites = this.favourites.filter(favourite => favourite !== id);
+        fetch(process.env.VUE_APP_BEER_API_URL + '/favourites/' + id, {
+          method: 'DELETE'
+        }).catch(error => console.error(error));
       } else {
-        this.favourites.push(beer);
-        adddFavouriteBeerToDb(beer);
+        this.favourites.push(id);
+        fetch(process.env.VUE_APP_BEER_API_URL + '/favourites', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ id })
+        }).catch(error => console.error(error));
       }
     }
   },
