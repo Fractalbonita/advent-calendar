@@ -57,8 +57,8 @@ import BaseSearch from '../components/ui/BaseSearch.vue';
 import BeerListItem from './BeerListItem.vue';
 import BaseFilterButton from '../components/ui/BaseFilterButton.vue';
 import {
-  adddFavouriteBeerToDd,
-  deleteFavouriteBeerFromDd
+  adddFavouriteBeerToDb,
+  deleteFavouriteBeerFromDb
 } from '../services/favouritesClient';
 
 export default Vue.extend({
@@ -109,10 +109,10 @@ export default Vue.extend({
         this.favourites = this.favourites.filter(
           favourite => favourite !== beer
         );
-        deleteFavouriteBeerFromDd(beer);
+        deleteFavouriteBeerFromDb(beer);
       } else {
         this.favourites.push(beer);
-        adddFavouriteBeerToDd(beer);
+        adddFavouriteBeerToDb(beer);
       }
     }
   },

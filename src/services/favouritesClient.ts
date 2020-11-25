@@ -1,6 +1,6 @@
 import Beer from '../components/Beer';
 
-export function adddFavouriteBeerToDd(beer: Beer) {
+export function adddFavouriteBeerToDb(beer: Beer) {
   fetch(process.env.VUE_APP_BEER_API_URL + '/favourites', {
     method: 'POST',
     headers: {
@@ -13,7 +13,7 @@ export function adddFavouriteBeerToDd(beer: Beer) {
     .catch(error => console.error(error));
 }
 
-export function deleteFavouriteBeerFromDd(beer: Beer) {
+export function deleteFavouriteBeerFromDb(beer: Beer) {
   fetch(process.env.VUE_APP_BEER_API_URL + '/favourites/' + beer.id, {
     method: 'DELETE',
     headers: {
