@@ -2134,79 +2134,16 @@
   "comments": [],
   "favourites": [
     {
-      "image": "/assets/images/vulkan-india-pale-ale-2020.jpg",
-      "award": "Bronze",
-      "year": "2020",
-      "name": "India Pale Ale",
-      "brewery": "Vulkan Brauerei",
-      "tastingNote": "",
-      "category": "IPA",
-      "country": "Germany",
-      "style": "American Style",
-      "abv": "5.80%",
-      "website": "https://www.vulkan-brauerei.de/",
-      "id": "2",
-      "slug": "vulkan-india-pale-ale-2020"
+      "id": "6"
     },
     {
-      "image": "/assets/images/bach-bulldozer.jpg",
-      "award": "Bronze",
-      "year": "2020",
-      "name": "Bulldozer",
-      "brewery": "Bach´s",
-      "tastingNote": "",
-      "category": "IPA",
-      "country": "Germany",
-      "style": "American Style",
-      "abv": "6.30%",
-      "website": "https://www.bachs.beer/",
-      "id": "1",
-      "slug": "bachs-bulldozer-2020"
+      "id": "11"
     },
     {
-      "image": "/assets/images/schwarzbraeu-ipa.jpg",
-      "award": "Bronze",
-      "year": "2020",
-      "name": "Select",
-      "brewery": "Schwarzbräu",
-      "tastingNote": "Amber in appearance, with a thick, dense head that is well-retained. It offers aromas of jammy fruit, some resin, and caramel, alongside a hint of citrus. The palate similarly offers stone fruit as well as a certain softness, with some oxidisation.",
-      "category": "IPA",
-      "country": "Germany",
-      "style": "American Style",
-      "abv": "7.00%",
-      "website": "https://www.schwarzbraeu.de/",
-      "id": "3",
-      "slug": "schwarzbraeu-select-2020"
+      "id": "4"
     },
     {
-      "image": "/assets/images/crew-republic-in-your-face.jpg",
-      "award": "Silver",
-      "year": "2020",
-      "name": "In Your Face",
-      "brewery": "CREW Republic",
-      "tastingNote": "",
-      "category": "IPA",
-      "country": "Germany",
-      "style": "American Style",
-      "abv": "6.80%",
-      "website": "https://www.crewrepublic.de/",
-      "id": "4",
-      "slug": "crew-republic-in-your-face-2020"
-    },
-    {
-      "image": "/assets/images/crew-republic-escalation.jpg",
-      "award": "Country Winner",
-      "year": "2019",
-      "name": "7:45 Escalation",
-      "brewery": "CREW Republic",
-      "tastingNote": "",
-      "category": "IPA",
-      "country": "Germany",
-      "style": "Imperial/Double",
-      "abv": "8.30%",
-      "website": "https://www.crewrepublic.de/",
-      "id": "8",
-      "slug": "crew-republic-7-45-escalation-2019"
+      "id": "7"
     }
   ]
 }
