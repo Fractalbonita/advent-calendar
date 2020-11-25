@@ -7,7 +7,7 @@
       </p>
     </section>
     <section v-else>
-      <div v-if="isLoading">Loading ...</div>
+      <div v-if="isLoading">Loading beers ...</div>
       <div v-else class="beers">
         <BaseSearch
           v-bind:searchId="searchId"
@@ -24,7 +24,6 @@
         <BaseFilterButton v-bind:options="awards" v-on:change="handleAwards" />
         <p>Filter by year</p>
         <BaseFilterButton v-bind:options="years" v-on:change="handleYears" />
-        <p></p>
         <p class="beers__headline">
           There are {{ totalBeers }} beers to give a taste.
         </p>
@@ -35,7 +34,11 @@
             v-bind:beer="beer"
             class="beers__tile"
           >
-            <BeerListItem v-bind:beer="beer" />
+            <BeerListItem
+              v-bind:beer="beer"
+              v-on:select="toggleFavourite(beer.id)"
+              v-bind:isFavourite="favourites.includes(beer.id)"
+            />
           </li>
         </ul>
         <p v-show="noResults">
@@ -72,7 +75,7 @@ export default Vue.extend({
       selectedCategories: [] as string[],
       selectedAwards: [] as string[],
       selectedYears: [] as string[],
-      favourites: [] as Beer[]
+      favourites: [] as string[]
     };
   },
   created() {
@@ -84,6 +87,10 @@ export default Vue.extend({
         this.apiError = true;
       })
       .finally(() => (this.isLoading = false));
+    fetch(process.env.VUE_APP_BEER_API_URL + '/favourites')
+      .then(res => res.json())
+      .then((data: { id: string }[]) => data.map(({ id }) => id))
+      .then((favourites: string[]) => (this.favourites = favourites));
   },
   methods: {
     handleCategories(selectedCategories: string[]) {
@@ -94,6 +101,23 @@ export default Vue.extend({
     },
     handleYears(selectedYears: string[]) {
       this.selectedYears = selectedYears;
+    },
+    toggleFavourite(id: string) {
+      if (this.favourites.includes(id)) {
+        this.favourites = this.favourites.filter(favourite => favourite !== id);
+        fetch(process.env.VUE_APP_BEER_API_URL + '/favourites/' + id, {
+          method: 'DELETE'
+        }).catch(error => console.error(error));
+      } else {
+        this.favourites.push(id);
+        fetch(process.env.VUE_APP_BEER_API_URL + '/favourites', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ id })
+        }).catch(error => console.error(error));
+      }
     }
   },
   computed: {

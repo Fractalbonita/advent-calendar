@@ -7,7 +7,7 @@
       </p>
     </section>
     <section v-else>
-      <div v-if="isLoading">Loading ...</div>
+      <div v-if="isLoading">Loading calendar ...</div>
       <div v-else>
         <Countdown v-bind:count="countDown" />
         <CalendarWindowContentModal

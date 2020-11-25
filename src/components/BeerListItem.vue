@@ -5,6 +5,29 @@
   >
     <div class="beer__image">
       <img v-bind:src="getImage()" v-bind:alt="beer.name" />
+      <button
+        type="button"
+        aria-label="Toggle favourite"
+        v-on:click.prevent="$emit('select')"
+        class="beer__button--favourite"
+      >
+        <BaseIcon
+          v-if="isFavourite"
+          icon-name="favourite"
+          icon-border="red"
+          icon-color="red"
+        >
+          <IconFavourite />
+        </BaseIcon>
+        <BaseIcon
+          v-else
+          icon-name="favourite"
+          icon-border="red"
+          icon-color="transparent"
+        >
+          <IconFavourite />
+        </BaseIcon>
+      </button>
     </div>
     <h1 class="beer__headline">{{ beer.name }}</h1>
     <h2 class="beer__subheadline">{{ beer.brewery }}</h2>
@@ -18,11 +41,19 @@
 <script lang="ts">
 import Vue, { PropType } from 'vue';
 import Beer from './Beer';
+import BaseIcon from './ui/BaseIcon.vue';
+import IconFavourite from './icons/IconFavourite.vue';
 
 export default Vue.extend({
   name: 'BeerListItem',
+  components: {
+    BaseIcon,
+    IconFavourite
+  },
   props: {
-    beer: { type: Object as PropType<Beer> }
+    onSelect: Function,
+    beer: { type: Object as PropType<Beer> },
+    isFavourite: Boolean
   },
   methods: {
     getImage() {
@@ -45,9 +76,32 @@ export default Vue.extend({
   width: 100%;
   word-break: normal;
 
+  &__button--favourite {
+    position: absolute;
+    top: 8px;
+    right: 16px;
+    background-color: $secondary-color;
+    border: 1px solid $secondary-color;
+    border-radius: 50%;
+    cursor: pointer;
+    height: 36px;
+    outline: none;
+    width: 36px;
+
+    & svg {
+      position: absolute;
+      top: 6px;
+      left: 6px;
+
+      & .favourite {
+        color: green;
+      }
+    }
+  }
   &__image {
     height: 200px;
     overflow: hidden;
+    position: relative;
     width: 100%;
 
     & img {
