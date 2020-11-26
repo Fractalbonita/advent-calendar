@@ -51,7 +51,6 @@ export default Vue.extend({
     IconFavourite
   },
   props: {
-    onSelect: Function,
     beer: { type: Object as PropType<Beer> },
     isFavourite: Boolean
   },
