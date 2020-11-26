@@ -3,10 +3,11 @@
     <div class="comment__button_group">
       <button
         type="button"
+        ref="addButton"
         v-if="!isCommenting"
         key="show-form"
         v-on:click="changeState"
-        class="comment__button--add"
+        class="comment__button comment__button--add"
       >
         Leave a comment
       </button>
@@ -15,24 +16,29 @@
         v-else
         key="hide-form"
         v-on:click="changeState"
-        class="comment__button--cancel"
+        class="comment__button comment__button--cancel"
       >
         Cancel
       </button>
     </div>
     <div v-if="isCommenting" class="comment__form_wrapper">
-      <h2>Leave a comment</h2>
-      <form v-on:submit.prevent="addComment(beer.id)" class="comment__form">
-        <input type="hidden" v-bind:value="'ciao'" />
+      <h2 class="comment__form_headline">Leave a comment</h2>
+      <form
+        autocomplete="off"
+        v-on:submit.prevent="addComment(beer.id)"
+        class="comment__form"
+      >
         <label for="name" class="comment__form_label">Name</label>
         <input
           id="name"
+          ref="nameInput"
           name="name"
           type="text"
           placeholder="Your name"
           v-model="name"
           class="comment__form_input"
         />
+        <p v-if="!nameIsValid" class="comment__form_error">Name required</p>
         <label for="content" class="comment__form_label">Comment</label>
         <textarea
           id="content"
@@ -45,21 +51,25 @@
           v-model="content"
           class="comment__form_textarea"
         ></textarea>
-        <span class="comment__form_count">{{ characterCount }} / 400</span>
-        <span v-if="characterCount === 0" class="comment__form_error"
-          >The maximum length has been reached. Be concise and keep your comment
-          short.</span
+        <span else class="comment__form_counter"
+          >{{ characterCount }} / 400 characters</span
         >
+        <p v-if="characterCount === 0" class="comment__form_error">
+          The maximum length has been reached. Be concise and keep your comment
+          short.
+        </p>
+        <p v-if="!contentIsValid" class="comment__form_error">
+          Comment required
+        </p>
         <button
           type="submit"
-          v-bind:disabled="isDisabled"
-          class="comment__form_button--submit"
+          v-bind:disabled="!formIsValid"
+          class="comment__button comment__button--submit"
         >
           Post comment
         </button>
       </form>
     </div>
-    <BeerComment v-bind:comments="comments" />
   </div>
 </template>
 
@@ -68,13 +78,9 @@ import Vue, { PropType } from 'vue';
 import { v4 as uuid } from 'uuid';
 import Beer from './Beer';
 import Comment from './Comment';
-import BeerComment from './BeerComment.vue';
 
 export default Vue.extend({
   name: 'BeerCommentAddForm',
-  components: {
-    BeerComment
-  },
   data() {
     return {
       isCommenting: false,
@@ -87,48 +93,183 @@ export default Vue.extend({
   props: {
     beer: { type: Object as PropType<Beer> }
   },
+  mounted() {
+    (this.$refs.nameInput as Vue & { focus: () => boolean }).focus();
+  },
   methods: {
     addComment(id: string) {
-      const newComment = {
-        id: this.id,
-        name: this.name,
-        content: this.content,
-        beerId: id
-      };
-      this.comments.push(newComment);
-      fetch(process.env.VUE_APP_BEER_API_URL + '/comments', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(newComment)
-      }).catch(error => console.error(error));
-      console.log(this.comments);
-      this.name = '';
-      this.content = '';
-      this.isCommenting = false;
+      if (this.formIsValid) {
+        const newComment = {
+          id: this.id,
+          name: this.name,
+          content: this.content,
+          beerId: id
+        };
+        this.comments.push(newComment);
+        fetch(process.env.VUE_APP_BEER_API_URL + '/comments', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(newComment)
+        }).catch(error => console.error(error));
+        this.name = '';
+        this.content = '';
+        this.isCommenting = false;
+        this.focusOnAddButton();
+      }
     },
     changeState() {
       this.isCommenting = !this.isCommenting;
+      console.log(this.$refs.addButton);
+    },
+    focusOnAddButton() {
+      this.$nextTick(() => {
+        (this.$refs.addButton as Vue & { focus: () => boolean }).focus();
+      });
     }
   },
   computed: {
     characterCount(): number {
       return 400 - this.content.length;
     },
-    isDisabled(): boolean {
-      if (this.name.length === 0 || this.content.length === 0) {
-        return true;
-      } else {
-        return false;
-      }
+    nameIsValid(): boolean {
+      return !!this.name;
+    },
+    contentIsValid(): boolean {
+      return !!this.content;
+    },
+    formIsValid(): boolean {
+      return this.nameIsValid && this.contentIsValid;
     }
   }
 });
 </script>
 
 <style lang="scss" scoped>
-#comment {
-  resize: none;
+.comment {
+  &__form {
+    &_headline {
+      font-size: $headline-2-size;
+      margin: 0.5rem 0;
+    }
+    &_label {
+      color: $primary-color;
+      display: block;
+      font-size: $caption-size;
+      font-weight: bold;
+      margin: 0.5rem 0;
+    }
+    &_input,
+    &_textarea {
+      border: 1px solid $secondary-color;
+      border-radius: 0;
+      cursor: text;
+      font-size: $body-size;
+      margin: 0.5rem 0;
+      width: 80%;
+
+      &::placeholder {
+        color: $secondary-color;
+        font-size: $caption-size;
+        opacity: 0.7;
+      }
+      &:hover {
+        border: 1px solid $primary-color;
+      }
+      &:focus {
+        border: 2px solid $primary-color;
+        outline: none;
+      }
+    }
+    &_input {
+      height: 48px;
+      padding: 0 12px;
+    }
+    &_textarea {
+      font-family: Avenir, Helvetica, Arial, sans-serif;
+      padding: 12px;
+      resize: none;
+    }
+    &_error {
+      color: $error-color;
+      font-size: $overline-size;
+      margin: 0.2rem 0 1rem 0;
+    }
+    &_counter {
+      color: $secondary-color;
+      display: block;
+      font-size: $caption-size;
+      margin: 0.2rem 0 1rem 0;
+    }
+  }
+  &__button {
+    border-radius: 0;
+    cursor: pointer;
+    font-size: $button-size;
+    height: 36px;
+    margin: 1rem 0;
+    outline: none;
+    padding: 9px 12px;
+
+    &--add {
+      background-color: $primary-color;
+      border: 1px solid $primary-color;
+      color: $surface-color;
+
+      &:hover,
+      &:focus {
+        background-color: $surface-color;
+        border: 1px solid $primary-color;
+        color: $primary-color;
+      }
+      &:active {
+        background-color: $primary-color;
+        color: $surface-color;
+        opacity: 0.5;
+      }
+    }
+    &--cancel {
+      background-color: $surface-color;
+      border: 1px solid $secondary-color;
+      color: $secondary-color;
+
+      &:hover,
+      &:focus {
+        background-color: $surface-color;
+        border: 1px solid $primary-color;
+        color: $primary-color;
+      }
+      &:active {
+        background-color: $primary-color;
+        color: $surface-color;
+        opacity: 0.5;
+      }
+    }
+    &--submit {
+      background-color: $primary-color;
+      border: 1px solid $primary-color;
+      color: $surface-color;
+
+      &:disabled {
+        background-color: $disabled-color;
+        border: 1px solid $disabled-color;
+        color: secondary-color;
+        opacity: 0.5;
+        pointer-events: none;
+      }
+      &:hover,
+      &:focus {
+        background-color: $surface-color;
+        border: 1px solid $primary-color;
+        color: $primary-color;
+      }
+      &:active {
+        background-color: $primary-color;
+        color: $surface-color;
+        opacity: 0.5;
+      }
+    }
+  }
 }
 </style>
