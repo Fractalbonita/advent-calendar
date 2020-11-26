@@ -22,23 +22,29 @@
         beer.website
       }}</a>
     </div>
+    <h2>Comments</h2>
     <BeerCommentAddForm v-bind:beer="beer" />
+    <BeerComment v-bind:comments="comments" />
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
 import Beer from './Beer';
+import Comment from './Comment';
 import BeerCommentAddForm from '../components/BeerCommentAddForm.vue';
+import BeerComment from './BeerComment.vue';
 
 export default Vue.extend({
   name: 'BeerDetails',
   components: {
-    BeerCommentAddForm
+    BeerCommentAddForm,
+    BeerComment
   },
   data() {
     return {
-      beers: [] as Beer[]
+      beers: [] as Beer[],
+      comments: [] as Comment[]
     };
   },
   props: {
@@ -51,6 +57,15 @@ export default Vue.extend({
     fetch(process.env.VUE_APP_BEER_API_URL + '/beers')
       .then(res => res.json())
       .then((beers: Beer[]) => (this.beers = beers))
+      .catch(error => console.log(error.message));
+    fetch(process.env.VUE_APP_BEER_API_URL + '/comments')
+      .then(res => res.json())
+      .then(
+        (comments: Comment[]) =>
+          (this.comments = comments.filter(
+            comment => comment.beerId === this.beer.id
+          ))
+      )
       .catch(error => console.log(error.message));
   },
   methods: {
