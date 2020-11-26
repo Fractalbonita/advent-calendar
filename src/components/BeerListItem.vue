@@ -14,16 +14,18 @@
         <BaseIcon
           v-if="isFavourite"
           icon-name="favourite"
-          icon-border="red"
-          icon-color="red"
+          width="24"
+          height="24"
+          class="beer__button--favourite-filled"
         >
           <IconFavourite />
         </BaseIcon>
         <BaseIcon
           v-else
           icon-name="favourite"
-          icon-border="red"
-          icon-color="transparent"
+          width="24"
+          height="24"
+          class="beer__button--favourite-outline"
         >
           <IconFavourite />
         </BaseIcon>
@@ -76,25 +78,28 @@ export default Vue.extend({
   word-break: normal;
 
   &__button--favourite {
-    position: absolute;
-    top: 8px;
-    right: 16px;
     background-color: $secondary-color;
     border: 1px solid $secondary-color;
     border-radius: 50%;
     cursor: pointer;
     height: 36px;
+    position: absolute;
+    right: 16px;
+    top: 8px;
     outline: none;
     width: 36px;
 
     & svg {
-      position: absolute;
-      top: 6px;
       left: 6px;
-
-      & .favourite {
-        color: green;
-      }
+      position: absolute;
+      stroke: $favourite-color;
+      top: 6px;
+    }
+    &-filled {
+      fill: $favourite-color;
+    }
+    &-outline {
+      fill: transparent;
     }
   }
   &__image {
