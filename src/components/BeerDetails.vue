@@ -23,28 +23,23 @@
       }}</a>
     </div>
     <h2>Comments</h2>
-    <BeerCommentAddForm v-bind:beer="beer" />
-    <BeerComment v-bind:comments="comments" />
+    <BeerComment v-if="beer.id" v-bind:beer="beer" />
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
 import Beer from './Beer';
-import Comment from './Comment';
-import BeerCommentAddForm from '../components/BeerCommentAddForm.vue';
 import BeerComment from './BeerComment.vue';
 
 export default Vue.extend({
   name: 'BeerDetails',
   components: {
-    BeerCommentAddForm,
     BeerComment
   },
   data() {
     return {
-      beers: [] as Beer[],
-      comments: [] as Comment[]
+      beer: {} as Beer
     };
   },
   props: {
@@ -54,18 +49,9 @@ export default Vue.extend({
     }
   },
   created() {
-    fetch(process.env.VUE_APP_BEER_API_URL + '/beers')
+    fetch(process.env.VUE_APP_BEER_API_URL + '/beers?slug=' + this.slug)
       .then(res => res.json())
-      .then((beers: Beer[]) => (this.beers = beers))
-      .catch(error => console.log(error.message));
-    fetch(process.env.VUE_APP_BEER_API_URL + '/comments')
-      .then(res => res.json())
-      .then(
-        (comments: Comment[]) =>
-          (this.comments = comments.filter(
-            comment => comment.beerId === this.beer.id
-          ))
-      )
+      .then((beers: Beer[]) => (this.beer = beers[0]))
       .catch(error => console.log(error.message));
   },
   methods: {
@@ -74,14 +60,6 @@ export default Vue.extend({
         process.env.VUE_APP_BEER_IMAGES_URL +
         (this.beer.image ||
           '/assets/images/gonzalo-remy-JCIJnIXv7SE-unsplash.jpg')
-      );
-    }
-  },
-  computed: {
-    // type annoation necessary including type "undefined" in csee of no match
-    beer(): Beer {
-      return (
-        this.beers.find((beer: Beer) => this.slug === beer.slug) || ({} as Beer)
       );
     }
   }

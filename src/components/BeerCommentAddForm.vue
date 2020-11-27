@@ -25,7 +25,7 @@
       <h2 class="comment__form_headline">Leave a comment</h2>
       <form
         autocomplete="off"
-        v-on:submit.prevent="addComment(beer.id)"
+        v-on:submit.prevent="addComment"
         class="comment__form"
       >
         <label for="name" class="comment__form_label">Name</label>
@@ -74,10 +74,10 @@
 </template>
 
 <script lang="ts">
-import Vue, { PropType } from 'vue';
-import { v4 as uuid } from 'uuid';
-import Beer from './Beer';
+import Vue from 'vue';
 import Comment from './Comment';
+
+type VueFocus = Vue & { focus: () => boolean };
 
 export default Vue.extend({
   name: 'BeerCommentAddForm',
@@ -85,34 +85,17 @@ export default Vue.extend({
     return {
       isCommenting: false,
       comments: [] as Comment[],
-      id: uuid(),
       name: '',
       content: ''
     };
   },
-  props: {
-    beer: { type: Object as PropType<Beer> }
-  },
-  mounted() {
-    (this.$refs.nameInput as Vue & { focus: () => boolean }).focus();
-  },
   methods: {
-    addComment(id: string) {
+    addComment() {
       if (this.formIsValid) {
-        const newComment = {
-          id: this.id,
+        this.$emit('new-comment', {
           name: this.name,
-          content: this.content,
-          beerId: id
-        };
-        this.comments.push(newComment);
-        fetch(process.env.VUE_APP_BEER_API_URL + '/comments', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(newComment)
-        }).catch(error => console.error(error));
+          content: this.content
+        });
         this.name = '';
         this.content = '';
         this.isCommenting = false;
@@ -121,12 +104,11 @@ export default Vue.extend({
     },
     changeState() {
       this.isCommenting = !this.isCommenting;
-      console.log(this.$refs.addButton);
+      this.isCommenting &&
+        this.$nextTick(() => (this.$refs.nameInput as VueFocus).focus());
     },
     focusOnAddButton() {
-      this.$nextTick(() => {
-        (this.$refs.addButton as Vue & { focus: () => boolean }).focus();
-      });
+      this.$nextTick(() => (this.$refs.addButton as VueFocus).focus());
     }
   },
   computed: {
