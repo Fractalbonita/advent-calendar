@@ -19,7 +19,7 @@
               v-bind:name="comment.name"
               v-bind:content="comment.content"
               v-bind:beer="beer"
-              v-on:cancel="cancelEdit(comment.id)"
+              v-on:cancel="closeEdit"
               v-on:comment-edited="editComment(comment.id, $event)"
             />
           </div>
@@ -28,6 +28,7 @@
             <p class="comment__item_post">{{ comment.content }}</p>
             <button
               type="button"
+              ref="editButton"
               v-on:click="changeState(comment.id)"
               class="comment__button comment__button--edit"
             >
@@ -62,6 +63,8 @@ import BeerCommentAddForm from '../components/BeerCommentAddForm.vue';
 import BeerCommentEditForm from './BeerCommentEditForm.vue';
 import BeerCommentDeleteModal from './BeerCommentDeleteModal.vue';
 
+type VueFocus = Vue & { focus: () => boolean };
+
 export default Vue.extend({
   name: 'BeerComment',
   components: {
@@ -83,7 +86,7 @@ export default Vue.extend({
   created() {
     fetch(process.env.VUE_APP_BEER_API_URL + '/comments?beerId=' + this.beer.id)
       .then(res => res.json())
-      .then((comments: Comment[]) => (this.comments = comments))
+      .then((comments: Comment[]) => (this.comments = comments.reverse()))
       .catch(error => console.log(error.message));
   },
   methods: {
@@ -124,26 +127,31 @@ export default Vue.extend({
       }).catch(error => console.error(error));
       this.open = false;
     },
-    cancelEdit(id: string) {
-      this.isEditing != id;
+    closeEdit() {
+      this.isEditing = '';
     },
-    editComment(
-      id: string,
-      { newName, newContent }: { newName: string; newContent: string }
-    ) {
-      const editedComments = this.comments.map(comment =>
-        comment.id === id
-          ? { ...comment, name: newName, content: newContent }
-          : comment
-      );
-      fetch(process.env.VUE_APP_BEER_API_URL + '/comments', {
-        method: 'POST',
+    editComment(id: string, changes: object) {
+      const commentToEdit = this.comments.find(c => c.id === id) as Comment;
+      const editedComment = { ...commentToEdit, ...changes };
+      fetch(process.env.VUE_APP_BEER_API_URL + '/comments/' + id, {
+        method: 'PUT',
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify(editedComments)
-      }).catch(error => console.error(error));
-      this.isEditing !== this.comment.id;
+        body: JSON.stringify(editedComment)
+      })
+        .then(
+          () =>
+            (this.comments = this.comments.map(comment =>
+              comment.id === id ? editedComment : comment
+            ))
+        )
+        .catch(error => console.error(error));
+      this.closeEdit();
+      this.focusOnEditButton();
+    },
+    focusOnEditButton() {
+      this.$nextTick(() => (this.$refs.editButton as VueFocus).focus());
     }
   }
 });
