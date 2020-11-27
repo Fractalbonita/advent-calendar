@@ -8,18 +8,29 @@
       </p>
     </div>
     <div v-else>
-      <ul v-if="!isEditing" key="comment-view">
+      <ul key="comment-view">
         <li v-for="comment in comments" v-bind:key="comment.name">
-          <h2>{{ comment.name }}</h2>
-          <p>{{ comment.content }}</p>
-          <button type="button" v-on:click="changeState">
-            Edit comment
-          </button>
+          <div v-if="!isEditing">
+            <h2>{{ comment.name }}</h2>
+            <p>{{ comment.content }}</p>
+            <button type="button" v-on:click="changeState">
+              Edit
+            </button>
+            <button type="button" v-on:click="openModal(comment)">
+              Delete
+            </button>
+          </div>
+          <div v-else-if="isEditing" key="comment-edit">
+            <BeerCommentEditForm v-on:exit-edit="changeState" />
+          </div>
         </li>
       </ul>
-      <div v-else-if="isEditing" key="comment-edit">
-        <BeerCommentEditForm v-on:exit-edit="changeState" />
-      </div>
+      <BeerCommentDeleteModal
+        v-if="open"
+        v-bind:close="closeModal"
+        v-on:cancel="cancelDelete"
+        v-on:delete="deleteComment(comment.id)"
+      />
     </div>
   </div>
 </template>
@@ -31,17 +42,21 @@ import Beer from './Beer';
 import Comment from './Comment';
 import BeerCommentAddForm from '../components/BeerCommentAddForm.vue';
 import BeerCommentEditForm from './BeerCommentEditForm.vue';
+import BeerCommentDeleteModal from './BeerCommentDeleteModal.vue';
 
 export default Vue.extend({
   name: 'BeerComment',
   components: {
     BeerCommentAddForm,
-    BeerCommentEditForm
+    BeerCommentEditForm,
+    BeerCommentDeleteModal
   },
   data() {
     return {
       comments: [] as Comment[],
-      isEditing: false
+      comment: {} as Comment,
+      isEditing: false,
+      open: false
     };
   },
   props: {
@@ -73,6 +88,23 @@ export default Vue.extend({
     },
     changeState() {
       this.isEditing = !this.isEditing;
+    },
+    openModal(comment: Comment) {
+      this.open = true;
+      this.comment = comment;
+    },
+    closeModal() {
+      this.open = !this.open;
+    },
+    cancelDelete() {
+      this.open = !this.open;
+    },
+    deleteComment(id: string) {
+      this.comments = this.comments.filter(comment => comment.id !== id);
+      fetch(process.env.VUE_APP_BEER_API_URL + '/comments/' + id, {
+        method: 'DELETE'
+      }).catch(error => console.error(error));
+      this.open = false;
     }
   }
 });
