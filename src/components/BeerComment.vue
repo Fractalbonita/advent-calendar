@@ -11,15 +11,25 @@
       <ul class="comment__list">
         <li
           v-for="comment in comments"
-          v-bind:key="comment.name"
+          v-bind:key="comment.id"
           class="comment__item"
         >
-          <div v-if="!isEditing" key="comment-view">
+          <div v-if="isEditing === comment.id" key="comment-edit">
+            <BeerCommentEditForm
+              v-bind:name="comment.name"
+              v-bind:content="comment.content"
+              v-bind:beer="beer"
+              v-on:cancel="closeEdit"
+              v-on:comment-edited="editComment(comment.id, $event)"
+            />
+          </div>
+          <div v-else key="comment-view">
             <h2 class="comment__item_name">{{ comment.name }}</h2>
             <p class="comment__item_post">{{ comment.content }}</p>
             <button
               type="button"
-              v-on:click="changeState"
+              ref="editButton"
+              v-on:click="changeState(comment.id)"
               class="comment__button comment__button--edit"
             >
               Edit
@@ -31,9 +41,6 @@
             >
               Delete
             </button>
-          </div>
-          <div v-else-if="isEditing" key="comment-edit">
-            <BeerCommentEditForm v-on:exit-edit="changeState" />
           </div>
         </li>
       </ul>
@@ -56,6 +63,8 @@ import BeerCommentAddForm from '../components/BeerCommentAddForm.vue';
 import BeerCommentEditForm from './BeerCommentEditForm.vue';
 import BeerCommentDeleteModal from './BeerCommentDeleteModal.vue';
 
+type VueFocus = Vue & { focus: () => boolean };
+
 export default Vue.extend({
   name: 'BeerComment',
   components: {
@@ -67,7 +76,7 @@ export default Vue.extend({
     return {
       comments: [] as Comment[],
       comment: {} as Comment,
-      isEditing: false,
+      isEditing: '',
       open: false
     };
   },
@@ -77,7 +86,7 @@ export default Vue.extend({
   created() {
     fetch(process.env.VUE_APP_BEER_API_URL + '/comments?beerId=' + this.beer.id)
       .then(res => res.json())
-      .then((comments: Comment[]) => (this.comments = comments))
+      .then((comments: Comment[]) => (this.comments = comments.reverse()))
       .catch(error => console.log(error.message));
   },
   methods: {
@@ -98,8 +107,8 @@ export default Vue.extend({
         .then(() => this.comments.push(newComment))
         .catch(error => console.error(error));
     },
-    changeState() {
-      this.isEditing = !this.isEditing;
+    changeState(id: string) {
+      this.isEditing = id;
     },
     openModal(comment: Comment) {
       this.open = true;
@@ -117,6 +126,32 @@ export default Vue.extend({
         method: 'DELETE'
       }).catch(error => console.error(error));
       this.open = false;
+    },
+    closeEdit() {
+      this.isEditing = '';
+    },
+    editComment(id: string, changes: object) {
+      const commentToEdit = this.comments.find(c => c.id === id) as Comment;
+      const editedComment = { ...commentToEdit, ...changes };
+      fetch(process.env.VUE_APP_BEER_API_URL + '/comments/' + id, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(editedComment)
+      })
+        .then(
+          () =>
+            (this.comments = this.comments.map(comment =>
+              comment.id === id ? editedComment : comment
+            ))
+        )
+        .catch(error => console.error(error));
+      this.closeEdit();
+      this.focusOnEditButton();
+    },
+    focusOnEditButton() {
+      this.$nextTick(() => (this.$refs.editButton as VueFocus).focus());
     }
   }
 });

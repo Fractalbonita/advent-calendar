@@ -4,6 +4,16 @@
       <div class="header">
         <p class="header__overline">{{ beer.brewery }}</p>
         <h1 class="header__headline-1">{{ beer.name }}</h1>
+        <button
+          type="button"
+          aria-label="Close modal"
+          v-on:click="close"
+          class="header__button--close"
+        >
+          <BaseIcon icon-name="close" width="24" height="24">
+            <IconClose />
+          </BaseIcon>
+        </button>
       </div>
     </template>
     <template v-slot:main>
@@ -43,11 +53,15 @@
 import Vue, { PropType } from 'vue';
 import BaseModal from './ui/BaseModal.vue';
 import Beer from './Beer';
+import BaseIcon from './ui/BaseIcon.vue';
+import IconClose from './icons/IconClose.vue';
 
 export default Vue.extend({
   name: 'CalendarWindowContentModal',
   components: {
-    BaseModal
+    BaseModal,
+    BaseIcon,
+    IconClose
   },
   data() {
     return {
@@ -72,16 +86,48 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
 .header {
+  position: relative;
   width: 100%;
 
   &__overline {
     font-size: $overline-size;
-    margin: 0.5rem 0;
+    margin: 0;
+    padding: 0.5rem 0 0;
     text-transform: uppercase;
   }
   &__headline-1 {
     font-size: $headline-1-size;
-    margin: 0.5rem 0;
+    margin: 0;
+    padding: 0.5rem 0;
+  }
+  &__button--close {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    fill: $secondary-color;
+    font-size: $button-size;
+    height: 36px;
+    position: absolute;
+    right: 0;
+    stroke: $secondary-color;
+    top: 0px;
+    width: 36px;
+
+    &:hover,
+    &:focus {
+      fill: $primary-color;
+      stroke: $primary-color;
+    }
+    &:active {
+      fill: $primary-color;
+      stroke: $primary-color;
+      opacity: 0.5;
+    }
+    & svg {
+      left: 6px;
+      position: absolute;
+      top: 6px;
+    }
   }
 }
 .main {
