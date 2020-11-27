@@ -109,14 +109,15 @@ export default Vue.extend({
           method: 'DELETE'
         }).catch(error => console.error(error));
       } else {
-        this.favourites.push(id);
         fetch(process.env.VUE_APP_BEER_API_URL + '/favourites', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
           },
           body: JSON.stringify({ id })
-        }).catch(error => console.error(error));
+        })
+          .then(() => this.favourites.push(id))
+          .catch(error => console.error(error));
       }
     }
   },
