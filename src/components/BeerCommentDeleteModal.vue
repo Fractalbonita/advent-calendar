@@ -1,5 +1,8 @@
 <template>
   <BaseModal v-bind:closeModal="close" v-bind:scrollable="scrollable">
+    <template v-slot:header>
+      <h1 class="delete__headline">Are you sure?</h1>
+    </template>
     <template v-slot:main
       ><p class="delete__text">
         Are you sure you want to delete this comment permanently?
@@ -45,10 +48,17 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
 .delete {
+  &__headline {
+    font-size: $headline-1-size;
+    font-weight: bold;
+    margin: 0;
+  }
   &__text {
     font-size: $body-size;
     font-weight: bold;
-    text-align: center;
+    line-height: 1.5rem;
+    margin: 0;
+    text-align: left;
   }
   &__button {
     background-color: $surface-color;
