@@ -8,15 +8,27 @@
       </p>
     </div>
     <div v-else>
-      <ul key="comment-view">
-        <li v-for="comment in comments" v-bind:key="comment.name">
-          <div v-if="!isEditing">
-            <h2>{{ comment.name }}</h2>
-            <p>{{ comment.content }}</p>
-            <button type="button" v-on:click="changeState">
+      <ul class="comment__list">
+        <li
+          v-for="comment in comments"
+          v-bind:key="comment.name"
+          class="comment__item"
+        >
+          <div v-if="!isEditing" key="comment-view">
+            <h2 class="comment__item_name">{{ comment.name }}</h2>
+            <p class="comment__item_post">{{ comment.content }}</p>
+            <button
+              type="button"
+              v-on:click="changeState"
+              class="comment__button comment__button--edit"
+            >
               Edit
             </button>
-            <button type="button" v-on:click="openModal(comment)">
+            <button
+              type="button"
+              v-on:click="openModal(comment)"
+              class="comment__button comment__button--delete"
+            >
               Delete
             </button>
           </div>
@@ -109,3 +121,68 @@ export default Vue.extend({
   }
 });
 </script>
+
+<style lang="scss" scoped>
+.comment {
+  &__list {
+    list-style-type: none;
+    padding: 0;
+  }
+  &__item {
+    margin: 10px 0;
+
+    &_name {
+      color: $secondary-color;
+      font-size: $headline-2-size;
+      font-weight: bold;
+      margin: 0.5rem 0 1rem;
+    }
+    &_post {
+      font-size: $body-size;
+      font-weight: normal;
+      margin: 0.5rem 0;
+    }
+  }
+  &__button {
+    background-color: $surface-color;
+    border: 1px solid $primary-color;
+    border-radius: 0;
+    color: $primary-color;
+    cursor: pointer;
+    font-size: $button-size;
+    height: 36px;
+    margin: 8px;
+    outline: none;
+    padding: 9px 12px;
+
+    &--edit {
+      &:hover,
+      &:focus {
+        background-color: $primary-color;
+        border: 1px solid $primary-color;
+        color: $surface-color;
+      }
+      &:active {
+        background-color: $primary-color;
+        border: 1px solid $primary-color;
+        color: $surface-color;
+        opacity: 0.5;
+      }
+    }
+    &--delete {
+      &:hover,
+      focus {
+        background-color: $error-color;
+        border: 1px solid $error-color;
+        color: $surface-color;
+      }
+      &:active {
+        background-color: $error-color;
+        border: 1px solid $error-color;
+        color: $surface-color;
+        opacity: 0.5;
+      }
+    }
+  }
+}
+</style>
