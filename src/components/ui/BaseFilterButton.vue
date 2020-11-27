@@ -51,7 +51,7 @@ export default Vue.extend({
     color: $secondary-color;
     cursor: pointer;
     font-size: $button-size;
-    margin: 6px;
+    margin: 8px;
     outline: none;
     padding: 9px 12px;
 
