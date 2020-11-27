@@ -11,15 +11,24 @@
       <ul class="comment__list">
         <li
           v-for="comment in comments"
-          v-bind:key="comment.name"
+          v-bind:key="comment.id"
           class="comment__item"
         >
-          <div v-if="!isEditing" key="comment-view">
+          <div v-if="isEditing === comment.id" key="comment-edit">
+            <BeerCommentEditForm
+              v-bind:name="comment.name"
+              v-bind:content="comment.content"
+              v-bind:beer="beer"
+              v-on:cancel="cancelEdit(comment.id)"
+              v-on:comment-edited="editComment(comment.id, $event)"
+            />
+          </div>
+          <div v-else key="comment-view">
             <h2 class="comment__item_name">{{ comment.name }}</h2>
             <p class="comment__item_post">{{ comment.content }}</p>
             <button
               type="button"
-              v-on:click="changeState"
+              v-on:click="changeState(comment.id)"
               class="comment__button comment__button--edit"
             >
               Edit
@@ -31,9 +40,6 @@
             >
               Delete
             </button>
-          </div>
-          <div v-else-if="isEditing" key="comment-edit">
-            <BeerCommentEditForm v-on:exit-edit="changeState" />
           </div>
         </li>
       </ul>
@@ -67,7 +73,7 @@ export default Vue.extend({
     return {
       comments: [] as Comment[],
       comment: {} as Comment,
-      isEditing: false,
+      isEditing: '',
       open: false
     };
   },
@@ -98,8 +104,8 @@ export default Vue.extend({
         .then(() => this.comments.push(newComment))
         .catch(error => console.error(error));
     },
-    changeState() {
-      this.isEditing = !this.isEditing;
+    changeState(id: string) {
+      this.isEditing = id;
     },
     openModal(comment: Comment) {
       this.open = true;
@@ -117,6 +123,27 @@ export default Vue.extend({
         method: 'DELETE'
       }).catch(error => console.error(error));
       this.open = false;
+    },
+    cancelEdit(id: string) {
+      this.isEditing != id;
+    },
+    editComment(
+      id: string,
+      { newName, newContent }: { newName: string; newContent: string }
+    ) {
+      const editedComments = this.comments.map(comment =>
+        comment.id === id
+          ? { ...comment, name: newName, content: newContent }
+          : comment
+      );
+      fetch(process.env.VUE_APP_BEER_API_URL + '/comments', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(editedComments)
+      }).catch(error => console.error(error));
+      this.isEditing !== this.comment.id;
     }
   }
 });
