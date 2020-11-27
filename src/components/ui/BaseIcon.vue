@@ -8,7 +8,7 @@
     role="presentation"
   >
     <title v-bind:id="iconName" lang="en">{{ iconName }} icon</title>
-    <g v-bind:stroke="iconBorder" v-bind:fill="iconColor">
+    <g>
       <slot />
     </g>
   </svg>
@@ -22,23 +22,18 @@ export default Vue.extend({
   props: {
     iconName: {
       type: String,
-      default: 'box'
+      default: 'box',
+      required: true
     },
     width: {
       type: [Number, String],
-      default: 24
+      default: 24,
+      required: true
     },
     height: {
       type: [Number, String],
-      default: 24
-    },
-    iconBorder: {
-      type: String,
-      default: 'currentColor'
-    },
-    iconColor: {
-      type: String,
-      default: 'currentColor'
+      default: 24,
+      required: true
     }
   }
 });

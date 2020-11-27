@@ -16,7 +16,9 @@
             v-on:click="closeModal"
             class="modal__button--close"
           >
-            X
+            <BaseIcon icon-name="close" width="24" height="24">
+              <IconClose />
+            </BaseIcon>
           </button>
         </div>
         <div
@@ -37,10 +39,16 @@
 <script lang="ts">
 import Vue from 'vue';
 import BaseBackdrop from './BaseBackdrop.vue';
+import BaseIcon from './BaseIcon.vue';
+import IconClose from '../icons/IconClose.vue';
 
 export default Vue.extend({
   name: 'BaseModal',
-  components: { BaseBackdrop },
+  components: {
+    BaseBackdrop,
+    BaseIcon,
+    IconClose
+  },
   props: {
     closeModal: Function,
     scrollable: Boolean
@@ -90,12 +98,30 @@ export default Vue.extend({
     background-color: transparent;
     border: none;
     cursor: pointer;
+    fill: $secondary-color;
     font-size: $button-size;
     height: 36px;
-    width: 36px;
     position: absolute;
     right: 0;
+    stroke: $secondary-color;
     top: 0;
+    width: 36px;
+
+    &:hover,
+    &:focus {
+      fill: $primary-color;
+      stroke: $primary-color;
+    }
+    &:active {
+      fill: $primary-color;
+      stroke: $primary-color;
+      opacity: 0.5;
+    }
+    & svg {
+      left: 6px;
+      position: absolute;
+      top: 6px;
+    }
   }
   &__main {
     margin: 24px 0;
@@ -105,8 +131,8 @@ export default Vue.extend({
     justify-content: flex-end;
   }
   .scrollable {
-    scrollbar-width: thin;
     overflow-y: auto;
+    scrollbar-width: thin;
   }
 }
 </style>
