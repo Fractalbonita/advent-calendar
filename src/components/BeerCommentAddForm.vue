@@ -25,7 +25,7 @@
       <h2 class="comment__form_headline">Leave a comment</h2>
       <form
         autocomplete="off"
-        v-on:submit.prevent="addComment"
+        v-on:submit.prevent="onSubmit"
         class="comment__form"
       >
         <label for="name" class="comment__form_label">Name</label>
@@ -35,7 +35,7 @@
           name="name"
           type="text"
           placeholder="Your name"
-          v-model="name"
+          v-model.trim="name"
           class="comment__form_input"
         />
         <p v-if="!nameIsValid" class="comment__form_error">Name required</p>
@@ -48,7 +48,7 @@
           maxlength="400"
           spellcheck="true"
           placeholder="Your comment"
-          v-model="content"
+          v-model.trim="content"
           class="comment__form_textarea"
         ></textarea>
         <span else class="comment__form_counter"
@@ -90,7 +90,7 @@ export default Vue.extend({
     };
   },
   methods: {
-    addComment() {
+    onSubmit() {
       if (this.formIsValid) {
         this.$emit('new-comment', {
           name: this.name,
