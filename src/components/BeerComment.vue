@@ -2,7 +2,7 @@
   <div>
     <BeerCommentAddForm v-on:new-comment="addComment" v-bind:beer="beer" />
     <div v-if="comments.length === 0">
-      <p>
+      <p class="comment__fallback">
         There are no comments yet. You can leave a comment by tapping the button
         above.
       </p>
@@ -10,7 +10,7 @@
     <div v-else>
       <ul class="comment__list">
         <li
-          v-for="comment in comments"
+          v-for="comment in reversedComments"
           v-bind:key="comment.id"
           class="comment__item"
         >
@@ -86,7 +86,7 @@ export default Vue.extend({
   created() {
     fetch(process.env.VUE_APP_BEER_API_URL + '/comments?beerId=' + this.beer.id)
       .then(res => res.json())
-      .then((comments: Comment[]) => (this.comments = comments.reverse()))
+      .then((comments: Comment[]) => (this.comments = comments))
       .catch(error => console.log(error.message));
   },
   methods: {
@@ -153,12 +153,23 @@ export default Vue.extend({
     focusOnEditButton() {
       this.$nextTick(() => (this.$refs.editButton as VueFocus).focus());
     }
+  },
+  computed: {
+    reversedComments(): Comment[] {
+      return this.comments.slice(0).reverse();
+    }
   }
 });
 </script>
 
 <style lang="scss" scoped>
 .comment {
+  &__fallback {
+    font-size: $body-size;
+    font-weight: normal;
+    line-height: 1.5;
+    margin: 1.5rem 0;
+  }
   &__list {
     list-style-type: none;
     padding: 0;
@@ -167,54 +178,43 @@ export default Vue.extend({
     margin: 10px 0;
 
     &_name {
-      color: $secondary-color;
-      font-size: $headline-2-size;
+      color: $text-color;
+      font-size: $headline-3-size;
       font-weight: bold;
-      margin: 0.5rem 0 1rem;
+      margin: 1.5rem 0 1rem;
     }
     &_post {
       font-size: $body-size;
       font-weight: normal;
-      margin: 0.5rem 0;
+      margin: 0.5rem 0 1rem;
     }
   }
   &__button {
-    background-color: $surface-color;
+    background-color: $background-color;
     border: 1px solid $primary-color;
     border-radius: 0;
     color: $primary-color;
     cursor: pointer;
     font-size: $button-size;
+    font-weight: normal;
     height: 36px;
-    margin: 8px;
+    letter-spacing: 0.1rem;
+    margin: 0 8px;
     outline: none;
     padding: 9px 12px;
 
-    &--edit {
+    &--edit,
+    &--delete {
       &:hover,
       &:focus {
         background-color: $primary-color;
         border: 1px solid $primary-color;
-        color: $surface-color;
+        color: $text-color;
       }
       &:active {
         background-color: $primary-color;
         border: 1px solid $primary-color;
-        color: $surface-color;
-        opacity: 0.5;
-      }
-    }
-    &--delete {
-      &:hover,
-      focus {
-        background-color: $error-color;
-        border: 1px solid $error-color;
-        color: $surface-color;
-      }
-      &:active {
-        background-color: $error-color;
-        border: 1px solid $error-color;
-        color: $surface-color;
+        color: $text-color;
         opacity: 0.5;
       }
     }
