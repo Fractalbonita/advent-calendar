@@ -1,15 +1,17 @@
 <template>
   <div v-on:keyup.esc="closeModal" tabindex="0" class="calendar">
     <section v-if="apiError">
-      <p>
+      <p class="calendar__error">
         The inforamtion you have requrested is currently not available. Please
         try again later.
       </p>
     </section>
     <section v-else>
-      <div v-if="isLoading">Loading calendar ...</div>
+      <div v-if="isLoading">
+        <BaseLoading title="calendar" />
+      </div>
       <div v-else>
-        <Countdown v-bind:count="countDown" />
+        <Countdown v-bind:count="countDown" class="calendar__countdown" />
         <CalendarWindowContentModal
           v-if="shown"
           v-bind:close="closeModal"
@@ -37,14 +39,16 @@
 
 <script lang="ts">
 import Vue from 'vue';
+import Beer from './Beer';
+import BaseLoading from './ui/BaseLoading.vue';
 import Countdown from './Countdown.vue';
 import CalendarWindowContentModal from './CalendarWindowContentModal.vue';
 import CalendarWindow from './CalendarWindow.vue';
-import Beer from './Beer';
 
 export default Vue.extend({
   name: 'CalendarWindows',
   components: {
+    BaseLoading,
     Countdown,
     CalendarWindowContentModal,
     CalendarWindow
@@ -104,12 +108,22 @@ export default Vue.extend({
 .calendar {
   outline: none;
 
+  &__error {
+    font-size: $body-size;
+    font-weight: normal;
+    line-height: 1.5;
+    margin: 0.5rem 0;
+  }
+  &__countdown {
+    text-align: center;
+  }
   &__wrapper {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
     list-style-type: none;
     padding: 0;
+    margin: 2rem 0;
   }
   &__window {
     cursor: pointer;
