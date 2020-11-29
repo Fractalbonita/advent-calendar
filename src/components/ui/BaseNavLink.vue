@@ -15,18 +15,19 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
 a {
-  font-weight: bold;
-  color: $secondary-color;
+  font-size: $body-size;
+  font-weight: normal;
+  color: $text-color;
   outline: none;
   padding: 10px;
   text-decoration: none;
 
   &:hover {
-    color: $primary-color;
+    border-bottom: 1px solid $primary-color;
   }
   &.router-link-exact-active {
-    text-decoration: underline;
-    color: $primary-color;
+    border-bottom: 1px solid $primary-color;
+    color: $text-color;
   }
 }
 </style>
