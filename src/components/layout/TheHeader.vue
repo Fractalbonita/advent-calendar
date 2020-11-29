@@ -21,8 +21,11 @@ export default Vue.extend({
   text-align: center;
 
   &__title {
+    color: $primary-color;
+    font-family: 'Lobster';
     font-size: $headline-1-size;
-    margin: 0.5rem;
+    font-weight: bold;
+    margin: 0.5rem 0 2.5rem 0;
   }
 }
 </style>
