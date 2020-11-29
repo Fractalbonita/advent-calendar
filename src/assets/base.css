@@ -1,10 +1,27 @@
+:root {
+  --background-color: #050b0a;
+  --text-color: #ffffff;
+}
 * {
   box-sizing: border-box;
 }
 body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  letter-spacing: 0.1rem;
   margin: 0;
 }
 body,
 html {
   height: 100vh;
+}
+@font-face {
+  font-family: 'Lobster';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Lobster-Regular'),
+    url('fonts/Lobster/Lobster-Regular.ttf') format('truetype');
 }
