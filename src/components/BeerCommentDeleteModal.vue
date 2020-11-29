@@ -5,7 +5,7 @@
     </template>
     <template v-slot:main
       ><p class="delete__text">
-        Are you sure you want to delete this comment permanently?
+        Do you really want to delete this comment permanently?
       </p></template
     >
     <template v-slot:footer>
@@ -49,57 +49,47 @@ export default Vue.extend({
 <style lang="scss" scoped>
 .delete {
   &__headline {
+    color: $text-color;
+    font-family: 'Lobster';
     font-size: $headline-1-size;
     font-weight: bold;
     margin: 0;
   }
   &__text {
+    color: $text-color;
     font-size: $body-size;
-    font-weight: bold;
+    font-weight: normal;
     line-height: 1.5rem;
     margin: 0;
     text-align: left;
   }
   &__button {
     background-color: $surface-color;
-    border: none;
+    border: 1px solid $surface-color;
     border-radius: 0;
-    color: $secondary-color;
+    color: $primary-color;
     cursor: pointer;
     font-size: $button-size;
+    font-weight: normal;
     height: 36px;
+    letter-spacing: 0.1rem;
     margin: 0 8px;
     outline: none;
     padding: 9px 12px;
     text-transform: uppercase;
 
-    &--cancel {
-      &:hover,
-      &:focus {
-        background-color: $primary-color;
-        border: 1px solid $primary-color;
-        color: $surface-color;
-      }
-      &:active {
-        background-color: $primary-color;
-        border: 1px solid $primary-color;
-        color: $surface-color;
-        opacity: 0.5;
-      }
-    }
+    &--cancel,
     &--delete {
-      color: $primary-color;
-
       &:hover,
       &:focus {
         background-color: $primary-color;
         border: 1px solid $primary-color;
-        color: $surface-color;
+        color: $text-color;
       }
       &:active {
         background-color: $primary-color;
         border: 1px solid $primary-color;
-        color: $surface-color;
+        color: $text-color;
         opacity: 0.5;
       }
     }
