@@ -1,19 +1,56 @@
+// Beer Standard reference method (SRM) colors
+$beer-1-color: #f3f993;
+$beer-2-color: #f5f75c; // pale straw
+$beer-3-color: #f6f513; // straw
+$beer-4-color: #eae615; // pale gold
+$beer-5-color: #e0d01b;
+$beer-6-color: #d5bc26; // deep gold
+$beer-7-color: #cdaa37;
+$beer-8-color: #c1963c;
+$beer-9-color: #be8c3a; // pale amber
+$beer-10-color: #be823a;
+$beer-11-color: #c17a37;
+$beer-12-color: #bf7138; // medium amber
+$beer-13-color: #bc6733;
+$beer-14-color: #b26033;
+$beer-15-color: #a85839; // deep amber
+$beer-16-color: #985336;
+$beer-17-color: #8d4c32;
+$beer-18-color: #7c452d; // amber brown
+$beer-19-color: #6b3a1e;
+$beer-20-color: #5d341a; // brown
+$beer-21-color: #4e2a0c;
+$beer-22-color: #4a2727;
+$beer-23-color: #361f1b;
+$beer-24-color: #261716; // ruby brown
+$beer-25-color: #231716;
+$beer-26-color: #19100f;
+$beer-27-color: #161007;
+$beer-28-color: #120d0c;
+$beer-29-color: #100b0a;
+$beer-30-color: #050b0a; // deep brown
+$beer-40-color: #000000; // black
+
 // theme colors
-$primary-color: #42b983;
-$secondary-color: #2c3e50;
-$background-color: #000000;
-$surface-color: #ffffff;
+// 22
+$background-color: $beer-30-color;
+$error-color: $beer-7-color;
+$primary-color: $beer-9-color;
+$text-color: #ffffff;
 $shadow-color: rgba(0, 0, 0, 0.33);
-$disabled-color: #808080;
-$error-color: red;
-$favourite-color: red;
+$secondary-color: $beer-15-color;
+$surface-color: #373c3b;
+$tertiary-color: $beer-18-color;
 
 // typography
-$headline-1-size: 1.375rem;
-$headline-2-size: 1.125rem;
+$headline-1-size: 1.75rem;
+$headline-2-size: 1.375rem;
+$headline-3-size: 1.125rem;
 $subtitle-1-size: 1rem;
 $subtitle-2-size: 0.875rem;
 $overline-size: 0.75rem;
 $caption-size: 0.875rem;
 $body-size: 1rem;
 $button-size: 0.875rem;
+
+// muli arimo open sans cabin
