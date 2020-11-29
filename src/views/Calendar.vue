@@ -1,9 +1,10 @@
 <template>
   <div id="calendar">
-    <TheHeader title="The advent calendar"
-      ><h2 class="calendar__subheadline">{{ currentDate }}</h2></TheHeader
-    >
+    <TheHeader title="The advent calendar">
+      <h3 class="calendar__date">{{ currentDate }}</h3>
+    </TheHeader>
     <CalendarWindows />
+    <BaseScrollToTop />
   </div>
 </template>
 
@@ -11,12 +12,14 @@
 import Vue from 'vue';
 import TheHeader from '../components/layout/TheHeader.vue';
 import CalendarWindows from '../components/CalendarWindows.vue';
+import BaseScrollToTop from '../components/ui/BaseScrollToTop.vue';
 
 export default Vue.extend({
   name: 'Calendar',
   components: {
     TheHeader,
-    CalendarWindows
+    CalendarWindows,
+    BaseScrollToTop
   },
   computed: {
     currentDate(): string {
@@ -28,8 +31,13 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
 #calendar {
-  & .calendar__subheadline {
-    font-size: $headline-2-size;
+  padding: 20px;
+
+  & .calendar__date {
+    font-size: $headline-3-size;
+    font-weight: normal;
+    letter-spacing: 0.2rem;
+    margin: 1rem 0 1.5rem;
   }
 }
 </style>

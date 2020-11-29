@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="notFound">
     <h1>404</h1>
     <h2>Page not found.</h2>
     <p>
@@ -16,3 +16,9 @@ export default Vue.extend({
   name: 'NotFound'
 });
 </script>
+
+<style lang="scss" scoped>
+#notFound {
+  padding: 20px;
+}
+</style>

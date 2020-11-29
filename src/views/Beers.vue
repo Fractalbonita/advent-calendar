@@ -21,3 +21,9 @@ export default Vue.extend({
   }
 });
 </script>
+
+<style lang="scss" scoped>
+#beers {
+  padding: 20px;
+}
+</style>
