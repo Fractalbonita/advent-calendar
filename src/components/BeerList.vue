@@ -238,7 +238,7 @@ export default Vue.extend({
 
     &:hover,
     &:focus {
-      opacity: 0.6;
+      filter: sepia(40%);
     }
     &:active {
       opacity: 0.3;
