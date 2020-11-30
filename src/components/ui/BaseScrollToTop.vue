@@ -1,7 +1,7 @@
 <template>
   <button
     type="button"
-    v-scroll="handleScroll"
+    v-show="visible"
     v-on:click="scrollToTop"
     class="scroll__button"
   >
@@ -22,34 +22,27 @@ export default Vue.extend({
     BaseIcon,
     IconArrowUp
   },
-  directives: {
-    scroll: {
-      inserted: function(el, binding) {
-        const f = function(evt: Event) {
-          if (binding.value(evt, el)) {
-            window.removeEventListener('scroll', f);
-          }
-        };
-        window.addEventListener('scroll', f);
-      }
-    }
+  data() {
+    return {
+      visible: false
+    };
+  },
+  mounted() {
+    window.addEventListener('scroll', this.scrollListener);
+  },
+  beforeDestroy() {
+    window.removeEventListener('scroll', this.scrollListener);
   },
   methods: {
-    handleScroll(evt: Event, el: Element) {
-      if (window.scrollY > 50) {
-        el.setAttribute(
-          'style',
-          'opacity: 1; transform: translate3d(0, -10px, 0)'
-        );
-      }
-      return window.scrollY > 100;
-    },
     scrollToTop() {
       window.scrollTo({
         top: 0,
         left: 0,
         behavior: 'smooth'
       });
+    },
+    scrollListener() {
+      this.visible = window.scrollY > 150;
     }
   }
 });
