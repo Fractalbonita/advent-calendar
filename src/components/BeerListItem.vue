@@ -95,6 +95,10 @@ export default Vue.extend({
       stroke: $secondary-color;
       top: 6px;
     }
+    &:hover,
+    &:focus {
+      stroke-width: 3;
+    }
     &-filled {
       fill: $tertiary-color;
     }
