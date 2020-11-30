@@ -1,12 +1,12 @@
 <template>
   <div v-if="openWindow" key="window-open" class="window window--open">
     <p class="window__overline">{{ windowNumber }}</p>
-    <h2
+    <h3
       v-on:click.stop="$emit('open-window')"
       class="window__headline window__headline--open"
     >
       {{ beer.name }}
-    </h2>
+    </h3>
     <p class="window__subtitle-1">{{ beer.category }}</p>
     <p class="window__subtitle-2">{{ beer.brewery }}</p>
   </div>
@@ -59,6 +59,7 @@ export default Vue.extend({
     &--open {
       color: $primary-color;
       font-size: $headline-3-size;
+      font-weight: bold;
 
       &:hover,
       &:focus {
@@ -68,11 +69,7 @@ export default Vue.extend({
     &--closed {
       color: $text-color;
       font-size: $headline-1-size;
-
-      &:hover,
-      &:focus {
-        color: $primary-color;
-      }
+      font-weight: bold;
     }
   }
   &__subtitle-1 {
@@ -99,6 +96,10 @@ export default Vue.extend({
     &:focus {
       background-color: $surface-color;
       border: 1px solid $primary-color;
+    }
+    &:hover h1,
+    &:focus h1 {
+      color: $primary-color;
     }
   }
   &--open {
