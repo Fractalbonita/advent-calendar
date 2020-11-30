@@ -235,6 +235,14 @@ export default Vue.extend({
     flex: 1 1 250px;
     margin: 10px;
     padding: 10px;
+
+    &:hover,
+    &:focus {
+      opacity: 0.6;
+    }
+    &:active {
+      opacity: 0.3;
+    }
   }
 }
 </style>
