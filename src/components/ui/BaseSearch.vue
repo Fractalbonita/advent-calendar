@@ -61,7 +61,7 @@ export default Vue.extend({
 .search {
   margin: 2rem auto;
   position: relative;
-  width: 80%;
+  width: 90%;
 
   &__label {
     display: flex;
