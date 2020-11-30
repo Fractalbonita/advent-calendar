@@ -3,7 +3,7 @@
     <p class="details__overline">{{ beer.brewery }}</p>
     <h1 class="details__headline">{{ beer.name }}</h1>
     <h2 class="details__subheadline">Facts</h2>
-    <p class="details__note">
+    <p v-if="beer.tastingNote" class="details__note">
       <BaseIcon
         icon-name="opening quotation mark"
         width="30"
@@ -155,6 +155,7 @@ export default Vue.extend({
     margin: 0 25px;
     overflow: hidden;
     text-align: center;
+    transition: transform 0.1s;
     width: auto;
 
     & img {
@@ -164,6 +165,12 @@ export default Vue.extend({
       object-fit: scale-down;
       object-position: 50% 50%;
       width: auto;
+
+      &:hover,
+      &:focus {
+        cursor: pointer;
+        transform: scale(1.4);
+      }
     }
   }
   &__description {
