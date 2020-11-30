@@ -3,7 +3,25 @@
     <p class="details__overline">{{ beer.brewery }}</p>
     <h1 class="details__headline">{{ beer.name }}</h1>
     <h2 class="details__subheadline">Facts</h2>
-    <p class="details__note">{{ beer.tastingNote }}</p>
+    <p class="details__note">
+      <BaseIcon
+        icon-name="opening quotation mark"
+        width="30"
+        height="30"
+        class="details__quote--open"
+      >
+        <IconQuoteOpen />
+      </BaseIcon>
+      {{ beer.tastingNote }}
+      <BaseIcon
+        icon-name="opening quotation mark"
+        width="30"
+        height="30"
+        class="details__quote--close"
+      >
+        <IconQuoteClose />
+      </BaseIcon>
+    </p>
     <section class="details__wrapper">
       <div class="details__image">
         <img v-bind:src="getImage()" v-bind:alt="beer.name" />
@@ -42,11 +60,17 @@
 import Vue from 'vue';
 import Beer from './Beer';
 import BeerComment from './BeerComment.vue';
+import BaseIcon from './ui/BaseIcon.vue';
+import IconQuoteOpen from './icons/IconQuoteOpen.vue';
+import IconQuoteClose from './icons/IconQuoteClose.vue';
 
 export default Vue.extend({
   name: 'BeerDetails',
   components: {
-    BeerComment
+    BeerComment,
+    BaseIcon,
+    IconQuoteOpen,
+    IconQuoteClose
   },
   data() {
     return {
@@ -98,6 +122,18 @@ export default Vue.extend({
     font-size: $headline-2-size;
     font-weight: bold;
     margin: 1.5rem 0 1rem;
+  }
+  &__quote--open {
+    display: inline-block;
+    fill: $background-color;
+    stroke: $primary-color;
+    vertical-align: bottom;
+  }
+  &__quote--close {
+    display: inline-block;
+    fill: $background-color;
+    stroke: $primary-color;
+    vertical-align: text-top;
   }
   &__note {
     font-size: $body-size;
