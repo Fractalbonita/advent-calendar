@@ -1,4 +1,4 @@
-// Beer Standard reference method (SRM) colors
+// beer Standard Reference Method (SRM) colors
 $beer-1-color: #f3f993;
 $beer-2-color: #f5f75c; // pale straw
 $beer-3-color: #f6f513; // straw
@@ -32,15 +32,15 @@ $beer-30-color: #050b0a; // deep brown
 $beer-40-color: #000000; // black
 
 // theme colors
-// 22
+// 22 as candidate color
 $background-color: $beer-30-color;
 $error-color: $beer-7-color;
 $primary-color: $beer-9-color;
-$text-color: #ffffff;
-$shadow-color: rgba(0, 0, 0, 0.33);
 $secondary-color: $beer-15-color;
+$shadow-color: rgba(0, 0, 0, 0.33);
 $surface-color: #373c3b;
 $tertiary-color: $beer-18-color;
+$text-color: #ffffff;
 
 // typography
 $headline-1-size: 1.75rem;
@@ -52,5 +52,3 @@ $overline-size: 0.75rem;
 $caption-size: 0.875rem;
 $body-size: 1rem;
 $button-size: 0.875rem;
-
-// muli arimo open sans cabin

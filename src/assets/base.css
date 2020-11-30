@@ -10,7 +10,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--background-color);
   color: var(--text-color);
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Cabin';
   letter-spacing: 0.1rem;
   margin: 0;
 }
@@ -24,4 +24,11 @@ html {
   font-weight: 400;
   src: local('Lobster-Regular'),
     url('fonts/Lobster/Lobster-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Cabin';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Cabin-Regular'),
+    url('fonts/Cabin/static/Cabin-Regular.ttf') format('truetype');
 }
