@@ -48,7 +48,7 @@ export default Vue.extend({
     display: inline-block;
     fill: $primary-color;
     stroke: $primary-color;
-    vertical-align: middle;
+    vertical-align: text-top;
   }
   &__name {
     color: $primary-color;
