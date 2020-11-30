@@ -154,6 +154,14 @@ export default Vue.extend({
     flex: 1 1 250px;
     margin: 10px;
     padding: 10px;
+
+    &:hover,
+    &:focus {
+      filter: sepia(40%);
+    }
+    &:active {
+      opacity: 0.3;
+    }
   }
   &__headline {
     color: $text-color;
