@@ -5,6 +5,7 @@
     </TheHeader>
     <CalendarWindows />
     <BaseScrollToTop />
+    <TheFooter />
   </div>
 </template>
 
@@ -13,13 +14,15 @@ import Vue from 'vue';
 import TheHeader from '../components/layout/TheHeader.vue';
 import CalendarWindows from '../components/CalendarWindows.vue';
 import BaseScrollToTop from '../components/ui/BaseScrollToTop.vue';
+import TheFooter from '../components/layout/TheFooter.vue';
 
 export default Vue.extend({
   name: 'Calendar',
   components: {
     TheHeader,
     CalendarWindows,
-    BaseScrollToTop
+    BaseScrollToTop,
+    TheFooter
   },
   computed: {
     currentDate(): string {

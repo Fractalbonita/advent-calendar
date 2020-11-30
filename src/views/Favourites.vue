@@ -3,6 +3,7 @@
     <TheHeader title="My favourite beers" />
     <FavouriteBeerList />
     <BaseScrollToTop />
+    <TheFooter />
   </div>
 </template>
 
@@ -11,13 +12,15 @@ import Vue from 'vue';
 import TheHeader from '../components/layout/TheHeader.vue';
 import FavouriteBeerList from '../components/FavouriteBeerList.vue';
 import BaseScrollToTop from '../components/ui/BaseScrollToTop.vue';
+import TheFooter from '../components/layout/TheFooter.vue';
 
 export default Vue.extend({
   name: 'Favourites',
   components: {
     TheHeader,
     FavouriteBeerList,
-    BaseScrollToTop
+    BaseScrollToTop,
+    TheFooter
   }
 });
 </script>
