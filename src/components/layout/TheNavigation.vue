@@ -44,12 +44,12 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
 .nav {
+  background-color: $background-color;
   display: flex;
+  height: 56px;
   justify-content: space-evenly;
   position: sticky;
   top: 0;
-  background-color: white;
-  border-bottom: 1px solid $primary-color;
   z-index: 1;
 
   &__wrapper {

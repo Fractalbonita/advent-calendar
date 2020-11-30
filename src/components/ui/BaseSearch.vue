@@ -59,9 +59,9 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
 .search {
-  margin: 0 auto;
+  margin: 2rem auto;
   position: relative;
-  width: 80%;
+  width: 90%;
 
   &__label {
     display: flex;
@@ -71,21 +71,25 @@ export default Vue.extend({
   &__icon {
     align-items: center;
     display: flex;
-    fill: #42b983;
+    fill: $primary-color;
     height: 36px;
     justify-content: center;
     left: 6px;
     position: absolute;
-    stroke: #42b983;
+    stroke: transparent;
     top: 6px;
     width: 36px;
   }
   &__input {
-    border: 1px solid $secondary-color;
+    background-color: $surface-color;
+    border: 1px solid $surface-color;
     border-radius: 0;
+    color: $text-color;
     cursor: text;
     font-size: $body-size;
+    font-weight: normal;
     height: 48px;
+    letter-spacing: 0.1rem;
     padding: 0 42px;
     width: 100%;
 
@@ -93,8 +97,11 @@ export default Vue.extend({
       display: none;
     }
     &::placeholder {
-      color: $secondary-color;
+      color: $text-color;
       font-size: $caption-size;
+      font-weight: normal;
+      letter-spacing: 0.1rem;
+      opacity: 0.5;
     }
     &:hover {
       border: 1px solid $primary-color;
@@ -116,9 +123,9 @@ export default Vue.extend({
     width: 36px;
 
     & svg {
-      fill: $secondary-color;
+      fill: $primary-color;
       position: absolute;
-      stroke: $secondary-color;
+      stroke: $primary-color;
       top: 6px;
       left: 6px;
 
@@ -128,8 +135,8 @@ export default Vue.extend({
         stroke: $primary-color;
       }
       &:active {
-        fill: $primary-color;
-        stroke: $primary-color;
+        fill: $surface-color;
+        stroke: $surface-color;
         opacity: 0.5;
       }
     }

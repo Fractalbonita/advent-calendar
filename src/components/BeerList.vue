@@ -1,13 +1,15 @@
 <template>
   <div>
     <section v-if="apiError">
-      <p>
+      <p class="beers__error">
         The inforamtion you have requrested is currently not available. Please
         try again later.
       </p>
     </section>
     <section v-else>
-      <div v-if="isLoading">Loading beers ...</div>
+      <div v-if="isLoading">
+        <BaseLoading title="beers" />
+      </div>
       <div v-else class="beers">
         <BaseSearch
           v-bind:searchId="searchId"
@@ -15,21 +17,36 @@
           v-bind:ariaLabel="ariaLabel"
           v-model="searchQuery"
         />
-        <p v-show="noResults">
+        <p v-show="noResults" class="beers__search">
           Your search did not match any beer.
         </p>
-        <p>Filter by taste category</p>
+        <p class="beers__caption">Filter by taste category</p>
         <BaseFilterButton
           v-bind:options="categories"
           v-on:change="handleCategories"
         />
-        <p>Filter by beer award</p>
+        <p class="beers__caption">Filter by beer award</p>
         <BaseFilterButton v-bind:options="awards" v-on:change="handleAwards" />
-        <p>Filter by year</p>
+        <p class="beers__caption">Filter by year</p>
         <BaseFilterButton v-bind:options="years" v-on:change="handleYears" />
-        <p class="beers__headline">
-          There are {{ totalBeers }} beers to give a taste.
-        </p>
+        <h2
+          v-if="filteredBeers.length === 1"
+          key="single-beer"
+          class="beers__headline"
+        >
+          There is
+          <span class="beers__headline_counter">
+            {{ totalBeers }}
+          </span>
+          beer to give a taste.
+        </h2>
+        <h2 v-else key="multiple-beers" class="beers__headline">
+          There are
+          <span class="beers__headline_counter">
+            {{ totalBeers }}
+          </span>
+          beers to give a taste.
+        </h2>
         <ul class="beers__tiles">
           <li
             v-for="beer in filteredBeers"
@@ -52,6 +69,7 @@
 <script lang="ts">
 import Vue from 'vue';
 import Beer from './Beer';
+import BaseLoading from './ui/BaseLoading.vue';
 import BaseSearch from '../components/ui/BaseSearch.vue';
 import BeerListItem from './BeerListItem.vue';
 import BaseFilterButton from '../components/ui/BaseFilterButton.vue';
@@ -59,6 +77,7 @@ import BaseFilterButton from '../components/ui/BaseFilterButton.vue';
 export default Vue.extend({
   name: 'BeerList',
   components: {
+    BaseLoading,
     BaseSearch,
     BeerListItem,
     BaseFilterButton
@@ -165,20 +184,65 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
 .beers {
+  &__search {
+    font-size: $body-size;
+    font-weight: normal;
+    line-height: 1.5;
+    margin: 0.5rem 0;
+    text-align: center;
+  }
+  &__error {
+    font-size: $body-size;
+    font-weight: normal;
+    line-height: 1.5;
+    margin: 0.5rem 0;
+  }
+  &__caption {
+    font-size: $body-size;
+    font-weight: normal;
+    line-height: 1.5;
+    margin: 1rem 0 0.5rem 0;
+  }
+  &__headline {
+    color: $text-color;
+    font-size: $body-size;
+    font-weight: normal;
+    line-height: 1.5;
+    margin: 1.5rem 0 0.5rem;
+    text-align: center;
+
+    &_counter {
+      color: $primary-color;
+      font-family: 'Lobster';
+      font-size: $headline-2-size;
+      font-weight: bold;
+      letter-spacing: 0.2rem;
+    }
+  }
   &__tiles {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
     list-style-type: none;
+    margin: 0;
     padding: 0;
   }
   &__tile {
-    border: 1px solid $primary-color;
+    background-color: $surface-color;
+    border: 1px solid $surface-color;
     border-radius: 0;
     cursor: pointer;
     flex: 1 1 250px;
     margin: 10px;
     padding: 10px;
+
+    &:hover,
+    &:focus {
+      filter: sepia(40%);
+    }
+    &:active {
+      opacity: 0.3;
+    }
   }
 }
 </style>

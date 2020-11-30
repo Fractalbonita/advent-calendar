@@ -3,7 +3,7 @@
     <template v-slot:header>
       <div class="header">
         <p class="header__overline">{{ beer.brewery }}</p>
-        <h1 class="header__headline-1">{{ beer.name }}</h1>
+        <h1 class="header__headline">{{ beer.name }}</h1>
         <button
           type="button"
           aria-label="Close modal"
@@ -30,7 +30,7 @@
           <h2 class="main__description_caption">Category</h2>
           <p class="main__description_text">{{ beer.category }}</p>
           <h2 class="main__description_caption">Style</h2>
-          <p class="main__description_text">{{ beer.teaste }}</p>
+          <p class="main__description_text">{{ beer.style }}</p>
           <h2 class="main__description_caption">Alcohol by volume</h2>
           <p class="main__description_text">{{ beer.abv }}</p>
           <h2 class="main__description_caption">Country</h2>
@@ -51,8 +51,8 @@
 
 <script lang="ts">
 import Vue, { PropType } from 'vue';
-import BaseModal from './ui/BaseModal.vue';
 import Beer from './Beer';
+import BaseModal from './ui/BaseModal.vue';
 import BaseIcon from './ui/BaseIcon.vue';
 import IconClose from './icons/IconClose.vue';
 
@@ -91,12 +91,16 @@ export default Vue.extend({
 
   &__overline {
     font-size: $overline-size;
+    font-weight: normal;
     margin: 0;
     padding: 0.5rem 0 0;
     text-transform: uppercase;
   }
-  &__headline-1 {
+  &__headline {
+    color: $primary-color;
+    font-family: 'Lobster';
     font-size: $headline-1-size;
+    font-weight: bold;
     margin: 0;
     padding: 0.5rem 0;
   }
@@ -104,12 +108,12 @@ export default Vue.extend({
     background-color: transparent;
     border: none;
     cursor: pointer;
-    fill: $secondary-color;
+    fill: $text-color;
     font-size: $button-size;
     height: 36px;
     position: absolute;
     right: 0;
-    stroke: $secondary-color;
+    stroke: transparent;
     top: 0px;
     width: 36px;
 
@@ -132,8 +136,7 @@ export default Vue.extend({
 }
 .main {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-flow: row wrap;
 
   &__image {
     flex: 1 1 180px;
@@ -141,7 +144,16 @@ export default Vue.extend({
     text-align: center;
 
     &_container {
+      background-color: $text-color;
+      border: 20px solid;
+      border-image: repeating-linear-gradient(
+          30deg,
+          $beer-9-color,
+          $beer-30-color 15px
+        )
+        60;
       height: 240px;
+      margin: 0 25px;
       overflow: hidden;
       width: auto;
 
@@ -155,12 +167,14 @@ export default Vue.extend({
       }
     }
     &_subtitle-1 {
+      color: $primary-color;
       font-size: $subtitle-1-size;
       font-weight: bold;
       margin: 1rem 0 0.5rem 0;
     }
     &_subtitle-2 {
       font-size: $subtitle-2-size;
+      font-weight: normal;
       margin: 0.5rem 0 1rem 0;
     }
   }
@@ -170,26 +184,34 @@ export default Vue.extend({
 
     &_caption {
       font-size: $caption-size;
-      margin: 1rem 0 0.5rem;
+      font-weight: bold;
+      margin: 1rem 0 0.2rem;
     }
     &_text {
       font-size: $body-size;
+      font-weight: normal;
+      line-height: 1.5;
       margin: 0;
+      margin-right: 1.5rem;
+      word-break: normal;
     }
     &_link {
       color: inherit;
+      font-size: $body-size;
+      font-weight: normal;
+      line-height: 1.5;
       text-decoration: none;
+      word-break: break-word;
 
       &:hover,
       &:focus {
         color: $primary-color;
-        font-size: $headline-2-size;
+        font-size: $headline-3-size;
       }
-
       &:active {
+        border-bottom: 1px solid $primary-color;
         color: $primary-color;
-        font-size: $headline-2-size;
-        font-weight: bold;
+        font-size: $headline-3-size;
       }
     }
   }

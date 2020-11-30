@@ -45,31 +45,34 @@ export default Vue.extend({
 <style lang="scss" scoped>
 .filter {
   &__button {
-    background-color: transparent;
+    background-color: $background-color;
     border: 1px solid $secondary-color;
     border-radius: 0;
     color: $secondary-color;
     cursor: pointer;
     font-size: $button-size;
+    font-weight: normal;
+    letter-spacing: 0.1rem;
     margin: 8px;
     outline: none;
     padding: 9px 12px;
 
     &:hover,
     &:focus {
-      background-color: $surface-color;
+      background-color: $background-color;
       border: 1px solid $primary-color;
       color: $primary-color;
     }
     &:active {
       background-color: $primary-color;
-      color: $surface-color;
+      border: 1px solid $primary-color;
+      color: $text-color;
       opacity: 0.5;
     }
     &[aria-pressed='true'] {
-      background-color: $primary-color;
-      border: 1px solid $primary-color;
-      color: $surface-color;
+      background-color: $tertiary-color;
+      border: 1px solid $secondary-color;
+      color: $text-color;
     }
   }
 }

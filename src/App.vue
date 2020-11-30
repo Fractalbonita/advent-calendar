@@ -20,12 +20,6 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: $secondary-color;
-}
 .views-enter-active,
 .views-leave-active {
   transition: all 0.6s cubic-bezier(1, 0.5, 0.8, 1);

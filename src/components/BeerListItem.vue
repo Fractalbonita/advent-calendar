@@ -78,8 +78,8 @@ export default Vue.extend({
   word-break: normal;
 
   &__button--favourite {
-    background-color: $secondary-color;
-    border: 1px solid $secondary-color;
+    background-color: $surface-color;
+    border: 1px solid $surface-color;
     border-radius: 50%;
     cursor: pointer;
     height: 36px;
@@ -92,11 +92,15 @@ export default Vue.extend({
     & svg {
       left: 6px;
       position: absolute;
-      stroke: $favourite-color;
+      stroke: $secondary-color;
       top: 6px;
     }
+    &:hover,
+    &:focus {
+      stroke-width: 3;
+    }
     &-filled {
-      fill: $favourite-color;
+      fill: $tertiary-color;
     }
     &-outline {
       fill: transparent;
@@ -119,13 +123,17 @@ export default Vue.extend({
   }
   &__headline {
     color: $primary-color;
+    font-family: 'Lobster';
     font-size: $headline-2-size;
+    font-weight: bold;
+    line-height: 1.5;
     margin: 1rem 0.5rem 0.5rem;
   }
   &__subheadline {
-    color: $secondary-color;
+    color: $text-color;
     font-size: $subtitle-1-size;
-    font-weight: 500;
+    font-weight: normal;
+    line-height: 1.5;
     margin: 0.5rem 0.5rem 0.8rem;
   }
   &__text {
@@ -140,14 +148,20 @@ export default Vue.extend({
       background-color: $primary-color;
       border: 1px solid $primary-color;
       border-radius: 0;
-      color: $surface-color;
+      color: $text-color;
       font-size: $caption-size;
+      font-weight: normal;
       margin: 0;
       padding: 5px 10px;
+      text-align: center;
     }
     &_award {
-      font-size: $caption-size;
+      color: $text-color;
+      font-size: $overline-size;
+      font-weight: normal;
+      line-height: 1.5;
       margin: 0;
+      text-align: right;
     }
   }
 }
