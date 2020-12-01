@@ -1,7 +1,7 @@
 <template>
   <div>
     <section>
-      <p class="description__text">
+      <p class="description__intro">
         Treat your taste buds during the festive season and explore a new craft
         beer each day from the 1st to the 24th December.
       </p>
@@ -53,6 +53,13 @@ export default Vue.extend({
     margin: 2rem 0 1rem;
     text-align: center;
   }
+  &__intro {
+    font-size: $headline-2-size;
+    font-weight: normal;
+    line-height: 1.5;
+    margin: 1rem 0;
+    text-align: center;
+  }
   &__text {
     font-size: $body-size;
     font-weight: normal;
@@ -67,6 +74,13 @@ export default Vue.extend({
     letter-spacing: 0.1rem;
     line-height: 1.5;
     margin: 1rem 0;
+  }
+  &__greeting {
+    font-size: $headline-3-size;
+    font-weight: normal;
+    line-height: 1.5;
+    margin: 1rem 0;
+    text-align: center;
   }
   &__wrapper {
     margin: 2rem 0;
