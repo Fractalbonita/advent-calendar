@@ -34,5 +34,72 @@ export default Vue.extend({
 <style lang="scss" scoped>
 #home {
   padding: 20px;
+  position: relative;
+}
+@media screen and (max-width: 575.98px) {
+  #home::after {
+    content: '';
+    background: top / contain no-repeat url('../assets/images/Logo.png');
+    opacity: 0.5;
+    top: 25vh;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+  }
+}
+@media screen and (max-width: 767.98px) {
+  #home::after {
+    content: '';
+    background: top / contain no-repeat url('../assets/images/Logo.png');
+    opacity: 0.5;
+    top: 20vh;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+  }
+}
+@media screen and (max-width: 991.98px) {
+  #home::after {
+    content: '';
+    background: top / contain no-repeat url('../assets/images/Logo.png');
+    opacity: 0.5;
+    top: 5vh;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+  }
+}
+@media screen and (max-width: 1199.98px) {
+  #home::after {
+    content: '';
+    background: center / contain no-repeat url('../assets/images/Logo.png');
+    opacity: 0.5;
+    top: 2vh;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  #home::after {
+    content: '';
+    background: center / contain no-repeat url('../assets/images/Logo.png');
+    opacity: 0.5;
+    top: 5vh;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+  }
 }
 </style>
