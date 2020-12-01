@@ -21,7 +21,7 @@
           <li
             v-for="beer in randomBeers"
             v-bind:key="beer.id"
-            v-on:click="toggleWindow(beer.id)"
+            v-on:click="toggleWindow(beer)"
             class="calendar__window"
           >
             <CalendarWindow
@@ -80,10 +80,13 @@ export default Vue.extend({
       .finally(() => (this.isLoading = false));
   },
   methods: {
-    toggleWindow(id: string) {
-      this.open.includes(id)
-        ? this.open.splice(this.open.indexOf(id), 1)
-        : this.open.push(id);
+    toggleWindow(beer: Beer) {
+      const now = new Date();
+      const windowOpenDate = new Date(2020, 11, this.getWindowNumber(beer));
+      if (now < windowOpenDate) {
+        return;
+      }
+      this.open.includes(beer.id) || this.open.push(beer.id);
     },
     getWindowNumber(beer: Beer) {
       return this.beers.indexOf(beer) + 1;
