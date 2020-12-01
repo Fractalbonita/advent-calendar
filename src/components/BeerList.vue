@@ -159,10 +159,7 @@ export default Vue.extend({
   },
   computed: {
     christmasEve() {
-      return (
-        new Date().toLocaleDateString() >=
-        new Date('2020-12-24').toLocaleDateString()
-      );
+      return new Date() >= new Date(2020, 11, 24);
     },
     totalBeers(): number {
       return this.filteredBeers.length;
