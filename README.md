@@ -7,7 +7,7 @@ Treat your taste buds during the festive season and explore a new craft beer eac
 - Vue router
 - Typescript
 - Json-server
-- uui
+- uuid
 - SCSS
 - BEM
 
