@@ -20,7 +20,7 @@
         flavoured beers as well as stouts and porters brewed in Germany.
       </p>
       <p class="description__text">
-        Tapping on the name of the beer will reveal a popup with further facts
+        Tapping on the name of the beer will reveal a dialog with further facts
         about the beer.
       </p>
       <p class="description__greeting">Cheers!</p>
