@@ -40,7 +40,7 @@ export default Vue.extend({
   #home::after {
     content: '';
     background: top / contain no-repeat url('../assets/images/Logo.png');
-    opacity: 0.5;
+    opacity: 0.4;
     top: 25vh;
     left: 0;
     bottom: 0;
@@ -53,7 +53,7 @@ export default Vue.extend({
   #home::after {
     content: '';
     background: top / contain no-repeat url('../assets/images/Logo.png');
-    opacity: 0.5;
+    opacity: 0.4;
     top: 20vh;
     left: 0;
     bottom: 0;
@@ -66,7 +66,7 @@ export default Vue.extend({
   #home::after {
     content: '';
     background: top / contain no-repeat url('../assets/images/Logo.png');
-    opacity: 0.5;
+    opacity: 0.4;
     top: 5vh;
     left: 0;
     bottom: 0;
@@ -79,7 +79,7 @@ export default Vue.extend({
   #home::after {
     content: '';
     background: center / contain no-repeat url('../assets/images/Logo.png');
-    opacity: 0.5;
+    opacity: 0.4;
     top: 2vh;
     left: 0;
     bottom: 0;
@@ -93,7 +93,7 @@ export default Vue.extend({
   #home::after {
     content: '';
     background: center / contain no-repeat url('../assets/images/Logo.png');
-    opacity: 0.5;
+    opacity: 0.4;
     top: 5vh;
     left: 0;
     bottom: 0;
