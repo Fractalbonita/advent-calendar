@@ -8,7 +8,8 @@
     <p class="description__text">
       You don't wnat to forget this delicious, hoppy and strong flavoured beer?
       Take notes! You can comment beers by tapping on a specific beer of the
-      beer list. If you feel the urge edit or delete your notes, you can do so.
+      beer list. If you feel the urge to edit or delete your notes, you can do
+      so.
     </p>
     <div class="description__wrapper">
       <button class="description__link">

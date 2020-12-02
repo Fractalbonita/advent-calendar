@@ -2,14 +2,14 @@
   <section>
     <h2 class="description__headline">Fancy more beers?</h2>
     <p class="description__text">
-      On the 24th December a list of all beers will be available on the
+      On the 24th of December a list of all beers will be available on the
       <span class="description__highlight">Beers</span>
       page. You can search for a specific beer by the name of the beer or
-      brewery. You can also fitler the beer list by different tags such as beer
+      brewery. You can also filter the beer list by different tags such as beer
       style, award, and year.
     </p>
     <p class="description__text">
-      If you tap on any beer, you will be guided on the details page.
+      If you tap on any beer, you will be guided to the details page.
     </p>
     <div class="description__wrapper">
       <button type="button" class="description__link">

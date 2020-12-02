@@ -3,7 +3,7 @@
     <section>
       <p class="description__intro">
         Treat your taste buds during the festive season and explore a new craft
-        beer each day from the 1st to the 24th December.
+        beer each day from the 1st to the 24th of December.
       </p>
       <p class="description__text">
         Behind each <span class="description__highlight">Calendar</span> window
