@@ -1,0 +1,13 @@
+version: '2.4'
+
+services:
+  proxy:
+    image: nginx:1.19.5-alpine
+    ports:
+    - '2345:80'
+    volumes:
+    - ./proxy.conf:/etc/nginx/conf.d/default.conf:ro
+  api:
+    image: api-xmas-korhammer
+  frontend:
+    image: frontend-xmas-korhammer
