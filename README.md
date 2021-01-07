@@ -22,7 +22,7 @@ Coming soon!
 
 **Tablet**
 
-<img src="./screenshots/screen_home.png" height="300"> <img src="./screenshots/screen_calendar.png" height="300"> <img src="./screenshots/screen_calendar_20-12-01.png" height="300"> <img src="./screenshots/screen_calendar_20-12-01_details.png" height="300"> <img src="./screenshots/screen_beers.png" height="300"> <img src="./screenshots/screen_beers_tablet.png" height="300"> <img src="./screenshots/screen_favourites_tablet.png" height="300">
+<img src="./screenshots/screen_home.png" height="300"> <img src="./screenshots/screen_calendar.png" height="300"> <img src="./screenshots/screen_calendar_20-12-01.png" height="300"> <img src="./screenshots/screen_calendar_20-12-01_details.png" height="300"> <img src="./screenshots/screen_beers.png" height="300"> <img src="./screenshots/screen_beers_tablet.png" height="300"> <img src="./screenshots/screen_beers_filter_tablet.png" height="300"> <img src="./screenshots/screen_favourites_tablet.png" height="300">
 
 **Mobile**
 
